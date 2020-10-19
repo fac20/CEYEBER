@@ -23,3 +23,24 @@
   background-color: var(--color-4);
   height: 100vh;
 }
+
+@keyframes globe {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.globe {
+  height: 10rem;
+  background-image: url(./images/globe.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  animation-name: globe;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
