@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LandingPage from './pages/landingPage';
-import { Title } from './components/Text.js';
 import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
-      <main>
+      <main className="App">
         <Switch>
           <Route path="/" exact>
             <LandingPage />
