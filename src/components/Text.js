@@ -2,15 +2,26 @@ import styled from 'styled-components';
 import React from 'react';
 
 export const H1 = styled.h1`
-  color: var(--color-5);
+  color: ${props => props.theme.h1Color};
   font-family: var(--title-font);
   text-align: center;
 `;
-const MainTitle = styled.span`
+
+export const H2 = styled.h2`
+  color: ${props => props.theme.textColor};
+  font-family: var(--title-font);
+`;
+
+export const MainTitle = styled.span`
   font-size: 5rem;
   color: var(--color-1);
   font-family: var(--title-font);
   display: block;
+`;
+
+export const Text = styled.p`
+  color: ${props => props.theme.textColor};
+  font-family: var(--title-font);
 `;
 
 export const Title = () => {
