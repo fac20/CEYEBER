@@ -2,13 +2,13 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
   codecov: codecov/codecov@1.1.1
-
-- run:
-    name: Send to CodeCov
-    command: bash <(curl -s https://codecov.io/bash)
-
-- codecov/upload:
-    file: "./coverage/clover.xml"
+jobs:
+  build:
+    - run:
+          name: run tests and generate coverage
+          command: npm run cov
+      - codecov/upload:
+          file: "./coverage/clover.xml"
 
 workflows:
   node-tests:
