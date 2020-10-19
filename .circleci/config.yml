@@ -12,3 +12,4 @@ workflows:
   node-tests:
     jobs:
       - node/test
+      - build
