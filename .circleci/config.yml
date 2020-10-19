@@ -3,9 +3,11 @@ orbs:
   node: circleci/node@3.0.0
   codecov: codecov/codecov@1.1.1
 
-  bash <(curl -s https://codecov.io/bash)
+- run:
+    name: Send to CodeCov
+    command: bash <(curl -s https://codecov.io/bash)
 
-  - codecov/upload:
+- codecov/upload:
     file: "./coverage/clover.xml"
 
 workflows:
