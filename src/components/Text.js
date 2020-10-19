@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const H1 = styled.h1`
+export const H1 = styled.h1`
   color: var(--color-5);
   font-family: var(--title-font);
   text-align: center;

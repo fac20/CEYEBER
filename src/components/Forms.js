@@ -11,6 +11,11 @@ const Form = styled.form`
   flex-direction: column;
 `;
 
+export const Container = styled.div`
+  padding: 3rem;
+  text-align: center;
+`;
+
 const Fieldset = styled.fieldset`
   color: ${props => props.theme.formColor};
   border-style: solid;

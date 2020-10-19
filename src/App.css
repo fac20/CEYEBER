@@ -44,3 +44,13 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+.avatar {
+  height: 10rem;
+  background-image: url(./images/avatar.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
