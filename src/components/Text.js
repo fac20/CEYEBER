@@ -3,7 +3,7 @@ import React from 'react';
 
 const H1 = styled.h1`
   color: var(--color-5);
-  font-family: 'Aldrich', sans-serif;
+  font-family: var(--title-font);
 `;
 const MainTitle = styled.span`
   color: var(--color-1);

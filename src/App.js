@@ -1,15 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
 import LandingPage from './pages/landingPage';
-
-function App() {
-  return (
-    <div className="App">
-      <LandingPage />
-    </div>
-=======
 import { Title } from './components/Text.js';
 import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 
@@ -19,7 +11,7 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            <Title />
+            <LandingPage />
           </Route>
           <Route path="/profile" exact></Route>
           <Route path="/training-manual" exact></Route>
@@ -36,7 +28,6 @@ function App() {
         </Switch>
       </main>
     </BrowserRouter>
->>>>>>> main
   );
 }
 
