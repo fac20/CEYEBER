@@ -3,6 +3,7 @@ import './App.css';
 import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import TrainingManual from './pages/trainingManual';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
             <LandingPage />
           </Route>
           <Route path="/profile" exact></Route>
-          <Route path="/training-manual" exact></Route>
+          <Route path="/training-manual" exact>
+            <TrainingManual />
+          </Route>
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact></Route>
           <Route path="/try-again" exact></Route>
