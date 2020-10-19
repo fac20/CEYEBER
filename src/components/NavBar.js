@@ -4,9 +4,8 @@ import styled from 'styled-components';
 
 export const NavBar = () => {
   return (
-    <NavBar>
+    <nav>
       <ul>
-        {/* <BackButton /> */}
         <li>
           <Link to="/training-manual">Training Manual</Link>
         </li>
@@ -14,16 +13,6 @@ export const NavBar = () => {
           <Link to="/profile">Profile</Link>
         </li>
       </ul>
-    </NavBar>
+    </nav>
   );
 };
-
-// const BackButton = () => {
-//   return (
-//     <>
-//       <button>Back</button>
-//     </>
-//   );
-// };
-
-// const Points = () => {};
