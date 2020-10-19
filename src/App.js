@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import LandingPage from './pages/landingPage';
+import Profile from './pages/profile';
 import { BrowserRouter, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
           <Route path="/" exact>
             <LandingPage />
           </Route>
-          <Route path="/profile" exact></Route>
+          <Route path="/profile" exact>
+            <Profile />
+          </Route>
           <Route path="/training-manual" exact></Route>
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact></Route>
