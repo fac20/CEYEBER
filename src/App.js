@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
@@ -8,8 +7,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      {/* <NavBar /> */}
-      <main>
+      <main className="App">
         <Switch>
           <Route path="/" exact>
             <NavBar />
