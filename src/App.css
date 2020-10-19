@@ -20,8 +20,8 @@
 }
 
 .App {
-  background-color: var(--color-4);
   height: 100vh;
+  background-color: var(--color-4);
 }
 
 @keyframes globe {
