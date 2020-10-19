@@ -25,6 +25,10 @@ function App() {
           <Route path="/third-case-intro" exact></Route>
           <Route path="/third-case-task" exact></Route>
           <Route path="/game-over" exact></Route>
+          <Route>
+            <h1>Oops! Page not found.</h1>
+            <Link to="/">Back to Home</Link>
+          </Route>
         </Switch>
       </main>
     </BrowserRouter>
