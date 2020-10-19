@@ -15,6 +15,11 @@
   /* white */
   --color-5: hsl(0, 0%, 100%);
 
-  --title-font: "Orbitron", sans-serif;
-  --info-font: "Aldrich", sans-serif;
+  --title-font: 'Orbitron', sans-serif;
+  --info-font: 'Aldrich', sans-serif;
+}
+
+.App {
+  background-color: var(--color-4);
+  height: 100vh;
 }
