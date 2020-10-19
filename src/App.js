@@ -4,19 +4,22 @@ import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
+import Profile from './pages/profile';
 
 function App() {
   return (
     <BrowserRouter>
       <main className="App">
+        <NavBar />
         <Switch>
           <Route path="/" exact>
-            <NavBar />
             <LandingPage />
           </Route>
-          <Route path="/profile" exact></Route>
           <Route path="/training-manual" exact>
             <TrainingManual />
+          </Route>
+          <Route path="/profile" exact>
+            <Profile />
           </Route>
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact></Route>

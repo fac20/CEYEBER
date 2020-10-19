@@ -20,8 +20,8 @@
 }
 
 .App {
-  background-color: var(--color-4);
   height: 100vh;
+  background-color: var(--color-4);
 }
 
 @keyframes globe {
@@ -41,6 +41,16 @@
   background-position: center;
   animation-name: globe;
   animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.avatar {
+  height: 10rem;
+  background-image: url(./images/avatar.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
