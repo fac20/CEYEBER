@@ -11,7 +11,7 @@ const LandingPage = () => {
   return (
     <ThemeProvider theme={landingPageTheme}>
       <Title />
-      <div class="globe" />
+      <div className="globe" />
       <LandingPageForm />
     </ThemeProvider>
   );
