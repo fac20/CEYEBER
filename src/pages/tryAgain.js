@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import { Button } from '../components/Buttons';
 import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
