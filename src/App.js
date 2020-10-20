@@ -4,6 +4,7 @@ import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
+import FirstCasePage from './pages/firstCasePage';
 import Profile from './pages/profile';
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
             <Profile />
           </Route>
           <Route path="/first-case-intro" exact></Route>
-          <Route path="/first-case-task" exact></Route>
+          <Route path="/first-case-task" exact>
+            <FirstCasePage />
+          </Route>
           <Route path="/try-again" exact></Route>
           <Route path="/success" exact></Route>
           <Route path="/badge" exact></Route>
