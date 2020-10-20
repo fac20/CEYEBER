@@ -14,7 +14,7 @@ const Title = styled(H1)`
 
 const Profile = () => {
   const history = useHistory();
-  const createPorfile = () => {};
+  const createProfile = () => {};
 
   return (
     <Container>
@@ -22,7 +22,7 @@ const Profile = () => {
         <Title>Hello Brown Fox!</Title>
         <div className="avatar" />
         <H1>RATE YOUR SKILLS!</H1>
-        <Button onClick={createPorfile}>START YOUR FIRST</Button>
+        <Button onClick={createProfile}>START YOUR FIRST</Button>
       </ThemeProvider>
     </Container>
   );

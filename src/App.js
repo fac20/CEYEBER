@@ -7,10 +7,13 @@ import TrainingManual from './pages/trainingManual';
 import Profile from './pages/profile';
 
 function App() {
+  //set points to start with 2
+  const [points, setPoints] = React.useState(11);
+
   return (
     <BrowserRouter>
       <main className="App">
-        <NavBar />
+        <NavBar points={points} />
         <Switch>
           <Route path="/" exact>
             <LandingPage />
