@@ -20,9 +20,8 @@ const Profile = () => {
         <H1>Hello Brown Fox!</H1>
         <div className="avatar" />
         <H2>RATE YOUR SKILLS!</H2>
-
         <RatingBar />
-        <Button onClick={createPorfile}>START YOUR FIRST</Button>
+        <Button onClick={createProfile}>START YOUR FIRST TASK</Button>
       </ThemeProvider>
     </Container>
   );
