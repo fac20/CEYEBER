@@ -8,7 +8,7 @@ import Profile from './pages/profile';
 
 function App() {
   //set points to start with 2
-  const [points, setPoints] = React.useState(11);
+  const [points, setPoints] = React.useState(2);
 
   return (
     <BrowserRouter>
