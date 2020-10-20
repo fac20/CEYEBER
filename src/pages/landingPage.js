@@ -1,9 +1,10 @@
 import React from 'react';
 import { Title } from './../components/Text';
-import { LandingPageForm, Container } from './../components/Forms';
+import { LandingPageForm } from './../components/Forms';
 import { ThemeProvider } from 'styled-components';
 import { landingPageTheme } from './../components/themes';
 import { useHistory } from 'react-router-dom';
+import { Container } from './../components/Forms';
 
 const LandingPage = () => {
   const history = useHistory();
