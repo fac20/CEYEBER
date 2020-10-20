@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
-import { ratingPageTheme } from './../components/themes';
+import { ratingPageTheme } from '../components/themes';
 
 const TryAgain = () => {
   const history = useHistory();
