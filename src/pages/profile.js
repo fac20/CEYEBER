@@ -2,15 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
-import { H1 } from './../components/Text';
+import { H1, H2 } from './../components/Text';
 import { Container } from './../components/Forms';
 import { ThemeProvider } from 'styled-components';
-import { landingPageTheme } from './../components/themes';
-
-const Title = styled(H1)`
-  color: var(--color-2);
-  font-size: 3rem;
-`;
+import { ratingPageTheme } from './../components/themes';
+import RatingBar from '../components/RatingBar.js';
 
 const Profile = () => {
   const history = useHistory();
@@ -22,13 +18,12 @@ const Profile = () => {
 
   return (
     <Container>
-      <ThemeProvider theme={landingPageTheme}>
-        <Div>
-          <Title>Hello Brown Fox!</Title>
-        </Div>
+      <ThemeProvider theme={ratingPageTheme}>
+        <H1>Hello Brown Fox!</H1>
         <div className="avatar" />
-        <H1>RATE YOUR SKILLS!</H1>
-        <Button onClick={createProfile}>START YOUR FIRST</Button>
+        <H2>RATE YOUR SKILLS!</H2>
+        <RatingBar />
+        <Button onClick={createProfile}>START YOUR FIRST TASK</Button>
       </ThemeProvider>
     </Container>
   );

@@ -11,3 +11,13 @@ export const fieldPageTheme = {
   btnColor: 'var(--color-3)',
   btnTextColor: 'var(--color-4)'
 };
+
+export const ratingPageTheme = {
+  textColor: 'var(--color-5)',
+  h1Color: 'var(--color-2)',
+  btnColor: 'var(--color-2)',
+  btnTextColor: 'var(--color-4)',
+  ratingBarColor: 'var(--color-1)',
+  selected: 'var(--color-3)',
+  labelColor: 'var(--color-5)'
+};

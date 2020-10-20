@@ -27,10 +27,11 @@ const Fieldset = styled.fieldset`
   border-color: ${props => props.theme.formColor};
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   font-family: var(--info-font);
   font-size: 1.2rem;
   margin-bottom: 1ch;
+  color: ${props => props.theme.labelColor};
 `;
 
 const Input = styled.input`

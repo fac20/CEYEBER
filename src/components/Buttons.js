@@ -13,7 +13,7 @@ export const Button = styled.button`
   background-color: ${props => props.theme.btnColor};
   :hover {
     color: ${props => props.theme.btnColor};
-    background-color: ${props => props.theme.btnTextcolor};
+    background-color: ${props => props.theme.btnTextColor};
     border-color: ${props => props.theme.btnColor};
     border-style: solid;
   }
