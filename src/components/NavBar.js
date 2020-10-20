@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 export const StyledNavBar = styled.nav`
   background-color: var(--color-3);
-  position: fixed;
   padding: 0;
   width: 100vw;
   display: flex;
