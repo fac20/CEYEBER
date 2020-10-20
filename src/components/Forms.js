@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
 
@@ -12,13 +12,8 @@ const Form = styled.form`
 `;
 
 export const Container = styled.div`
-  @media only screen and (max-width: 450px) {
-    padding: 1rem;
-  }
-  @media only screen and (min-width: 460px) {
-    padding: 6rem;
-    text-align: center;
-  }
+  padding: 3rem;
+  text-align: center;
 `;
 
 const Fieldset = styled.fieldset`
@@ -55,29 +50,27 @@ const Input = styled.input`
 
 export const LandingPageForm = () => {
   const history = useHistory();
-  const [profile, updateProfile] = useState({
-    alias: 'BrownFox',
-    age: 8,
-    location: 'London'
-  });
-  console.log(profile);
-  const buildProfile = event => {
-    const id = event.target.id;
-    const value = event.target.value;
-    console.log(event.target);
-    updateProfile({ ...profile, [id]: value });
+
+  const handleSubmit = event => {
+    event.preventDefault();
     history.push('/profile');
+    console.log(event.target);
+    const alias = event.target.elements.alias.value;
+    const age = event.target.elements.age.value;
+    const location = event.target.elements.location.value;
+
+    console.log(alias, age, location);
   };
 
   return (
-    <Form onSubmit={buildProfile}>
+    <Form onSubmit={event => handleSubmit(event)}>
       <Fieldset>
         <Label htmlFor="alias">Alias:</Label>
-        <Input id="alias" type="text" placeholder="BrownFox" />
+        <Input id="alias" type="text" placeholder="BrownFox" required />
         <Label htmlFor="age">Age:</Label>
-        <Input id="age" type="number" placeholder="8" />
+        <Input id="age" type="number" min="8" placeholder="8" required />
         <Label htmlFor="location">Location:</Label>
-        <Input id="location" type="text" placeholder="London" />
+        <Input id="location" type="text" placeholder="London" required />
       </Fieldset>
       <Button>CLICK HERE TO BUILD YOUR PROFILE</Button>
     </Form>

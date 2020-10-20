@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import Profile from './pages/profile';
 import TryAgain from './pages/try-again';
+import GameOver from './pages/gameover';
 
 function App() {
   //set points to start with 2
@@ -36,7 +37,9 @@ function App() {
           <Route path="/second-case-task" exact></Route>
           <Route path="/third-case-intro" exact></Route>
           <Route path="/third-case-task" exact></Route>
-          <Route path="/game-over" exact></Route>
+          <Route path="/game-over" exact>
+            <GameOver />
+          </Route>
           <Route>
             <h1>Oops! Page not found.</h1>
             <Link to="/">Back to Home</Link>

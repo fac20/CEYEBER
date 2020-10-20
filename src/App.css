@@ -54,3 +54,13 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+.skull {
+  height: 10rem;
+  background-image: url(./images/skull.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

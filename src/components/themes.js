@@ -21,3 +21,10 @@ export const ratingPageTheme = {
   selected: 'var(--color-3)',
   labelColor: 'var(--color-5)'
 };
+
+export const gameOverPageTheme = {
+  textColor: 'var(--color-5)',
+  h1Color: 'var(--color-3)',
+  btnColor: 'var(--color-3)',
+  btnTextColor: 'var(--color-4)'
+};
