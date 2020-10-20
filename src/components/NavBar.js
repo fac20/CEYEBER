@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from './Buttons.js';
 import styled from 'styled-components';
 
 export const StyledNavBar = styled.nav`
   background-color: var(--color-3);
-  position: fixed;
   padding: 0;
   width: 100vw;
   display: flex;
@@ -39,7 +37,7 @@ export const NavBar = ({ points }) => {
 const PointsBar = ({ points }) => {
   return (
     <>
-      <label for="gamePoints">Points</label>
+      <label htmlFor="gamePoints">Points</label>
       <progress id="gamePoints" value={points} max="11"></progress>
     </>
   );

@@ -50,19 +50,29 @@ const Input = styled.input`
 
 export const LandingPageForm = () => {
   const history = useHistory();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    history.push('/profile');
+    console.log(event.target);
+    const alias = event.target.elements.alias.value;
+    const age = event.target.elements.age.value;
+    const location = event.target.elements.location.value;
+
+    console.log(alias, age, location);
+  };
+
   return (
-    <Form>
+    <Form onSubmit={event => handleSubmit(event)}>
       <Fieldset>
         <Label htmlFor="alias">Alias:</Label>
-        <Input id="alias" type="text" placeholder="BrownFox" />
+        <Input id="alias" type="text" placeholder="BrownFox" required />
         <Label htmlFor="age">Age:</Label>
-        <Input id="age" type="number" placeholder="8" />
+        <Input id="age" type="number" min="8" placeholder="8" required />
         <Label htmlFor="location">Location:</Label>
-        <Input id="location" type="text" placeholder="London" />
+        <Input id="location" type="text" placeholder="London" required />
       </Fieldset>
-      <Button onClick={() => history.push('/profile')}>
-        CLICK HERE TO BUILD YOUR PROFILE
-      </Button>
+      <Button>CLICK HERE TO BUILD YOUR PROFILE</Button>
     </Form>
   );
 };
