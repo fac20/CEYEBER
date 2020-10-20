@@ -20,8 +20,18 @@ const FirstCasePage = ({ points, setPoints }) => {
     <ThemeProvider theme={fieldPageTheme}>
       <ImageQuestion title={title} img={img} question={question} />
       <CorrectButton points={points} setPoints={setPoints} label="Report" />
-      <IgnoreButton points={points} setPoints={setPoints} label="Ignore" />
-      <WrongButton points={points} setPoints={setPoints} label="Share" />
+      <IgnoreButton
+        points={points}
+        setPoints={setPoints}
+        label="Ignore"
+        nextPage={'try-again'}
+      />
+      <WrongButton
+        points={points}
+        setPoints={setPoints}
+        label="Share"
+        nextPage={'try-again'}
+      />
     </ThemeProvider>
   );
 };

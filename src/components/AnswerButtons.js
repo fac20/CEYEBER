@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Buttons.js';
+import { useHistory } from 'react-router-dom';
 
 //CORRECT button:
 export function CorrectButton({ points, setPoints, label }) {
@@ -13,7 +14,8 @@ export function CorrectButton({ points, setPoints, label }) {
 }
 
 //WRONG button:
-export function WrongButton({ points, setPoints, label }) {
+export function WrongButton({ points, setPoints, label, nextPage }) {
+  const history = useHistory();
   const handleWrongClick = () => {
     //change the number of points the player has
     setPoints(points - 2);
@@ -24,13 +26,16 @@ export function WrongButton({ points, setPoints, label }) {
     // }
 
     //go to the next page
+    history.push(nextPage);
   };
 
   return <Button onClick={handleWrongClick}>{label}</Button>;
 }
 
 //IGNORE button:
-export function IgnoreButton({ points, setPoints, label }) {
+export function IgnoreButton({ points, setPoints, label, nextPage }) {
+  const history = useHistory();
+
   const handleIgnoreClick = () => {
     //change the number of points the player has
     setPoints(points - 1);
@@ -41,6 +46,7 @@ export function IgnoreButton({ points, setPoints, label }) {
     // }
 
     //go to the next page
+    history.push(nextPage);
   };
 
   return <Button onClick={handleIgnoreClick}>{label}</Button>;
