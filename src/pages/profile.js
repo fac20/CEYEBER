@@ -16,10 +16,16 @@ const Profile = () => {
   const history = useHistory();
   const createProfile = () => {};
 
+  const Div = styled.div`
+    padding-top: 3rem;
+  `;
+
   return (
     <Container>
       <ThemeProvider theme={landingPageTheme}>
-        <Title>Hello Brown Fox!</Title>
+        <Div>
+          <Title>Hello Brown Fox!</Title>
+        </Div>
         <div className="avatar" />
         <H1>RATE YOUR SKILLS!</H1>
         <Button onClick={createProfile}>START YOUR FIRST</Button>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import LandingPage from './pages/landingPage';
-import { NavBar } from './components/NavBar.js';
+import { StyledNavBar, NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import Profile from './pages/profile';
@@ -13,7 +13,6 @@ function App() {
   return (
     <BrowserRouter>
       <main className="App">
-        <NavBar points={points} />
         <Switch>
           <Route path="/" exact>
             <LandingPage />
@@ -22,6 +21,7 @@ function App() {
             <TrainingManual />
           </Route>
           <Route path="/profile" exact>
+            <NavBar points={points} />
             <Profile />
           </Route>
           <Route path="/first-case-intro" exact></Route>
