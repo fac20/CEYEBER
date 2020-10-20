@@ -10,7 +10,9 @@ import RatingBar from '../components/RatingBar.js';
 
 const Profile = () => {
   const history = useHistory();
-  const createPorfile = () => {};
+  const createPorfile = () => {
+    history.push('/first-case-intro');
+  };
 
   return (
     <Container>
