@@ -10,11 +10,9 @@ import RatingBar from '../components/RatingBar.js';
 
 const Profile = () => {
   const history = useHistory();
-  const createProfile = () => {};
-
-  const Div = styled.div`
-    padding-top: 3rem;
-  `;
+  const createProfile = () => {
+    history.push('/first-case-intro');
+  };
 
   return (
     <Container>
