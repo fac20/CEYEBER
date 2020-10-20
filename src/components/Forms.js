@@ -58,8 +58,6 @@ export const LandingPageForm = () => {
     const alias = event.target.elements.alias.value;
     const age = event.target.elements.age.value;
     const location = event.target.elements.location.value;
-
-    console.log(alias, age, location);
   };
 
   return (

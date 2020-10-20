@@ -15,7 +15,6 @@ const FirstCasePage = ({ points, setPoints }) => {
   const img = '';
   const question =
     'Your friend/family member Sam just shared a VIRAL video of a ...';
-  //const answers = ['yes', 'no', 'maybe'];
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
