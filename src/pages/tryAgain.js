@@ -6,11 +6,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
-<<<<<<< HEAD:src/pages/try-again.js
 import { gameOverPageTheme } from './../components/themes';
-=======
-import { ratingPageTheme } from '../components/themes';
->>>>>>> main:src/pages/tryAgain.js
 
 const TryAgain = () => {
   const history = useHistory();
