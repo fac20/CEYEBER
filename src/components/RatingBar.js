@@ -10,6 +10,8 @@ const StarRating = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 50%;
+  min-width: 100px;
+  max-width: 200px;
   justify-content: space-between;
 `;
 
@@ -27,9 +29,18 @@ const StarIcon = styled.button`
 
 const DivContainer = styled.div`
   display: flex;
+  margin: auto;
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
+  @media only screen and (min-width: 700px) {
+    width: 450px;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  @media only screen and (max-width: 460px) {
+    margin: 0.5rem;
+  }
 `;
 
 const RatingBar = () => {

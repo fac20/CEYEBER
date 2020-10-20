@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
 
@@ -12,8 +12,13 @@ const Form = styled.form`
 `;
 
 export const Container = styled.div`
-  padding: 3rem;
-  text-align: center;
+  @media only screen and (max-width: 450px) {
+    padding: 1rem;
+  }
+  @media only screen and (min-width: 460px) {
+    padding: 6rem;
+    text-align: center;
+  }
 `;
 
 const Fieldset = styled.fieldset`
@@ -50,8 +55,22 @@ const Input = styled.input`
 
 export const LandingPageForm = () => {
   const history = useHistory();
+  const [profile, updateProfile] = useState({
+    alias: 'BrownFox',
+    age: 8,
+    location: 'London'
+  });
+  console.log(profile);
+  const buildProfile = event => {
+    const id = event.target.id;
+    const value = event.target.value;
+    console.log(event.target);
+    updateProfile({ ...profile, [id]: value });
+    history.push('/profile');
+  };
+
   return (
-    <Form>
+    <Form onSubmit={buildProfile}>
       <Fieldset>
         <Label htmlFor="alias">Alias:</Label>
         <Input id="alias" type="text" placeholder="BrownFox" />
@@ -60,9 +79,7 @@ export const LandingPageForm = () => {
         <Label htmlFor="location">Location:</Label>
         <Input id="location" type="text" placeholder="London" />
       </Fieldset>
-      <Button onClick={() => history.push('/profile')}>
-        CLICK HERE TO BUILD YOUR PROFILE
-      </Button>
+      <Button>CLICK HERE TO BUILD YOUR PROFILE</Button>
     </Form>
   );
 };

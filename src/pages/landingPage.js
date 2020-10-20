@@ -9,13 +9,13 @@ const LandingPage = () => {
   const history = useHistory();
   history.push('/');
   return (
-    // <Container>
-    <ThemeProvider theme={landingPageTheme}>
-      <Title />
-      <div className="globe" />
-      <LandingPageForm />
-    </ThemeProvider>
-    // </Container>
+    <Container>
+      <ThemeProvider theme={landingPageTheme}>
+        <Title />
+        <div className="globe" />
+        <LandingPageForm />
+      </ThemeProvider>
+    </Container>
   );
 };
 
