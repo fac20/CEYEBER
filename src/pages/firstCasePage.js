@@ -3,6 +3,8 @@ import { ThemeProvider } from 'styled-components';
 import { fieldPageTheme } from './../components/themes';
 import { ImageQuestion } from './../components/Questions';
 
+//TODO add buttons
+
 const FirstCasePage = () => {
   const title = 'Case One';
   const img = '';
