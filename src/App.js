@@ -29,7 +29,11 @@ function App() {
           </Route>
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact>
-            <FirstCasePage />
+            <NavBar points={points} />
+            <FirstCasePage
+              points={points}
+              setPoints={setPoints}
+            ></FirstCasePage>
           </Route>
           <Route path="/try-again" exact>
             <TryAgain />
