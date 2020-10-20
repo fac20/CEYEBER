@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
-import { ratingPageTheme } from '../components/themes';
+import { gameOverPageTheme } from './../components/themes';
 
 const TryAgain = () => {
   const history = useHistory();
@@ -16,9 +16,9 @@ const TryAgain = () => {
 
   return (
     <Container>
-      <ThemeProvider theme={ratingPageTheme}>
+      <ThemeProvider theme={gameOverPageTheme}>
         <H1>Incorrect!</H1>
-        <div className="avatar" />
+        <div className="alert" />
         <H2>
           Have a look at the case again.
           <br /> If you are unsure information is
