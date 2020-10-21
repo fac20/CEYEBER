@@ -10,7 +10,6 @@ const TrainingManual = () => {
 
   const goBack = () => {
     history.goBack();
-    history.push('/training-manual');
   };
 
   return (

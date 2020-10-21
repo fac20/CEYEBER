@@ -10,7 +10,6 @@ import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameover';
 
 function App() {
-  //set points to start with 2
   const [points, setPoints] = React.useState(2);
 
   return (
@@ -29,7 +28,11 @@ function App() {
           </Route>
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact>
-            <FirstCasePage />
+            <NavBar points={points} />
+            <FirstCasePage
+              points={points}
+              setPoints={setPoints}
+            ></FirstCasePage>
           </Route>
           <Route path="/try-again" exact>
             <TryAgain />
