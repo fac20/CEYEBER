@@ -42,7 +42,6 @@ function App() {
             <BadgePage badgeType={badgeType} alias={alias} />
           </Route>
           <Route path="/second-case-intro" exact></Route>
-
           <Route path="/second-case-task" exact>
             <NavBar points={points} />
             <SecondCasePage points={points} setPoints={setPoints} />

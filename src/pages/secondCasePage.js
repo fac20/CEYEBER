@@ -10,8 +10,8 @@ import {
 
 const SecondCasePage = ({ points, setPoints }) => {
   const title = 'Case Two';
-  const question = `Dr Goblin thinks climate change is FAKE
-    NEWS. Check out Dr Goblin’s latest post: `;
+  const question = `Read this message from Netflix and decide 
+  which action to take:`;
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
@@ -19,20 +19,21 @@ const SecondCasePage = ({ points, setPoints }) => {
       <CorrectButton
         points={points}
         setPoints={setPoints}
-        label="Check
-        whether Dr Goblin’s claim is true"
+        label="Doesn’t look right, 
+        report to Netflix"
         nextPage={'/badge'}
       />
       <IgnoreButton
         points={points}
         setPoints={setPoints}
-        label="Ignore it- he is a 'Dr' after all!"
+        label="Don’t know, better to
+        ignore it"
         nextPage={'try-again'}
       />
       <WrongButton
         points={points}
         setPoints={setPoints}
-        label="Like Dr Goblin’s post]"
+        label="Click the link - this is from Netflix"
         nextPage={'try-again'}
       />
     </ThemeProvider>
