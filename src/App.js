@@ -27,10 +27,17 @@ function App() {
   let failMessage = 'nothing yet, page 0';
 
   pageNum === 1
-    ? (failMessage = 'page1 fail message')
+    ? (failMessage = `Try again – even though Sam is your
+      friend, they might still spread Fake News. 
+      It’s important to check.`)
     : pageNum === 2
-    ? (failMessage = 'page2 fail message')
-    : (failMessage = 'page3 fail message');
+    ? (failMessage = `Try again. It’s very easy to steal a logo and
+    pretend you are from a certain company, and 
+    ignoring these messages means
+    they can come back again! `)
+    : (failMessage = `Oh dear. Using a combination of capital letters, 
+    numbers and punctuation like "!?" might help. Don't use things a hacker
+    could easily guess like your name or birthday! `);
 
   return (
     <BrowserRouter>
