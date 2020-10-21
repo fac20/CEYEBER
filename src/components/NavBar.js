@@ -37,7 +37,7 @@ export const NavBar = ({ points }) => {
 const PointsBar = ({ points }) => {
   return (
     <>
-      <label htmlFor="gamePoints">Points</label>
+      <label htmlFor="gamePoints">{points} Points</label>
       <progress id="gamePoints" value={points} max="11"></progress>
     </>
   );

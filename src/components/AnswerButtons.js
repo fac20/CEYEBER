@@ -21,8 +21,11 @@ export function WrongButton({ points, setPoints, label, nextPage }) {
     setPoints(points - 2);
 
     //if player has no points left, render gameOver page
+    //not added or committed: produces an error
+    // console.log(points);
     // if (points <= 0) {
-    //
+    //   console.log('yes');
+    //   nextPage = '/game-over';
     // }
 
     //go to the next page

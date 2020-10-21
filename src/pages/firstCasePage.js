@@ -23,7 +23,7 @@ const FirstCasePage = ({ points, setPoints }) => {
       <IgnoreButton
         points={points}
         setPoints={setPoints}
-        label="Ignore"
+        label="Ignore and laugh"
         nextPage={'try-again'}
       />
       <WrongButton
