@@ -8,10 +8,13 @@ import FirstCasePage from './pages/firstCasePage';
 import SecondCasePage from './pages/secondCasePage';
 import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
-import GameOver from './pages/gameover';
+import GameOver from './pages/gameoverPage';
+import BadgePage from './pages/badgePage';
 
 function App() {
   const [points, setPoints] = React.useState(2);
+  const badgeType = 'Troll Hunter';
+  const alias = 'BrownFox';
 
   return (
     <BrowserRouter>
@@ -36,7 +39,9 @@ function App() {
             <TryAgain />
           </Route>
           <Route path="/success" exact></Route>
-          <Route path="/badge" exact></Route>
+          <Route path="/badge" exact>
+            <BadgePage badgeType={badgeType} alias={alias} />
+          </Route>
           <Route path="/second-case-intro" exact></Route>
 
           <Route path="/second-case-task" exact>

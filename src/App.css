@@ -22,6 +22,9 @@
 .App {
   /* height: 100vh; */
   background-color: var(--color-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes globe {
@@ -35,6 +38,7 @@
 
 .globe {
   height: 10rem;
+  width: 10rem;
   background-image: url(./images/globe.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -51,26 +55,31 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .skull {
-  height: 10rem;
+  height: 12rem;
+  width: 12rem;
   background-image: url(./images/skull.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .alert {
-  height: 10rem;
+  height: 12rem;
+  width: 12rem;
   background-image: url(./images/alert.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+}
+
+.badge {
+  height: 12rem;
+  width: 12rem;
+  background-image: url(./images/badge.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
