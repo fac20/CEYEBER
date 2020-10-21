@@ -16,7 +16,9 @@ export function CorrectButton({
     //change the number of points the player has
     setPoints(points + 3);
 
-    setAnswerArray([...answerArray, label]);
+    if (window.location.pathname == '/third-case-task') {
+      setAnswerArray([...answerArray, label]);
+    }
 
     //go to the next page
     history.push(nextPage);
@@ -38,7 +40,9 @@ export function WrongButton({
     //change the number of points the player has
     setPoints(points - 2);
 
-    setAnswerArray([...answerArray, label]);
+    if (window.location.pathname == '/third-case-task') {
+      setAnswerArray([...answerArray, label]);
+    }
 
     if (points <= 0) {
       console.log('yes');
@@ -67,7 +71,9 @@ export function IgnoreButton({
     //change the number of points the player has
     setPoints(points - 1);
 
-    setAnswerArray([...answerArray, label]);
+    if (window.location.pathname == '/third-case-task') {
+      setAnswerArray([...answerArray, label]);
+    }
 
     //go to the next page
     if (points <= 0) {
