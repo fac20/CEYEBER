@@ -38,7 +38,6 @@ function App() {
           <Route path="/try-again" exact>
             <TryAgain />
           </Route>
-          <Route path="/success" exact></Route>
           <Route path="/badge" exact>
             <BadgePage badgeType={badgeType} alias={alias} />
           </Route>
