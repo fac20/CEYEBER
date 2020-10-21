@@ -23,13 +23,13 @@ export function WrongButton({ points, setPoints, label, nextPage }) {
     //if player has no points left, render gameOver page
     //not added or committed: produces an error
     // console.log(points);
-    // if (points <= 0) {
-    //   console.log('yes');
-    //   nextPage = '/game-over';
-    // }
-
-    //go to the next page
-    history.push(nextPage);
+    if (points <= 0) {
+      console.log('yes');
+      history.push('/game-over');
+    } else {
+      //go to the next page
+      history.push(nextPage);
+    }
   };
 
   return <Button onClick={handleWrongClick}>{label}</Button>;
@@ -49,7 +49,12 @@ export function IgnoreButton({ points, setPoints, label, nextPage }) {
     // }
 
     //go to the next page
-    history.push(nextPage);
+    if (points <= 0) {
+      history.push('/game-over');
+    } else {
+      //go to the next page
+      history.push(nextPage);
+    }
   };
 
   return <Button onClick={handleIgnoreClick}>{label}</Button>;
