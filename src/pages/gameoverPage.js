@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
-import { gameOverPageTheme } from './../components/themes';
+import { gameOverPageTheme } from '../components/themes';
 
 const GameOver = () => {
   const history = useHistory();
