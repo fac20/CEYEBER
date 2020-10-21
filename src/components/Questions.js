@@ -43,7 +43,9 @@ export function TimedQuestion({
       setTimeLeft(timeLeft - 1);
     }, 1000);
     return () => clearInterval(startInterval);
-  }, [timeLeft, setTimeLeft]);
+  }, [timeLeft, setTimeLeft, history, nextPage]);
+  //esLint wanted dependencies of history and nextPage so have added them
+  //doesn't seem to affect page working
 
   return (
     <>
