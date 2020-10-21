@@ -10,11 +10,17 @@ import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
 import BadgePage from './pages/badgePage';
+import CasesPage from './pages/casesPage';
 
 function App() {
   const [points, setPoints] = React.useState(2);
-  const badgeType = 'Troll Hunter';
+  const badgeType = null;
   const alias = 'BrownFox';
+  const cases = {
+    case1: 'Troll Hunter',
+    case2: null,
+    case3: null
+  };
 
   return (
     <BrowserRouter>
@@ -29,6 +35,10 @@ function App() {
           <Route path="/profile" exact>
             <NavBar points={points} />
             <Profile />
+          </Route>
+          <Route path="/cases" exact>
+            <NavBar points={points} />
+            <CasesPage alias={alias} cases={cases}></CasesPage>
           </Route>
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact>

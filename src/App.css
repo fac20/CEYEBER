@@ -51,6 +51,7 @@
 
 .avatar {
   height: 10rem;
+  width: 10rem;
   background-image: url(./images/avatar.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -79,6 +80,15 @@
   height: 12rem;
   width: 12rem;
   background-image: url(./images/badge.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.greyBadge {
+  height: 12rem;
+  width: 12rem;
+  background-image: url(./images/greyBadge.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
