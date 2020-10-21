@@ -1,6 +1,7 @@
 import React from 'react';
 import { H1, Text } from './Text';
 import { Img } from './Image';
+import { useHistory } from 'react-router-dom';
 
 export const ImageQuestion = ({ title, img, question }) => {
   return (
@@ -21,6 +22,40 @@ export const ImageQuestion = ({ title, img, question }) => {
 //if points is high when timer runs out, you win badge
 //if low, try again
 
-export const TimedQuestion = ({}) => {
-  return <></>;
-};
+export function TimedQuestion({
+  title,
+  img,
+  question,
+  timeLeft,
+  setTimeLeft,
+  nextPage
+}) {
+  //states of timeLeft and setTimeLeft held on page
+  //remember to import useHistory on the page!
+  const history = useHistory();
+
+  React.useEffect(() => {
+    //  if there is not timeLeft then go to try again page
+    if (timeLeft <= 0) history.push(nextPage);
+
+    // else create set interval function for every second
+    const startInterval = setInterval(() => {
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+    return () => clearInterval(startInterval);
+  }, [timeLeft, setTimeLeft]);
+
+  return (
+    <>
+      <h1>{timeLeft}</h1>
+      <label htmlFor="game">Time Left:</label>
+      <progress id="game" value={timeLeft} max="30">
+        {' '}
+        {timeLeft}{' '}
+      </progress>
+      <H1>{title}</H1>
+      <Img src={img} />
+      <Text>{question}</Text>
+    </>
+  );
+}

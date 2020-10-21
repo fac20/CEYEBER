@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import FirstCasePage from './pages/firstCasePage';
 import SecondCasePage from './pages/secondCasePage';
+import ThirdCasePage from './pages/thirdCasePage';
 import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
@@ -47,7 +48,9 @@ function App() {
             <SecondCasePage points={points} setPoints={setPoints} />
           </Route>
           <Route path="/third-case-intro" exact></Route>
-          <Route path="/third-case-task" exact></Route>
+          <Route path="/third-case-task" exact>
+            <ThirdCasePage />
+          </Route>
           <Route path="/game-over" exact>
             <GameOver />
           </Route>
