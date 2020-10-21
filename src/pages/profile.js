@@ -6,6 +6,7 @@ import { Container } from './../components/Forms';
 import { ThemeProvider } from 'styled-components';
 import { ratingPageTheme } from './../components/themes';
 import RatingBar from '../components/RatingBar.js';
+import { Avatar } from '../components/Image';
 
 const Profile = () => {
   const history = useHistory();
@@ -17,7 +18,7 @@ const Profile = () => {
     <Container>
       <ThemeProvider theme={ratingPageTheme}>
         <H1>Hello Brown Fox!</H1>
-        <div className="avatar" />
+        <Avatar className="avatar" />
         <H2>RATE YOUR SKILLS!</H2>
         <RatingBar />
         <Button onClick={createProfile}>START YOUR FIRST TASK</Button>

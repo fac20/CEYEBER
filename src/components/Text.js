@@ -21,7 +21,7 @@ export const MainTitle = styled.span`
 
 export const Text = styled.p`
   color: ${props => props.theme.textColor};
-  font-family: var(--title-font);
+  font-family: var(--info-font);
 `;
 
 export const Title = () => {
