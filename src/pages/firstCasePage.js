@@ -8,8 +8,6 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-//TODO add buttons
-
 const FirstCasePage = ({ points, setPoints }) => {
   const title = 'Case One';
   const img = '';

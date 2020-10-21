@@ -3,7 +3,7 @@ import { Button } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
 
 //CORRECT button:
-export function CorrectButton({ points, setPoints, label }) {
+export function CorrectButton({ points, setPoints, label, nextPage }) {
   const handleCorrectClick = () => {
     //change the number of points the player has
     setPoints(points + 3);
