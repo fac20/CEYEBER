@@ -21,6 +21,7 @@ const SecondCasePage = ({ points, setPoints }) => {
         setPoints={setPoints}
         label="Check
         whether Dr Goblin’s claim is true"
+        nextPage={'/badge'}
       />
       <IgnoreButton
         points={points}

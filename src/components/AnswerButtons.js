@@ -4,11 +4,13 @@ import { useHistory } from 'react-router-dom';
 
 //CORRECT button:
 export function CorrectButton({ points, setPoints, label, nextPage }) {
+  const history = useHistory();
   const handleCorrectClick = () => {
     //change the number of points the player has
     setPoints(points + 3);
 
     //go to the next page
+    history.push(nextPage);
   };
   return <Button onClick={handleCorrectClick}>{label}</Button>;
 }
@@ -20,9 +22,6 @@ export function WrongButton({ points, setPoints, label, nextPage }) {
     //change the number of points the player has
     setPoints(points - 2);
 
-    //if player has no points left, render gameOver page
-    //not added or committed: produces an error
-    // console.log(points);
     if (points <= 0) {
       console.log('yes');
       history.push('/game-over');

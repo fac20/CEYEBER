@@ -24,6 +24,7 @@ const FirstCasePage = ({ points, setPoints }) => {
         points={points}
         setPoints={setPoints}
         label="Check it's true or fake"
+        nextPage={'/badge'}
       />
       <IgnoreButton
         points={points}
