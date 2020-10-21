@@ -10,6 +10,7 @@ export const StyledNavBar = styled.nav`
   justify-content: space-between;
   list-style-type: none;
   margin-bottom: 1rem;
+  min-width: 370px;
 `;
 
 const Li = styled.li`

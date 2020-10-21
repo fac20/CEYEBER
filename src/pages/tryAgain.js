@@ -10,7 +10,7 @@ import { gameOverPageTheme } from './../components/themes';
 const TryAgain = () => {
   const history = useHistory();
   const createProfile = () => {
-    history.push('/first-case-task');
+    history.goBack();
   };
 
   return (
