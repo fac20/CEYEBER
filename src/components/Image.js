@@ -9,12 +9,17 @@ export const Img = styled.img`
 
 export const Avatar = styled.div``;
 
-export const BadgeImage = styled.div``;
+export const BadgeImage = styled.div`
+  ${props =>
+    props.size === 'small'
+      ? 'width: 75px; height: 75px; margin-left: auto; margin-right: auto'
+      : ''}
+`;
 
 export const BadgeContainer = styled.div`
-  border: 5px solid;
-  padding: 2rem;
-  border-radius: 50px;
+  border: ${props => (props.size === 'small' ? '1px' : '5px')} solid;
+  padding: ${props => (props.size === 'small' ? '1rem' : '2rem')};
+  border-radius: ${props => (props.size === 'small' ? '25px' : '50px')};
   border-color: ${props => props.theme.borderColor};
 `;
 
@@ -24,16 +29,20 @@ export const BadgeTitle = styled.h2`
       ? props.theme.badgeGreyColor
       : props.theme.badgeTextColor};
   font-family: var(--title-font);
+  ${props => (props.size === 'small' ? 'font-size: 70%' : '')};
   margin-top: 0;
 `;
 
-export const Badge = ({ badgeType }) => {
+export const Badge = ({ badgeType, size }) => {
   return (
-    <BadgeContainer>
-      <BadgeTitle badgeType={badgeType}>
+    <BadgeContainer size={size}>
+      <BadgeTitle badgeType={badgeType} size={size}>
         {badgeType !== null ? badgeType : 'Earn a badge'}
       </BadgeTitle>
-      <BadgeImage className={badgeType !== null ? 'badge' : 'greyBadge'} />
+      <BadgeImage
+        className={badgeType !== null ? 'badge' : 'greyBadge'}
+        size={size}
+      />
     </BadgeContainer>
   );
 };
