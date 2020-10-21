@@ -20,7 +20,7 @@ const CasesPage = ({ alias, cases }) => {
   const displayBadges = cases => {
     let badgeArray = [];
     for (const property in cases) {
-      badgeArray.push(<Badge badgeType={cases[property]} />);
+      badgeArray.push(<Badge badgeType={cases[property]} size="small" />);
     }
     return badgeArray;
   };

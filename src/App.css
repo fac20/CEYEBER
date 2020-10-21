@@ -61,6 +61,7 @@
 .skull {
   height: 12rem;
   width: 12rem;
+  margin: auto;
   background-image: url(./images/skull.svg);
   background-repeat: no-repeat;
   background-size: contain;
