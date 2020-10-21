@@ -7,17 +7,11 @@ import { ThemeProvider } from 'styled-components';
 import { H1, H2 } from '../components/Text';
 import { gameOverPageTheme } from './../components/themes';
 
-const TryAgain = ({ failMessage, pageNum }) => {
+const TryAgain = ({ failMessage }) => {
   const history = useHistory();
   const createProfile = () => {
     history.goBack();
   };
-
-  pageNum === 1
-    ? (failMessage = 'page1 fail message')
-    : pageNum === 2
-    ? (failMessage = 'page2 fail message')
-    : (failMessage = 'page3 fail message');
 
   return (
     <ThemeProvider theme={gameOverPageTheme}>

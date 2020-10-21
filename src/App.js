@@ -26,6 +26,12 @@ function App() {
   const [pageNum, setPageNum] = React.useState(0);
   let failMessage = 'nothing yet, page 0';
 
+  pageNum === 1
+    ? (failMessage = 'page1 fail message')
+    : pageNum === 2
+    ? (failMessage = 'page2 fail message')
+    : (failMessage = 'page3 fail message');
+
   return (
     <BrowserRouter>
       <main className="App">
@@ -50,12 +56,11 @@ function App() {
             <FirstCasePage
               points={points}
               setPoints={setPoints}
-              pageNum={pageNum}
               setPageNum={setPageNum}
             />
           </Route>
           <Route path="/try-again" exact>
-            <TryAgain failMessage={failMessage} pageNum={pageNum} />
+            <TryAgain failMessage={failMessage} />
           </Route>
           <Route path="/badge" exact>
             <BadgePage badgeType={badgeType} alias={alias} />
@@ -66,7 +71,6 @@ function App() {
             <SecondCasePage
               points={points}
               setPoints={setPoints}
-              pageNum={pageNum}
               setPageNum={setPageNum}
             />
           </Route>
@@ -77,7 +81,6 @@ function App() {
               points={points}
               setPoints={setPoints}
               alias={alias}
-              pageNum={pageNum}
               setPageNum={setPageNum}
             />
           </Route>
