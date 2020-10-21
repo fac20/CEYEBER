@@ -2,12 +2,13 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { fieldPageTheme } from './../components/themes';
 import { TimedQuestion } from './../components/Questions';
+import { Text } from './../components/Text';
+
 import {
   CorrectButton,
   IgnoreButton,
   WrongButton
 } from './../components/AnswerButtons';
-//import {Text} from './..components/Text'
 
 //make whichever buttons have been clicked appear on the screen
 //IDEA:
@@ -33,7 +34,7 @@ const ThirdCasePage = ({ points, setPoints, alias }) => {
     Quick, make your password stronger!`;
 
   const [timeLeft, setTimeLeft] = React.useState(30);
-  //const [answerArray, setAnswerArray] = React.useState([]);
+  const [answerArray, setAnswerArray] = React.useState([]);
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
@@ -45,13 +46,57 @@ const ThirdCasePage = ({ points, setPoints, alias }) => {
         nextPage={'/try-again'}
       />
 
-      <CorrectButton points={points} setPoints={setPoints} label="!!" />
-      <IgnoreButton points={points} setPoints={setPoints} label="dog" />
-      <CorrectButton points={points} setPoints={setPoints} label="01" />
-      <WrongButton points={points} setPoints={setPoints} label="password" />
-      <CorrectButton points={points} setPoints={setPoints} label="?" />
-      <IgnoreButton points={points} setPoints={setPoints} label="abc" />
-      <WrongButton points={points} setPoints={setPoints} label={alias} />
+      <Text>{answerArray}</Text>
+
+      <CorrectButton
+        points={points}
+        setPoints={setPoints}
+        label="!!"
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
+      <IgnoreButton
+        points={points}
+        setPoints={setPoints}
+        label="dog"
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
+      <CorrectButton
+        points={points}
+        setPoints={setPoints}
+        label="01"
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
+      <WrongButton
+        points={points}
+        setPoints={setPoints}
+        label="password"
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
+      <CorrectButton
+        points={points}
+        setPoints={setPoints}
+        label="?"
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
+      <IgnoreButton
+        points={points}
+        setPoints={setPoints}
+        label="abc"
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
+      <WrongButton
+        points={points}
+        setPoints={setPoints}
+        label={alias}
+        answerArray={answerArray}
+        setAnswerArray={setAnswerArray}
+      />
     </ThemeProvider>
   );
 };

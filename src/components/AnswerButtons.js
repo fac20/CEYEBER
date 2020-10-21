@@ -3,11 +3,20 @@ import { Button } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
 
 //CORRECT button:
-export function CorrectButton({ points, setPoints, label, nextPage }) {
+export function CorrectButton({
+  points,
+  setPoints,
+  label,
+  answerArray,
+  setAnswerArray,
+  nextPage
+}) {
   const history = useHistory();
   const handleCorrectClick = () => {
     //change the number of points the player has
     setPoints(points + 3);
+
+    setAnswerArray([...answerArray, label]);
 
     //go to the next page
     history.push(nextPage);
@@ -16,11 +25,20 @@ export function CorrectButton({ points, setPoints, label, nextPage }) {
 }
 
 //WRONG button:
-export function WrongButton({ points, setPoints, label, nextPage }) {
+export function WrongButton({
+  points,
+  setPoints,
+  label,
+  answerArray,
+  setAnswerArray,
+  nextPage
+}) {
   const history = useHistory();
   const handleWrongClick = () => {
     //change the number of points the player has
     setPoints(points - 2);
+
+    setAnswerArray([...answerArray, label]);
 
     if (points <= 0) {
       console.log('yes');
@@ -35,12 +53,21 @@ export function WrongButton({ points, setPoints, label, nextPage }) {
 }
 
 //IGNORE button:
-export function IgnoreButton({ points, setPoints, label, nextPage }) {
+export function IgnoreButton({
+  points,
+  setPoints,
+  label,
+  answerArray,
+  setAnswerArray,
+  nextPage
+}) {
   const history = useHistory();
 
   const handleIgnoreClick = () => {
     //change the number of points the player has
     setPoints(points - 1);
+
+    setAnswerArray([...answerArray, label]);
 
     //go to the next page
     if (points <= 0) {
