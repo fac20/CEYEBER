@@ -49,7 +49,13 @@ function App() {
           </Route>
           <Route path="/third-case-intro" exact></Route>
           <Route path="/third-case-task" exact>
-            <ThirdCasePage />
+            <NavBar points={points} />
+
+            <ThirdCasePage
+              points={points}
+              setPoints={setPoints}
+              alias={alias}
+            />
           </Route>
           <Route path="/game-over" exact>
             <GameOver />
