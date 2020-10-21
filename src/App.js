@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import FirstCasePage from './pages/firstCasePage';
 import SecondCasePage from './pages/secondCasePage';
+import ThirdCasePage from './pages/thirdCasePage';
 import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
@@ -52,13 +53,20 @@ function App() {
             <BadgePage badgeType={badgeType} alias={alias} />
           </Route>
           <Route path="/second-case-intro" exact></Route>
-
           <Route path="/second-case-task" exact>
             <NavBar points={points} />
             <SecondCasePage points={points} setPoints={setPoints} />
           </Route>
           <Route path="/third-case-intro" exact></Route>
-          <Route path="/third-case-task" exact></Route>
+          <Route path="/third-case-task" exact>
+            <NavBar points={points} />
+
+            <ThirdCasePage
+              points={points}
+              setPoints={setPoints}
+              alias={alias}
+            />
+          </Route>
           <Route path="/game-over" exact>
             <GameOver />
           </Route>
