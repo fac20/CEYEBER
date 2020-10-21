@@ -8,37 +8,34 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-//image not appearing
-import { eagle } from '../images/eagleTakesChild.png';
-
-const FirstCasePage = ({ points, setPoints }) => {
-  const title = 'Case One';
-  const img = eagle;
-  const question = `Your friend Sam just shared a VIRAL video of 
-    a golden eagle picking up a child and flying away with it!`;
+const SecondCasePage = ({ points, setPoints }) => {
+  const title = 'Case Two';
+  const question = `Dr Goblin thinks climate change is FAKE
+    NEWS. Check out Dr Goblin’s latest post: `;
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
-      <ImageQuestion title={title} img src={eagle} question={question} />
+      <ImageQuestion title={title} question={question} />
       <CorrectButton
         points={points}
         setPoints={setPoints}
-        label="Check it's true or fake"
+        label="Check
+        whether Dr Goblin’s claim is true"
       />
       <IgnoreButton
         points={points}
         setPoints={setPoints}
-        label="Ignore the video"
+        label="Ignore it- he is a 'Dr' after all!"
         nextPage={'try-again'}
       />
       <WrongButton
         points={points}
         setPoints={setPoints}
-        label="Share the video"
+        label="Like Dr Goblin’s post]"
         nextPage={'try-again'}
       />
     </ThemeProvider>
   );
 };
 
-export default FirstCasePage;
+export default SecondCasePage;

@@ -5,6 +5,7 @@ import { NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import FirstCasePage from './pages/firstCasePage';
+import SecondCasePage from './pages/secondCasePage';
 import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameover';
@@ -29,10 +30,7 @@ function App() {
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact>
             <NavBar points={points} />
-            <FirstCasePage
-              points={points}
-              setPoints={setPoints}
-            ></FirstCasePage>
+            <FirstCasePage points={points} setPoints={setPoints} />
           </Route>
           <Route path="/try-again" exact>
             <TryAgain />
@@ -40,7 +38,11 @@ function App() {
           <Route path="/success" exact></Route>
           <Route path="/badge" exact></Route>
           <Route path="/second-case-intro" exact></Route>
-          <Route path="/second-case-task" exact></Route>
+
+          <Route path="/second-case-task" exact>
+            <NavBar points={points} />
+            <SecondCasePage points={points} setPoints={setPoints} />
+          </Route>
           <Route path="/third-case-intro" exact></Route>
           <Route path="/third-case-task" exact></Route>
           <Route path="/game-over" exact>
