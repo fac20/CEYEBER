@@ -43,11 +43,6 @@ export function IgnoreButton({ points, setPoints, label, nextPage }) {
     //change the number of points the player has
     setPoints(points - 1);
 
-    //if player has no points left, render gameOver page
-    // if (points <= 0) {
-    //
-    // }
-
     //go to the next page
     if (points <= 0) {
       history.push('/game-over');
