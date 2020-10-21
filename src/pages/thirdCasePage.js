@@ -10,7 +10,7 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
+const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
   const title = 'Case Three';
   setPageNum(3);
   const question = `
