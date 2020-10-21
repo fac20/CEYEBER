@@ -26,6 +26,7 @@ export function TimedQuestion({
   title,
   img,
   question,
+  points,
   timeLeft,
   setTimeLeft,
   nextPage

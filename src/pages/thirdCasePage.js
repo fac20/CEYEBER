@@ -10,22 +10,6 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-//make whichever buttons have been clicked appear on the screen
-//IDEA:
-// create state of answer array with empty array here
-// answer buttons have access to array and setarray
-// each time the button is clicked, add its label to the answer array
-// display answer array on the screen in a text component
-//started: created state on answerpage level, imported text component
-//next: give props to answer buttons on thier page and pass them down here
-//display current state of answer array on page
-
-//OR:could this be a useEffect?
-//every time the points variable changes a button must have been clicked
-//add the label of the button click to a text component on the page
-
-//make next page be a badge if you get a certain number of points!
-
 const ThirdCasePage = ({ points, setPoints, alias }) => {
   const title = 'Case Three';
   const question = `
@@ -43,7 +27,7 @@ const ThirdCasePage = ({ points, setPoints, alias }) => {
         question={question}
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
-        nextPage={'/try-again'}
+        nextPage={points <= 10 ? '/try-again' : '/badge'}
       />
 
       <Text>{answerArray}</Text>
