@@ -23,6 +23,9 @@ function App() {
     case3: null
   };
 
+  const [pageNum, setPageNum] = React.useState(0);
+  let failMessage = 'nothing yet, page 0';
+
   return (
     <BrowserRouter>
       <main className="App">
@@ -44,10 +47,15 @@ function App() {
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact>
             <NavBar points={points} />
-            <FirstCasePage points={points} setPoints={setPoints} />
+            <FirstCasePage
+              points={points}
+              setPoints={setPoints}
+              pageNum={pageNum}
+              setPageNum={setPageNum}
+            />
           </Route>
           <Route path="/try-again" exact>
-            <TryAgain />
+            <TryAgain failMessage={failMessage} pageNum={pageNum} />
           </Route>
           <Route path="/badge" exact>
             <BadgePage badgeType={badgeType} alias={alias} />
@@ -55,16 +63,22 @@ function App() {
           <Route path="/second-case-intro" exact></Route>
           <Route path="/second-case-task" exact>
             <NavBar points={points} />
-            <SecondCasePage points={points} setPoints={setPoints} />
+            <SecondCasePage
+              points={points}
+              setPoints={setPoints}
+              pageNum={pageNum}
+              setPageNum={setPageNum}
+            />
           </Route>
           <Route path="/third-case-intro" exact></Route>
           <Route path="/third-case-task" exact>
             <NavBar points={points} />
-
             <ThirdCasePage
               points={points}
               setPoints={setPoints}
               alias={alias}
+              pageNum={pageNum}
+              setPageNum={setPageNum}
             />
           </Route>
           <Route path="/game-over" exact>

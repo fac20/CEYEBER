@@ -10,8 +10,9 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const ThirdCasePage = ({ points, setPoints, alias }) => {
+const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
   const title = 'Case Three';
+  setPageNum(3);
   const question = `
     A hacker has been detected nearby. 
     You haven’t changed your password in years!

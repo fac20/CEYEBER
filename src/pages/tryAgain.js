@@ -7,22 +7,23 @@ import { ThemeProvider } from 'styled-components';
 import { H1, H2 } from '../components/Text';
 import { gameOverPageTheme } from './../components/themes';
 
-const TryAgain = () => {
+const TryAgain = ({ failMessage, pageNum }) => {
   const history = useHistory();
   const createProfile = () => {
     history.goBack();
   };
 
+  pageNum === 1
+    ? (failMessage = 'page1 fail message')
+    : pageNum === 2
+    ? (failMessage = 'page2 fail message')
+    : (failMessage = 'page3 fail message');
+
   return (
     <ThemeProvider theme={gameOverPageTheme}>
       <H1>Incorrect!</H1>
       <div className="alert" />
-      <H2>
-        Have a look at the case again.
-        <br /> If you are unsure information is
-        <br /> true,try to look it up and see if more
-        <br /> than one trusted source is reporting it.
-      </H2>
+      <H2>{failMessage}</H2>
       <Button onClick={createProfile}>TRY AGAIN</Button>
     </ThemeProvider>
   );

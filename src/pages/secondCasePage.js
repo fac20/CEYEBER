@@ -8,8 +8,9 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const SecondCasePage = ({ points, setPoints }) => {
+const SecondCasePage = ({ points, setPoints, pageNum, setPageNum }) => {
   const title = 'Case Two';
+  setPageNum(2);
   const question = `Read this message from Netflix and decide 
   which action to take:`;
 

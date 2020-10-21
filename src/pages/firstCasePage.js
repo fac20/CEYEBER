@@ -11,7 +11,8 @@ import {
 //image not appearing
 import { eagle } from '../images/eagleTakesChild.png';
 
-const FirstCasePage = ({ points, setPoints }) => {
+const FirstCasePage = ({ points, setPoints, pageNum, setPageNum }) => {
+  setPageNum(1);
   const title = 'Case One';
   const img = eagle;
   const question = `Your friend Sam just shared a VIRAL video of 
@@ -31,12 +32,14 @@ const FirstCasePage = ({ points, setPoints }) => {
         setPoints={setPoints}
         label="Ignore the video"
         nextPage={'try-again'}
+        pageNum={pageNum}
       />
       <WrongButton
         points={points}
         setPoints={setPoints}
         label="Share the video"
         nextPage={'try-again'}
+        pageNum={pageNum}
       />
     </ThemeProvider>
   );
