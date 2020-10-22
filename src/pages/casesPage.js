@@ -4,6 +4,7 @@ import { Badge, Avatar } from '../components/Image';
 import { H1, H2, Text } from '../components/Text';
 import { casesPageTheme } from './../components/themes';
 import styled from 'styled-components';
+import Checklist from '../components/Checklist.js';
 
 const BadgeDisplay = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const BadgeDisplay = styled.div`
 `;
 
 const SubTitle = styled(H2)`
-  margin-left: 4rem;
+  margin-left: 2.5rem;
   align-self: flex-start;
 `;
 
@@ -32,7 +33,8 @@ const CasesPage = ({ alias, cases }) => {
       <H1>Cases solved</H1>
       <Avatar className="avatar" />
       <Text>Alias: {alias}</Text>
-      <SubTitle>Badges</SubTitle>
+      <Checklist cases={cases} />
+      <SubTitle>Badge</SubTitle>
       <BadgeDisplay>{Badges}</BadgeDisplay>
     </ThemeProvider>
   );
