@@ -7,16 +7,14 @@ import {
   IgnoreButton,
   WrongButton
 } from './../components/AnswerButtons';
-
-//image not appearing
-import { eagle } from '../images/eagleTakesChild.png';
+import eagle from './../images/eagleTakesChild.png';
 
 const FirstCasePage = ({ points, setPoints, setPageNum }) => {
   const title = 'Case One';
 
   React.useEffect(() => {
     setPageNum(1);
-  }, []);
+  }, [setPageNum]);
 
   const img = eagle;
   const question = `Your friend Sam just shared a VIRAL video of 
@@ -24,7 +22,7 @@ const FirstCasePage = ({ points, setPoints, setPageNum }) => {
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
-      <ImageQuestion title={title} img src={eagle} question={question} />
+      <ImageQuestion title={title} img={img} question={question} />
       <CorrectButton
         points={points}
         setPoints={setPoints}

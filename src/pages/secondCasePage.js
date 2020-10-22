@@ -13,7 +13,7 @@ const SecondCasePage = ({ points, setPoints, setPageNum }) => {
 
   React.useEffect(() => {
     setPageNum(2);
-  }, []);
+  }, [setPageNum]);
 
   const question = `Read this message from Netflix and decide 
   which action to take:`;

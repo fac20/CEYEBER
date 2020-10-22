@@ -19,8 +19,28 @@
   --info-font: 'Aldrich', sans-serif;
 }
 
+@media only screen and (min-width: 769px) {
+  /* nav {
+    display: flex;
+    justify-content: space-evenly;
+  } */
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  li {
+    width: 33%;
+    /* justify-content: space-between; */
+  }
+}
+a {
+  display: inline-block;
+}
+
 .App {
-  /* height: 100vh; */
+  min-width: 368px;
   background-color: var(--color-4);
   display: flex;
   flex-direction: column;

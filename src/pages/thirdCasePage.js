@@ -13,8 +13,8 @@ import {
 const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
   const title = 'Case Three';
   React.useEffect(() => {
-    setPageNum(1);
-  }, []);
+    setPageNum(3);
+  }, [setPageNum]);
 
   const question = `
     A hacker has been detected nearby. 
