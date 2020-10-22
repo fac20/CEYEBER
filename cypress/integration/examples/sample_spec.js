@@ -4,4 +4,3 @@ describe('My first test', function () {
     cy.contains('CEYEBER');
   });
 });
-E;
