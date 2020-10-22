@@ -13,7 +13,7 @@ export const H2 = styled.h2`
 `;
 
 export const MainTitle = styled.span`
-  font-size: 5rem;
+  font-size: 4rem;
   color: var(--color-1);
   font-family: var(--title-font);
   display: block;
@@ -22,6 +22,12 @@ export const MainTitle = styled.span`
 export const Text = styled.p`
   color: ${props => props.theme.textColor};
   font-family: var(--info-font);
+`;
+
+export const SpeechBubbleText = styled.p`
+  color: ${props => props.theme.textColor};
+  font-family: var(--info-font);
+  width: 70%;
 `;
 
 export const PasswordText = styled.p`

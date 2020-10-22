@@ -12,6 +12,7 @@ import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
+import FirstCaseIntro from './pages/firstCaseIntro';
 
 function App() {
   const [points, setPoints] = React.useState(2);
@@ -39,6 +40,12 @@ function App() {
     numbers and punctuation like "!?" might help. Don't use things a hacker
     could easily guess like your name or birthday! `);
 
+  const intro = window.location.pathname.includes('intro');
+
+  intro
+    ? (document.body.className = 'light-theme')
+    : (document.body.className = 'dark-theme');
+
   return (
     <BrowserRouter>
       <main className="App">
@@ -57,7 +64,10 @@ function App() {
             <NavBar points={points} />
             <CasesPage alias={alias} cases={cases}></CasesPage>
           </Route>
-          <Route path="/first-case-intro" exact></Route>
+          <Route path="/first-case-intro" exact>
+            <NavBar points={points} />
+            <FirstCaseIntro />
+          </Route>
           <Route path="/first-case-task" exact>
             <NavBar points={points} />
             <FirstCasePage
