@@ -55,6 +55,17 @@ export const casesPageTheme = {
   badgeTextColor: 'var(--color-2)'
 };
 
+export const caseIntroPage = {
+  textColor: 'var(--color-4)',
+  h1Color: 'var(--color-5)',
+  btnColor: 'var(--color-3)',
+  btnTextColor: 'var(--color-4)',
+  borderColor: 'var(--color-1)',
+  badgeGreyColor: 'var(--color-1)',
+  badgeTextColor: 'var(--color-2)',
+  bgColor: 'var(--color-6)'
+};
+
 export const navBarTheme = {
   pBarColor: 'var(--color-3)',
   pBarBgColor: 'var(--color-4)',
