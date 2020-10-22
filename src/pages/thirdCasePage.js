@@ -34,7 +34,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
         question={question}
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
-        nextPage={points <= 10 ? '/try-again' : '/badge'}
+        nextPage={points <= 10 || timeLeft == 0 ? '/try-again' : '/badge'}
       />
 
       <PasswordText>{answerArray}</PasswordText>
@@ -50,6 +50,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label="dog"
+          timeLeft={timeLeft}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -64,6 +65,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label="password"
+          timeLeft={timeLeft}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -78,6 +80,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label="abc"
+          timeLeft={timeLeft}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -85,6 +88,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label={alias}
+          timeLeft={timeLeft}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />

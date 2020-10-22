@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Label } from './Forms';
+import { Progress } from './ProgressBar';
 import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { navBarTheme } from './../components/themes';
 
 export const StyledNavBar = styled.nav`
   background-color: var(--color-3);
@@ -31,29 +35,31 @@ const Li = styled.li`
 
 export const NavBar = ({ points }) => {
   return (
-    <StyledNavBar>
-      <Ul>
-        <InlineDiv>
+    <ThemeProvider theme={navBarTheme}>
+      <StyledNavBar>
+        <Ul>
+          <InlineDiv>
+            <Li>
+              <Link to="/training-manual">Training Manual</Link>
+            </Li>
+            <Li>
+              <Link to="/profile">Profile</Link>
+            </Li>
+          </InlineDiv>
           <Li>
-            <Link to="/training-manual">Training Manual</Link>
+            <PointsBar points={points} />
           </Li>
-          <Li>
-            <Link to="/profile">Profile</Link>
-          </Li>
-        </InlineDiv>
-        <Li>
-          <PointsBar points={points} />
-        </Li>
-      </Ul>
-    </StyledNavBar>
+        </Ul>
+      </StyledNavBar>
+    </ThemeProvider>
   );
 };
 
 const PointsBar = ({ points }) => {
   return (
     <>
-      <label htmlFor="gamePoints">{points} Points</label>
-      <progress id="gamePoints" value={points} max="11"></progress>
+      <Label htmlFor="gamePoints">{points} Points</Label>
+      <Progress id="gamePoints" value={points} max="11"></Progress>
     </>
   );
 };
