@@ -7,7 +7,7 @@ import {
   IgnoreButton,
   WrongButton
 } from './../components/AnswerButtons';
-import eagle from './../images/eagleTakesChild.png';
+import eagle from './../images/eagleTakesChild.jpg';
 
 const FirstCasePage = ({ points, setPoints, setPageNum }) => {
   const title = 'Case One';
