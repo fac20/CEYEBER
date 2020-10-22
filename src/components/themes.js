@@ -11,7 +11,11 @@ export const fieldPageTheme = {
   textColor: 'var(--color-3)',
   h1Color: 'var(--color-3)',
   btnColor: 'var(--color-3)',
-  btnTextColor: 'var(--color-4)'
+  btnTextColor: 'var(--color-4)',
+  labelColor: 'var(--color-5)',
+  pBarColor: 'var(--color-3)',
+  pBarBgColor: 'var(--color-4)',
+  pBarValueColor: 'var(--color-1)'
 };
 
 export const ratingPageTheme = {
@@ -60,4 +64,10 @@ export const caseIntroPage = {
   badgeGreyColor: 'var(--color-1)',
   badgeTextColor: 'var(--color-2)',
   bgColor: 'var(--color-6)'
+};
+
+export const navBarTheme = {
+  pBarColor: 'var(--color-3)',
+  pBarBgColor: 'var(--color-4)',
+  pBarValueColor: 'var(--color-1)'
 };

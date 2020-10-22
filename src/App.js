@@ -25,7 +25,7 @@ function App() {
   };
 
   const [pageNum, setPageNum] = React.useState(0);
-  let failMessage = 'nothing yet, page 0';
+  let failMessage = '';
 
   pageNum === 1
     ? (failMessage = `Try again – even though Sam is your
@@ -98,6 +98,7 @@ function App() {
               points={points}
               setPoints={setPoints}
               alias={alias}
+              pageNum={pageNum}
               setPageNum={setPageNum}
             />
           </Route>

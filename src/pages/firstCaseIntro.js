@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import styled, { ThemeProvider } from 'styled-components';
 import { H1, H2, Text } from '../components/Text.js';
 import { caseIntroPage } from '../components/themes.js';
@@ -30,3 +31,9 @@ const FirstCaseIntro = () => {
 };
 
 export default FirstCaseIntro;
+=======
+
+export const FirstCaseIntro = ({}) => {
+  return;
+};
+>>>>>>> main

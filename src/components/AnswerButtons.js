@@ -31,6 +31,8 @@ export function WrongButton({
   points,
   setPoints,
   label,
+  timeLeft,
+  pageNum,
   answerArray,
   setAnswerArray,
   nextPage
@@ -38,15 +40,18 @@ export function WrongButton({
   const history = useHistory();
   const handleWrongClick = () => {
     //change the number of points the player has
-    setPoints(points - 2);
+    if (points > 0) {
+      setPoints(points - 2);
+    }
 
     if (window.location.pathname === '/third-case-task') {
       setAnswerArray([...answerArray, label]);
     }
 
     if (points <= 0) {
-      console.log('yes');
-      history.push('/game-over');
+      if (pageNum == 3 && timeLeft <= 0) {
+        history.push('/game-over');
+      }
     } else {
       //go to the next page
       history.push(nextPage);
@@ -61,6 +66,8 @@ export function IgnoreButton({
   points,
   setPoints,
   label,
+  timeLeft,
+  pageNum,
   answerArray,
   setAnswerArray,
   nextPage
@@ -69,7 +76,9 @@ export function IgnoreButton({
 
   const handleIgnoreClick = () => {
     //change the number of points the player has
-    setPoints(points - 1);
+    if (points > 0) {
+      setPoints(points - 2);
+    }
 
     if (window.location.pathname === '/third-case-task') {
       setAnswerArray([...answerArray, label]);
@@ -77,7 +86,9 @@ export function IgnoreButton({
 
     //go to the next page
     if (points <= 0) {
-      history.push('/game-over');
+      if (pageNum == 3 && timeLeft <= 0) {
+        history.push('/game-over');
+      }
     } else {
       //go to the next page
       history.push(nextPage);
