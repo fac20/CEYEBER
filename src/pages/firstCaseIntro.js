@@ -1,39 +1,35 @@
 import React from 'react';
-<<<<<<< HEAD
 import styled, { ThemeProvider } from 'styled-components';
-import { H1, H2, Text } from '../components/Text.js';
+import { H1, Text, SpeechBubbleText } from '../components/Text.js';
 import { caseIntroPage } from '../components/themes.js';
+import { Button } from '../components/Buttons';
+import { useHistory } from 'react-router-dom';
 
 const TheGuyImage = styled.div``;
 
-const Card = styled.div`
-  background-color: var(--color-6);
-  border-radius: 12px;
-  align-items: center;
-  margin: 2rem;
-  padding: 2rem;
-`;
-
 const FirstCaseIntro = () => {
+  const history = useHistory();
+
+  const goToTheMission = () => {
+    history.push('/first-case-task');
+  };
+
   return (
     <ThemeProvider theme={caseIntroPage}>
-      <Card>
-        <H1>1st Case: Hunting the trolls</H1>
-        <Text>
-          Find the people
-          <br />
-          who are spreading the fake news
-        </Text>
-        <TheGuyImage className="theguy" />
-      </Card>
+      <H1>1st Case: Hunting the trolls</H1>
+      <div className="speech-bubble">
+        <SpeechBubbleText>
+          Find the people who are spreading the fake news
+        </SpeechBubbleText>
+      </div>
+      <TheGuyImage className="theguy" />
+      <Text>
+        Your mission is to choose which of the following people on Twitter are
+        spreading false information.{' '}
+      </Text>
+      <Button onClick={goToTheMission}>Accept</Button>
     </ThemeProvider>
   );
 };
 
 export default FirstCaseIntro;
-=======
-
-export const FirstCaseIntro = ({}) => {
-  return;
-};
->>>>>>> main
