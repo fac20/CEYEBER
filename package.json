@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cov": "npm test -- --coverage --watchAll=false"
+    "cov": "npm test -- --coverage --watchAll=false",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
