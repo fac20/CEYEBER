@@ -23,6 +23,22 @@ function App() {
     case3: null
   };
 
+  const [pageNum, setPageNum] = React.useState(0);
+  let failMessage = 'nothing yet, page 0';
+
+  pageNum === 1
+    ? (failMessage = `Try again – even though Sam is your
+      friend, they might still spread Fake News. 
+      It’s important to check.`)
+    : pageNum === 2
+    ? (failMessage = `Try again. It’s very easy to steal a logo and
+    pretend you are from a certain company, and 
+    ignoring these messages means
+    they can come back again! `)
+    : (failMessage = `Oh dear. Using a combination of capital letters, 
+    numbers and punctuation like "!?" might help. Don't use things a hacker
+    could easily guess like your name or birthday! `);
+
   return (
     <BrowserRouter>
       <main className="App">
@@ -44,10 +60,14 @@ function App() {
           <Route path="/first-case-intro" exact></Route>
           <Route path="/first-case-task" exact>
             <NavBar points={points} />
-            <FirstCasePage points={points} setPoints={setPoints} />
+            <FirstCasePage
+              points={points}
+              setPoints={setPoints}
+              setPageNum={setPageNum}
+            />
           </Route>
           <Route path="/try-again" exact>
-            <TryAgain />
+            <TryAgain failMessage={failMessage} />
           </Route>
           <Route path="/badge" exact>
             <BadgePage badgeType={badgeType} alias={alias} />
@@ -55,16 +75,20 @@ function App() {
           <Route path="/second-case-intro" exact></Route>
           <Route path="/second-case-task" exact>
             <NavBar points={points} />
-            <SecondCasePage points={points} setPoints={setPoints} />
+            <SecondCasePage
+              points={points}
+              setPoints={setPoints}
+              setPageNum={setPageNum}
+            />
           </Route>
           <Route path="/third-case-intro" exact></Route>
           <Route path="/third-case-task" exact>
             <NavBar points={points} />
-
             <ThirdCasePage
               points={points}
               setPoints={setPoints}
               alias={alias}
+              setPageNum={setPageNum}
             />
           </Route>
           <Route path="/game-over" exact>

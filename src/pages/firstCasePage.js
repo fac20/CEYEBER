@@ -11,8 +11,13 @@ import {
 //image not appearing
 import { eagle } from '../images/eagleTakesChild.png';
 
-const FirstCasePage = ({ points, setPoints }) => {
+const FirstCasePage = ({ points, setPoints, setPageNum }) => {
   const title = 'Case One';
+
+  React.useEffect(() => {
+    setPageNum(1);
+  }, []);
+
   const img = eagle;
   const question = `Your friend Sam just shared a VIRAL video of 
     a golden eagle picking up a child and flying away with it!`;
