@@ -7,20 +7,22 @@ import {
   IgnoreButton,
   WrongButton
 } from './../components/AnswerButtons';
+import netflixMessage from './../images/netflixMessage.jpg';
 
 const SecondCasePage = ({ points, setPoints, setPageNum }) => {
   const title = 'Case Two';
 
   React.useEffect(() => {
     setPageNum(2);
-  }, []);
+  }, [setPageNum]);
 
+  const img = netflixMessage;
   const question = `Read this message from Netflix and decide 
   which action to take:`;
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
-      <ImageQuestion title={title} question={question} />
+      <ImageQuestion title={title} img={img} question={question} />
       <CorrectButton
         points={points}
         setPoints={setPoints}

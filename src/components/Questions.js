@@ -1,7 +1,9 @@
 import React from 'react';
-import { H1, Text } from './Text';
+import { H1, H2, Text } from './Text';
 import { Img } from './Image';
+import { Label } from './Forms';
 import { useHistory } from 'react-router-dom';
+import { Progress } from './ProgressBar';
 
 export const ImageQuestion = ({ title, img, question }) => {
   return (
@@ -50,12 +52,12 @@ export function TimedQuestion({
 
   return (
     <>
-      <h1>{timeLeft}</h1>
-      <label htmlFor="game">Time Left:</label>
-      <progress id="game" value={timeLeft} max="30">
+      <H2>{timeLeft}</H2>
+      <Label htmlFor="game">Time Left:</Label>
+      <Progress id="game" value={timeLeft} max="30">
         {' '}
         {timeLeft}{' '}
-      </progress>
+      </Progress>
       <H1>{title}</H1>
       <Img src={img} />
       <Text>{question}</Text>

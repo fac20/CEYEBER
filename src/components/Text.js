@@ -24,6 +24,17 @@ export const Text = styled.p`
   font-family: var(--info-font);
 `;
 
+export const PasswordText = styled.p`
+  color: ${props => props.theme.textColor};
+  font-family: var(--info-font);
+  border: 2px solid;
+  border-radius: 2px;
+  border-color: ${props => props.theme.textColor};
+  width: 60%;
+  height: 1rem;
+  padding: 0.5rem;
+`;
+
 export const Title = () => {
   return (
     <H1>

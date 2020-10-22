@@ -31,6 +31,7 @@ export function WrongButton({
   points,
   setPoints,
   label,
+  timeLeft,
   answerArray,
   setAnswerArray,
   nextPage
@@ -45,7 +46,6 @@ export function WrongButton({
     }
 
     if (points <= 0) {
-      console.log('yes');
       history.push('/game-over');
     } else {
       //go to the next page
@@ -61,6 +61,7 @@ export function IgnoreButton({
   points,
   setPoints,
   label,
+  timeLeft,
   answerArray,
   setAnswerArray,
   nextPage
