@@ -12,6 +12,7 @@ import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
+import FirstCaseIntro from './pages/firstCaseIntro';
 
 function App() {
   const [points, setPoints] = React.useState(2);
@@ -57,7 +58,10 @@ function App() {
             <NavBar points={points} />
             <CasesPage alias={alias} cases={cases}></CasesPage>
           </Route>
-          <Route path="/first-case-intro" exact></Route>
+          <Route path="/first-case-intro" exact>
+            <NavBar points={points} />
+            <FirstCaseIntro />
+          </Route>
           <Route path="/first-case-task" exact>
             <NavBar points={points} />
             <FirstCasePage
