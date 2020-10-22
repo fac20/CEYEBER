@@ -64,7 +64,13 @@ export const LandingPageForm = () => {
     <Form onSubmit={event => handleSubmit(event)}>
       <Fieldset>
         <Label htmlFor="alias">Alias:</Label>
-        <Input id="alias" type="text" placeholder="BrownFox" required />
+        <Input
+          id="alias"
+          type="text"
+          placeholder="BrownFox"
+          data-cy="alias"
+          required
+        />
         <Label htmlFor="age">Age:</Label>
         <Input id="age" type="number" min="8" placeholder="8" required />
         <Label htmlFor="location">Location:</Label>
