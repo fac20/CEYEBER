@@ -34,7 +34,7 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
         question={question}
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
-        nextPage={points <= 10 || timeLeft == 0 ? '/try-again' : '/badge'}
+        nextPage={points <= 10 && timeLeft == 0 ? '/try-again' : '/badge'}
       />
 
       <PasswordText>{answerArray}</PasswordText>
