@@ -40,7 +40,9 @@ export function WrongButton({
   const history = useHistory();
   const handleWrongClick = () => {
     //change the number of points the player has
-    setPoints(points - 2);
+    if (points > 0) {
+      setPoints(points - 2);
+    }
 
     if (window.location.pathname === '/third-case-task') {
       setAnswerArray([...answerArray, label]);
@@ -74,7 +76,9 @@ export function IgnoreButton({
 
   const handleIgnoreClick = () => {
     //change the number of points the player has
-    setPoints(points - 1);
+    if (points > 0) {
+      setPoints(points - 2);
+    }
 
     if (window.location.pathname === '/third-case-task') {
       setAnswerArray([...answerArray, label]);
