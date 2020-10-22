@@ -32,6 +32,7 @@ export function WrongButton({
   setPoints,
   label,
   timeLeft,
+  pageNum,
   answerArray,
   setAnswerArray,
   nextPage
@@ -46,7 +47,9 @@ export function WrongButton({
     }
 
     if (points <= 0) {
-      history.push('/game-over');
+      if (pageNum == 3 && timeLeft <= 0) {
+        history.push('/game-over');
+      }
     } else {
       //go to the next page
       history.push(nextPage);
@@ -62,6 +65,7 @@ export function IgnoreButton({
   setPoints,
   label,
   timeLeft,
+  pageNum,
   answerArray,
   setAnswerArray,
   nextPage
@@ -78,7 +82,9 @@ export function IgnoreButton({
 
     //go to the next page
     if (points <= 0) {
-      history.push('/game-over');
+      if (pageNum == 3 && timeLeft <= 0) {
+        history.push('/game-over');
+      }
     } else {
       //go to the next page
       history.push(nextPage);

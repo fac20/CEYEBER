@@ -11,7 +11,7 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
+const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
   const title = 'Case Three';
   React.useEffect(() => {
     setPageNum(3);
@@ -51,6 +51,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           setPoints={setPoints}
           label="dog"
           timeLeft={timeLeft}
+          pageNum={pageNum}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -66,6 +67,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           setPoints={setPoints}
           label="password"
           timeLeft={timeLeft}
+          pageNum={pageNum}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -81,6 +83,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           setPoints={setPoints}
           label="abc"
           timeLeft={timeLeft}
+          pageNum={pageNum}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -89,6 +92,7 @@ const ThirdCasePage = ({ points, setPoints, alias, setPageNum }) => {
           setPoints={setPoints}
           label={alias}
           timeLeft={timeLeft}
+          pageNum={pageNum}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
