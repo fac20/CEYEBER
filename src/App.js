@@ -40,6 +40,12 @@ function App() {
     numbers and punctuation like "!?" might help. Don't use things a hacker
     could easily guess like your name or birthday! `);
 
+  const intro = window.location.pathname.includes('intro');
+
+  intro
+    ? (document.body.className = 'light-theme')
+    : (document.body.className = 'dark-theme');
+
   return (
     <BrowserRouter>
       <main className="App">
