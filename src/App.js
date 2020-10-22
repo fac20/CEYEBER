@@ -88,6 +88,7 @@ function App() {
               points={points}
               setPoints={setPoints}
               alias={alias}
+              pageNum={pageNum}
               setPageNum={setPageNum}
             />
           </Route>
