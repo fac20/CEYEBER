@@ -29,5 +29,4 @@ workflows:
       - node/test
       - 'build'
       - cypress/run:
-          start: npm start
           wait-on: 'http-get://localhost:3000'
