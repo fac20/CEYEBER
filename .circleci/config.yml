@@ -12,10 +12,10 @@ jobs:
           file: ../coverage/clover.xml
 
 workflows:
-      build:
-        jobs: 
-          - cypress/run:
-              requires:
+    jobs:
+      - build
+      - cypress/run:
+          requires:
               - cypress/install
               - build
                 - start: npm start 
