@@ -9,6 +9,9 @@ jobs:
       - image: circleci/node:10.16.0
     steps:
       - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
           name: run tests and generate coverage
           command: npm run cov
       - codecov/upload:
