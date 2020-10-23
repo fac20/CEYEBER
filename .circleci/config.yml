@@ -22,16 +22,11 @@ jobs:
       - run:
           name: build
           command: CI=false npm run build
-  cypress:
-    docker:
-      - image: circleci/node:10.16.0
-      working_directory: ~/repo
-    steps:
       - run:
-          name: Cypress Install
+          name: Cypress install
           command: npm i cypress
       - run:
-          name: Cypress Run
+          name: Cypress run
           command: npm run ci
 
 workflows:
@@ -39,4 +34,3 @@ workflows:
     jobs:
       - node/test
       - 'build'
-      - 'cypress'
