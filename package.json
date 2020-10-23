@@ -9,7 +9,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "3.4.0",
     "styled-components": "^5.2.0"
   },
   "scripts": {
@@ -19,7 +19,7 @@
     "eject": "react-scripts eject",
     "cov": "npm test -- --coverage --watchAll=false",
     "cypress:open": "cypress open",
-    "ci": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test http-get://localhost:3000 cypress:open"
+    "ci": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test http-get://localhost:8080 cypress:open"
   },
   "eslintConfig": {
     "extends": "react-app"
