@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cov": "npm test -- --coverage --watchAll=false",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "ci": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
