@@ -8,6 +8,9 @@ jobs:
     docker:
       - image: circleci/node:10.16.0
     steps:
+      - run:
+          name: run tests and generate coverage
+          command: npm run cov
       - codecov/upload:
           file: ../coverage/clover.xml
 
