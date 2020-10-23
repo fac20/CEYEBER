@@ -18,12 +18,12 @@ jobs:
       - codecov/upload:
           file: ../coverage/clover.xml
       - run:
-          name: Build
+          name: build
           command: CI=false npm run build
 
 workflows:
   node-tests:
     jobs:
       - node/test
-      - build
+      - 'build'
       - cypress/run
