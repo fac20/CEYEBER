@@ -7,13 +7,25 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.16.0
+    working_directory: ~/repo
     steps:
+      - checkout:
+          path: ~/repo
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: run tests and generate coverage
+          command: npm run cov
       - codecov/upload:
-          file: ../coverage/clover.xml
+          file: ./coverage/clover.xml
+      - run:
+          name: build
+          command: CI=false npm run build
 
 workflows:
   node-tests:
     jobs:
       - node/test
-      - build
+      - 'build'
       - cypress/run
