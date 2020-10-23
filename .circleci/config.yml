@@ -22,13 +22,18 @@ jobs:
       - run:
           name: build
           command: CI=false npm run build
+  cypress:
+    steps:
+      - run:
+          name: Cypress Install
+          command: npm i cypress
+      - run:
+          name: Cypress Run
+          command: npm run ci
 
 workflows:
   node-tests:
     jobs:
       - node/test
       - 'build'
-      - cypress/run:
-        requires:
-          - cypress/install
-        start: npm run ci
+      - 'cypress'
