@@ -31,5 +31,5 @@ workflows:
       - cypress/run
         requires:
             - cypress/install
-          start: 'npm start'
-          wait-on: "https-get://localhost:3000"
+                start: 'npm start'
+                wait-on: "https-get://localhost:3000"
