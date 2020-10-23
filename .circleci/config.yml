@@ -23,6 +23,9 @@ jobs:
           name: build
           command: CI=false npm run build
   cypress:
+    docker:
+      - image: circleci/node:10.16.0
+      working_directory: ~/repo
     steps:
       - run:
           name: Cypress Install
