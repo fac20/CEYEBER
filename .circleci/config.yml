@@ -18,7 +18,7 @@ jobs:
           name: run tests and generate coverage
           command: npm run cov
       - codecov/upload:
-          file: ../coverage/clover.xml
+          file: ./coverage/clover.xml
       - run:
           name: build
           command: CI=false npm run build
