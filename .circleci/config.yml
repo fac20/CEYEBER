@@ -29,3 +29,7 @@ workflows:
       - node/test
       - 'build'
       - cypress/run
+        requires:
+            - cypress/install
+          start: 'npm start'
+          wait-on: "https-get://localhost:3000"
