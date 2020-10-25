@@ -5,9 +5,9 @@
 - [Intro](#Intro)
 - [Team Roles](#Team-Roles)
 - [Design Week](#Design-Week)
-- [Sprint One](#Sprint-One-Frontend)
+- [Sprint One](#Sprint-One---Frontend)
 - [Sprint Two](#Sprint-Two)
-- [Installation](#Install-Locally-:computer:)
+- [Installation](#Install-Locally-computer)
 - [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention-bug)
 
 
