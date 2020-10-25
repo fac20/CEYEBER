@@ -5,9 +5,11 @@
 - [Intro](#Intro)
 - [Team Roles](#Team-Roles)
 - [Design Week](#Design-Week)
+- [Built with](#Built-with)
 - [Sprint One](#Sprint-One---Frontend)
 - [Sprint Two](#Sprint-Two)
 - [Installation](#Install-Locally-computer)
+- [Project Status](#Project-status)
 - [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention-bug)
 
 
@@ -27,6 +29,8 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 ## Design Week
 * [Miro](https://miro.com/app/board/o9J_kkNyd_Y=/)
 * [Figma Prototype](https://www.figma.com/file/yaQqjJ4Erb8nineVf1r5SG/Ceyeber-Detective-App?node-id=176%3A434)
+
+## Built with
 
 ## Sprint One - Frontend 
 
@@ -54,6 +58,8 @@ _pending_
 2. cd into repo folder
 3. Run `npm install`
 4. Run `npm start`
+
+## Project status
 
 ## Bugs and Fixes requiring attention :bug:
 * Light/Dark background on task intro
