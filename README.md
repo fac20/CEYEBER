@@ -32,6 +32,14 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 
 ## Built with
 
+### Continous Integration
+* CircleCI
+* Codecov
+  
+### Tests
+* Jest
+* Cypress
+
 ## Sprint One - Frontend 
 
 ### Routes
