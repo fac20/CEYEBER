@@ -95,5 +95,6 @@ Under development. Currently building back-end and fixing bugs
 ## Acknowledgment
 
 ```
-  Thank you for helping us to improve our code base and helping us with the strategic decisions related to back end development.
+  Thank you for helping us to improve our code base 
+  and helping us with the strategic decisions related to back end development.
 ```
