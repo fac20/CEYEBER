@@ -32,11 +32,23 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 
 ## Built with
 
+- React
+- JavaScript
+- Miro
+- Figma
+
+### Dependencies
+
+- Styled components
+- React router
+
 ### Continous Integration
+
 * CircleCI
 * Codecov
   
 ### Tests
+
 * Jest
 * Cypress
 
