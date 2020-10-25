@@ -81,6 +81,8 @@ _pending_
 
 ## Project status
 
+Under development. Currently building back-end and fixing bugs
+
 ## Bugs and Fixes requiring attention :bug:
 * Light/Dark background on task intro
 * History state needs attention
