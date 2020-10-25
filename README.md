@@ -66,7 +66,14 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 
 ## Sprint One - Frontend 
 
-1. Landing page containing 
+1. Landing page - user is required to create alias, enter age and choose location
+2. Rating page - user provides information about social media use and current critical thinking skills. Navigation bar with a link to training manual page and profile page and also point bar(shows current points).
+3. There are three breefing pages containing instructions about a challenge 
+4. There are three challenges in the game
+5. Badge page displays badge which user earned after succesfully resorvilng challange
+6. Acceptance of the badge leads further to cases page which displays avatar, all accomplished and upcoming challanges, earned badges
+7. Try again page displays warning to user of what they have done wrong during the challange (user also recieves point reduction)
+8. User reaches game over page if points drops below 0
 
 ### Routes
 
