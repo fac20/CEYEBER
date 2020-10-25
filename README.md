@@ -8,7 +8,7 @@
 - [Sprint One](#Sprint-One)
 - [Sprint Two](#Sprint-Two)
 - [Installation](#Install-Locally-:computer:)
-- [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention-:bug:)
+- [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention)
 
 
 ## Intro :wave:
