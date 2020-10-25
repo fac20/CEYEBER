@@ -92,4 +92,8 @@ Under development. Currently building back-end and fixing bugs
 * Badges are currently hardcoded
 * Task list in cases page has to be styled in reverse order
 
+## Acknowledgment
 
+```
+  Thank you for helping us to improve our code base and helping us with the strategic decisions related to back end development.
+```
