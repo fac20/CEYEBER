@@ -52,7 +52,21 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 * Jest
 * Cypress
 
+## File Structure
+
+- .cricleci - contains yml file with configurations for cintinouse integration 
+- cypress - contains end to end tests any new tests can be added to ./cypress/integration/examples path
+- public - have folder which contains logo of the project which is displayed in a browser tab. Folder also contains index.html
+- src 
+    - components - includes all the components of the game such as (forms, raiting bars, buttons, navigation menu, texts and themes)
+    - images - contains all svg and jpg images of the project
+    - pages - ladnig page, profile page and all the other pages goes here
+    - app.js - holds all the routes and global hooks of the web app
+    - app.css - have media queries, list styling and styling of images
+
 ## Sprint One - Frontend 
+
+1. Landing page containing 
 
 ### Routes
 
@@ -95,6 +109,6 @@ Under development. Currently building back-end and fixing bugs
 ## Acknowledgment
 
 ```
-  Thank you for helping us to improve our code base 
+  Thank you Gillian from FAC18 for helping us to improve our code base 
   and helping us with the strategic decisions related to back end development.
 ```
