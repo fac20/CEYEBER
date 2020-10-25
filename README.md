@@ -1,5 +1,16 @@
 # CEYEBER
 
+## Table of content
+
+- [Intro](#Intro)
+- [Team Roles](#Team-Roles)
+- [Design Week](#Design-Week)
+- [Sprint One](#Sprint-One)
+- [Sprint Two](#Sprint-Two)
+- [Installation](#Install-Locally-:computer:)
+- [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention-:bug:)
+
+
 ## Intro :wave:
 
 [Link to Ceyeber Game](https://ceyeber.netlify.app/)
