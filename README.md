@@ -5,10 +5,10 @@
 - [Intro](#Intro)
 - [Team Roles](#Team-Roles)
 - [Design Week](#Design-Week)
-- [Sprint One](#Sprint-One)
+- [Sprint One](#Sprint-One-Frontend)
 - [Sprint Two](#Sprint-Two)
 - [Installation](#Install-Locally-:computer:)
-- [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention)
+- [Bugs and Fixes](#Bugs-and-Fixes-requiring-attention-bug)
 
 
 ## Intro :wave:
