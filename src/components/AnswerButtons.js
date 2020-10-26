@@ -49,7 +49,7 @@ export function WrongButton({
     }
 
     if (points <= 0) {
-      if (pageNum == 3 && timeLeft <= 0) {
+      if (pageNum === 3 && timeLeft <= 0) {
         history.push('/game-over');
       }
     } else {
@@ -86,7 +86,7 @@ export function IgnoreButton({
 
     //go to the next page
     if (points <= 0) {
-      if (pageNum == 3 && timeLeft <= 0) {
+      if (pageNum === 3 && timeLeft <= 0) {
         history.push('/game-over');
       }
     } else {
