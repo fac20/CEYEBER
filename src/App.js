@@ -109,7 +109,12 @@ function App() {
             <TryAgain failMessage={failMessage} />
           </Route>
           <Route path="/badge" exact>
-            <BadgePage badgeType={taskName} alias={alias} />
+            <BadgePage
+              badgeType={taskName}
+              alias={alias}
+              taskName={taskName}
+              setTaskName={setTaskName}
+            />
           </Route>
           <Route path="/second-case-intro" exact>
             <Intro taskName={taskName} />
