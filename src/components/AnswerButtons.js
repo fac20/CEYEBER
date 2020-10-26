@@ -7,6 +7,8 @@ export function CorrectButton({
   points,
   setPoints,
   label,
+  timeLeft,
+  taskName,
   answerArray,
   setAnswerArray,
   nextPage
@@ -16,8 +18,16 @@ export function CorrectButton({
     //change the number of points the player has
     setPoints(points + 3);
 
-    if (window.location.pathname === 'passwordChallenge') {
+    //third task special case
+    if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
+      if (timeLeft === 0) {
+        if (points === 0) {
+          history.push('/game-over');
+        } else if (points < 10) {
+          history.push(nextPage);
+        }
+      }
     }
 
     //go to the next page
@@ -47,18 +57,16 @@ export function WrongButton({
     //third task special case
     if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-
-      if (points === 0 && timeLeft === 0) {
-        history.push('/game-over');
-      } else if (points < 10 && timeLeft === 0) {
-        history.push(nextPage);
+      if (timeLeft === 0) {
+        if (points === 0) {
+          history.push('/game-over');
+        } else if (points < 10) {
+          history.push(nextPage);
+        }
       }
-    }
-
-    //1st and 2nd task-
-    if (points <= 0) {
+    } else if (points === 0) {
       history.push('/game-over');
-    } else {
+    } else if (points < 10) {
       //go to the next page
       history.push(nextPage);
     }
@@ -89,18 +97,16 @@ export function IgnoreButton({
     //third task special case
     if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-
-      if (points === 0 && timeLeft === 0) {
-        history.push('/game-over');
-      } else if (points < 10 && timeLeft === 0) {
-        history.push(nextPage);
+      if (timeLeft === 0) {
+        if (points === 0) {
+          history.push('/game-over');
+        } else if (points < 10) {
+          history.push(nextPage);
+        }
       }
-    }
-
-    //1st and 2nd task-
-    if (points <= 0) {
+    } else if (points === 0) {
       history.push('/game-over');
-    } else {
+    } else if (points < 10) {
       //go to the next page
       history.push(nextPage);
     }

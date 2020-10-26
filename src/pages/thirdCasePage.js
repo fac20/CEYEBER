@@ -43,6 +43,8 @@ const ThirdCasePage = ({ points, setPoints, alias, taskName, setTaskName }) => {
           points={points}
           setPoints={setPoints}
           label="!!"
+          timeLeft={timeLeft}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -59,6 +61,8 @@ const ThirdCasePage = ({ points, setPoints, alias, taskName, setTaskName }) => {
           points={points}
           setPoints={setPoints}
           label="01"
+          timeLeft={timeLeft}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -75,6 +79,8 @@ const ThirdCasePage = ({ points, setPoints, alias, taskName, setTaskName }) => {
           points={points}
           setPoints={setPoints}
           label="?"
+          timeLeft={timeLeft}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
