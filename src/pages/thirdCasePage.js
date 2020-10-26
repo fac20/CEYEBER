@@ -11,7 +11,15 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const ThirdCasePage = ({ points, setPoints, alias, taskName, setTaskName }) => {
+const ThirdCasePage = ({
+  points,
+  setPoints,
+  alias,
+  taskName,
+  setTaskName,
+  timeLeft,
+  setTimeLeft
+}) => {
   const title = 'Case Three';
   React.useEffect(() => {
     setTaskName('passwordChallenge');
@@ -23,7 +31,6 @@ const ThirdCasePage = ({ points, setPoints, alias, taskName, setTaskName }) => {
     You haven’t changed your password in years!
     Quick, make your password stronger!`;
 
-  const [timeLeft, setTimeLeft] = React.useState(30);
   const [answerArray, setAnswerArray] = React.useState([]);
 
   return (

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { H1, Text, SpeechBubbleText } from '../components/Text.js';
-import { caseIntroPage } from '../components/themes.js';
-import { Button } from '../components/Buttons';
+import { H1, Text, SpeechBubbleText } from './Text.js';
+import { caseIntroPage } from './themes.js';
+import { Button } from './Buttons';
 import { useHistory } from 'react-router-dom';
 
 const TheGuyImage = styled.div``;
 
-const FirstCaseIntro = () => {
+const Intro = () => {
   const history = useHistory();
 
   const goToTheMission = () => {
@@ -32,4 +32,4 @@ const FirstCaseIntro = () => {
   );
 };
 
-export default FirstCaseIntro;
+export default Intro;

@@ -9,12 +9,19 @@ import {
 } from './../components/AnswerButtons';
 import netflixMessage from './../images/netflixMessage.jpg';
 
-const SecondCasePage = ({ points, setPoints, setTaskName }) => {
+const SecondCasePage = ({
+  points,
+  setPoints,
+  taskName,
+  setTaskName,
+  badgesWon,
+  setBadgesWon
+}) => {
   const title = 'Case Two';
 
   React.useEffect(() => {
-    setTaskName('phishingMessage');
-  }, [setTaskName]);
+    setTaskName('Thief Buster');
+  }, []);
 
   const img = netflixMessage;
   const question = `Read this message from Netflix and decide 
@@ -29,6 +36,9 @@ const SecondCasePage = ({ points, setPoints, setTaskName }) => {
         label="Doesn’t look right, 
         report to Netflix"
         nextPage={'/badge'}
+        taskName={taskName}
+        setBadgesWon={setBadgesWon}
+        badgesWon={badgesWon}
       />
       <IgnoreButton
         points={points}

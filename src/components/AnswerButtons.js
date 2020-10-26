@@ -11,6 +11,8 @@ export function CorrectButton({
   taskName,
   answerArray,
   setAnswerArray,
+  badgesWon,
+  setBadgesWon,
   nextPage
 }) {
   const history = useHistory();
@@ -18,16 +20,18 @@ export function CorrectButton({
     //change the number of points the player has
     setPoints(points + 3);
 
+    if (taskName === 'Troll Hunter') {
+      setBadgesWon({ ...badgesWon, case1: taskName });
+    }
+    console.log('correct Button', taskName);
+    if (taskName === 'Thief Buster') {
+      setBadgesWon({ ...badgesWon, case2: taskName });
+    }
+
     //third task special case
     if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-      if (timeLeft === 0) {
-        if (points === 0) {
-          history.push('/game-over');
-        } else if (points < 10) {
-          history.push(nextPage);
-        }
-      }
+      setBadgesWon({ ...badgesWon, case3: taskName });
     }
 
     //go to the next page
@@ -57,15 +61,6 @@ export function WrongButton({
     //third task special case
     if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-      if (timeLeft === 0) {
-        if (points === 0) {
-          history.push('/game-over');
-        } else if (points < 10) {
-          history.push(nextPage);
-        }
-      }
-    } else if (points === 0) {
-      history.push('/game-over');
     } else if (points < 10) {
       //go to the next page
       history.push(nextPage);
@@ -97,13 +92,6 @@ export function IgnoreButton({
     //third task special case
     if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-      if (timeLeft === 0) {
-        if (points === 0) {
-          history.push('/game-over');
-        } else if (points < 10) {
-          history.push(nextPage);
-        }
-      }
     } else if (points === 0) {
       history.push('/game-over');
     } else if (points < 10) {

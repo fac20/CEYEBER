@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 const BadgePage = ({ alias, badgeType }) => {
   const history = useHistory();
 
-  const showCases = () => {
+  const showbadgesWon = () => {
     history.push('/cases');
   };
   return (
@@ -17,7 +17,7 @@ const BadgePage = ({ alias, badgeType }) => {
       <H1>You earned the badge!</H1>
       <Text>Well done {alias}!</Text>
       <Badge badgeType={badgeType} />
-      <Button onClick={showCases}>Accept</Button>
+      <Button onClick={showbadgesWon}>Accept</Button>
     </ThemeProvider>
   );
 };

@@ -5,6 +5,7 @@ import { Progress } from './ProgressBar';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { navBarTheme } from './../components/themes';
+import { useHistory } from 'react-router-dom';
 
 export const StyledNavBar = styled.nav`
   background-color: var(--color-3);
@@ -33,7 +34,7 @@ const Li = styled.li`
   width: 50%;
 `;
 
-export const NavBar = ({ points }) => {
+export const NavBar = ({ points, timeLeft }) => {
   return (
     <ThemeProvider theme={navBarTheme}>
       <StyledNavBar>
@@ -47,7 +48,7 @@ export const NavBar = ({ points }) => {
             </Li>
           </InlineDiv>
           <Li>
-            <PointsBar points={points} />
+            <PointsBar points={points} timeLeft={timeLeft} />
           </Li>
         </Ul>
       </StyledNavBar>
@@ -55,7 +56,17 @@ export const NavBar = ({ points }) => {
   );
 };
 
-const PointsBar = ({ points }) => {
+const PointsBar = ({ points, timeLeft, taskName }) => {
+  const history = useHistory();
+
+  React.useEffect(() => {
+    if (taskName !== 'passwordChallenge' && points <= 0) {
+      history.push('/game-over');
+    }
+    if (taskName === 'passwordChallenge' && points <= 0 && timeLeft === 0) {
+      history.push('/game-over');
+    }
+  }, [points, timeLeft, taskName]);
   return (
     <>
       <Label htmlFor="gamePoints">{points} Points</Label>
