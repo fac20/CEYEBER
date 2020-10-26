@@ -59,11 +59,21 @@ function App() {
             <TrainingManual />
           </Route>
           <Route path="/profile" exact>
-            <NavBar points={points} timeLeft={timeLeft} taskName={taskName} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <Profile />
           </Route>
           <Route path="/cases" exact>
-            <NavBar points={points} timeLeft={timeLeft} taskName={taskName} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <CasesPage
               alias={alias}
               badgesWon={badgesWon}
@@ -71,11 +81,21 @@ function App() {
             />
           </Route>
           <Route path="/first-case-intro" exact>
-            <NavBar points={points} timeLeft={timeLeft} taskName={taskName} />
-            <Intro />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
+            <Intro taskName={taskName} />
           </Route>
           <Route path="/first-case-task" exact>
-            <NavBar points={points} timeLeft={timeLeft} taskName={taskName} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <FirstCasePage
               points={points}
               setPoints={setPoints}
@@ -92,10 +112,15 @@ function App() {
             <BadgePage badgeType={taskName} alias={alias} />
           </Route>
           <Route path="/second-case-intro" exact>
-            <Intro />
+            <Intro taskName={taskName} />
           </Route>
           <Route path="/second-case-task" exact>
-            <NavBar points={points} timeLeft={timeLeft} taskName={taskName} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <SecondCasePage
               points={points}
               setPoints={setPoints}
@@ -105,12 +130,14 @@ function App() {
               badgesWon={badgesWon}
             />
           </Route>
-          <Route path="/third-case-intro" exact></Route>
+          <Route path="/third-case-intro" exact>
+            <Intro taskName={taskName} />
+          </Route>
           <Route path="/third-case-task" exact>
             <NavBar
+              setPoints={setPoints}
               points={points}
               timeLeft={timeLeft}
-              setTimeLeft={setTimeLeft}
               taskName={taskName}
             />
             <ThirdCasePage
@@ -119,6 +146,10 @@ function App() {
               alias={alias}
               taskName={taskName}
               setTaskName={setTaskName}
+              badgesWon={badgesWon}
+              setBadgesWon={setBadgesWon}
+              timeLeft={timeLeft}
+              setTimeLeft={setTimeLeft}
             />
           </Route>
           <Route path="/game-over" exact>

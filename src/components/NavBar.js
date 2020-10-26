@@ -34,7 +34,7 @@ const Li = styled.li`
   width: 50%;
 `;
 
-export const NavBar = ({ points, timeLeft }) => {
+export const NavBar = ({ setPoints, points, timeLeft, taskName }) => {
   return (
     <ThemeProvider theme={navBarTheme}>
       <StyledNavBar>
@@ -48,7 +48,12 @@ export const NavBar = ({ points, timeLeft }) => {
             </Li>
           </InlineDiv>
           <Li>
-            <PointsBar points={points} timeLeft={timeLeft} />
+            <PointsBar
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+              setPoints={setPoints}
+            />
           </Li>
         </Ul>
       </StyledNavBar>
@@ -56,15 +61,27 @@ export const NavBar = ({ points, timeLeft }) => {
   );
 };
 
-const PointsBar = ({ points, timeLeft, taskName }) => {
+const PointsBar = ({ points, timeLeft, taskName, setPoints }) => {
   const history = useHistory();
+  console.log(taskName != 'passwordChallenge', taskName);
 
   React.useEffect(() => {
+    if (points <= 0) {
+      setPoints(0);
+    }
     if (taskName !== 'passwordChallenge' && points <= 0) {
+      console.log('ITS HERE ACTUALLLY');
       history.push('/game-over');
     }
-    if (taskName === 'passwordChallenge' && points <= 0 && timeLeft === 0) {
-      history.push('/game-over');
+    if (taskName === 'passwordChallenge' && timeLeft === 0) {
+      if (points <= 0) {
+        console.log('ITS HERE');
+        history.push('/game-over');
+      } else if (points > 0 && points <= 10) {
+        history.push('/try-again');
+      } else if (points > 10) {
+        history.push('/badge');
+      }
     }
   }, [points, timeLeft, taskName]);
   return (

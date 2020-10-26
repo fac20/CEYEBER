@@ -18,12 +18,16 @@ const ThirdCasePage = ({
   taskName,
   setTaskName,
   timeLeft,
-  setTimeLeft
+  setTimeLeft,
+  badgesWon,
+  setBadgesWon
 }) => {
   const title = 'Case Three';
+  console.log('Third task name is', taskName);
+
   React.useEffect(() => {
     setTaskName('passwordChallenge');
-  }, [setTaskName]);
+  }, []);
 
   const img = hacker;
   const question = `
@@ -41,7 +45,8 @@ const ThirdCasePage = ({
         question={question}
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
-        nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
+        taskName={taskName}
+        // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
       />
 
       <PasswordText>{answerArray}</PasswordText>
@@ -54,6 +59,8 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          badgesWon={badgesWon}
+          setBadgesWon={setBadgesWon}
         />
         <IgnoreButton
           points={points}
@@ -72,6 +79,9 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          setAnswerArray={setAnswerArray}
+          badgesWon={badgesWon}
+          setBadgesWon={setBadgesWon}
         />
         <WrongButton
           points={points}
@@ -90,6 +100,8 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          badgesWon={badgesWon}
+          setBadgesWon={setBadgesWon}
         />
         <IgnoreButton
           points={points}
