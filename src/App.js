@@ -24,14 +24,14 @@ function App() {
     case3: null
   };
 
-  const [pageNum, setPageNum] = React.useState(0);
+  const [taskName, setTaskName] = React.useState(null);
   let failMessage = '';
 
-  pageNum === 1
+  taskName === 'viralVideo'
     ? (failMessage = `Try again – even though Sam is your
       friend, they might still spread Fake News. 
       It’s important to check.`)
-    : pageNum === 2
+    : taskName === 'phishingMessage'
     ? (failMessage = `Try again. It’s very easy to steal a logo and
     pretend you are from a certain company, and 
     ignoring these messages means
@@ -73,7 +73,7 @@ function App() {
             <FirstCasePage
               points={points}
               setPoints={setPoints}
-              setPageNum={setPageNum}
+              setTaskName={setTaskName}
             />
           </Route>
           <Route path="/try-again" exact>
@@ -88,7 +88,7 @@ function App() {
             <SecondCasePage
               points={points}
               setPoints={setPoints}
-              setPageNum={setPageNum}
+              setTaskName={setTaskName}
             />
           </Route>
           <Route path="/third-case-intro" exact></Route>
@@ -98,8 +98,8 @@ function App() {
               points={points}
               setPoints={setPoints}
               alias={alias}
-              pageNum={pageNum}
-              setPageNum={setPageNum}
+              taskName={taskName}
+              setTaskName={setTaskName}
             />
           </Route>
           <Route path="/game-over" exact>

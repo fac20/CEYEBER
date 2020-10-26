@@ -9,12 +9,12 @@ import {
 } from './../components/AnswerButtons';
 import netflixMessage from './../images/netflixMessage.jpg';
 
-const SecondCasePage = ({ points, setPoints, setPageNum }) => {
+const SecondCasePage = ({ points, setPoints, setTaskName }) => {
   const title = 'Case Two';
 
   React.useEffect(() => {
-    setPageNum(2);
-  }, [setPageNum]);
+    setTaskName('phishingMessage');
+  }, [setTaskName]);
 
   const img = netflixMessage;
   const question = `Read this message from Netflix and decide 

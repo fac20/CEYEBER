@@ -11,11 +11,11 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
+const ThirdCasePage = ({ points, setPoints, alias, taskName, setTaskName }) => {
   const title = 'Case Three';
   React.useEffect(() => {
-    setPageNum(3);
-  }, [setPageNum]);
+    setTaskName('passwordChallenge');
+  }, [setTaskName]);
 
   const img = hacker;
   const question = `
@@ -51,7 +51,7 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           setPoints={setPoints}
           label="dog"
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -67,7 +67,7 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           setPoints={setPoints}
           label="password"
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -83,7 +83,7 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           setPoints={setPoints}
           label="abc"
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -92,7 +92,7 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           setPoints={setPoints}
           label={alias}
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />

@@ -9,12 +9,12 @@ import {
 } from './../components/AnswerButtons';
 import eagle from './../images/eagleTakesChild.jpg';
 
-const FirstCasePage = ({ points, setPoints, setPageNum }) => {
+const FirstCasePage = ({ points, setPoints, setTaskName }) => {
   const title = 'Case One';
 
   React.useEffect(() => {
-    setPageNum(1);
-  }, [setPageNum]);
+    setTaskName('viralVideo');
+  }, [setTaskName]);
 
   const img = eagle;
   const question = `Your friend Sam just shared a VIRAL video of 
