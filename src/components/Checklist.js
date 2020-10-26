@@ -23,18 +23,17 @@ const LI = styled(Text)`
   }
 `;
 
-const Checklist = ({ cases }) => {
-  console.log(cases.case1);
+const Checklist = ({ badgesWon }) => {
   return (
     <>
       <UL>
-        <LI case={cases} name="Troll Hunter">
+        <LI case={badgesWon} name="Troll Hunter">
           Social media Fake News
         </LI>
-        <LI case={cases} name="Phish Phood">
+        <LI case={badgesWon} name="Phish Phood">
           Evading Deception: Phish Phood
         </LI>
-        <LI case={cases} name="Password">
+        <LI case={badgesWon} name="Password">
           Password ???
         </LI>
       </UL>

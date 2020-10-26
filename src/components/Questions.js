@@ -31,7 +31,8 @@ export function TimedQuestion({
   points,
   timeLeft,
   setTimeLeft,
-  nextPage
+  nextPage,
+  taskName
 }) {
   //states of timeLeft and setTimeLeft held on page
   //remember to import useHistory on the page!
@@ -39,7 +40,7 @@ export function TimedQuestion({
 
   React.useEffect(() => {
     //  if there is not timeLeft then go to try again page
-    if (timeLeft <= 0) history.push(nextPage);
+    //if (timeLeft <= 0) history.push(nextPage);
 
     // else create set interval function for every second
     const startInterval = setInterval(() => {

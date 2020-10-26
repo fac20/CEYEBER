@@ -11,11 +11,23 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 
-const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
+const ThirdCasePage = ({
+  points,
+  setPoints,
+  alias,
+  taskName,
+  setTaskName,
+  timeLeft,
+  setTimeLeft,
+  badgesWon,
+  setBadgesWon
+}) => {
   const title = 'Case Three';
+  console.log('Third task name is', taskName);
+
   React.useEffect(() => {
-    setPageNum(3);
-  }, [setPageNum]);
+    setTaskName('passwordChallenge');
+  }, []);
 
   const img = hacker;
   const question = `
@@ -23,7 +35,6 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
     You haven’t changed your password in years!
     Quick, make your password stronger!`;
 
-  const [timeLeft, setTimeLeft] = React.useState(30);
   const [answerArray, setAnswerArray] = React.useState([]);
 
   return (
@@ -34,7 +45,8 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
         question={question}
         timeLeft={timeLeft}
         setTimeLeft={setTimeLeft}
-        nextPage={points <= 10 && timeLeft == 0 ? '/try-again' : '/badge'}
+        taskName={taskName}
+        // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
       />
 
       <PasswordText>{answerArray}</PasswordText>
@@ -43,15 +55,19 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label="!!"
+          timeLeft={timeLeft}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          badgesWon={badgesWon}
+          setBadgesWon={setBadgesWon}
         />
         <IgnoreButton
           points={points}
           setPoints={setPoints}
           label="dog"
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -59,15 +75,20 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label="01"
+          timeLeft={timeLeft}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          setAnswerArray={setAnswerArray}
+          badgesWon={badgesWon}
+          setBadgesWon={setBadgesWon}
         />
         <WrongButton
           points={points}
           setPoints={setPoints}
           label="password"
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -75,15 +96,19 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           points={points}
           setPoints={setPoints}
           label="?"
+          timeLeft={timeLeft}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          badgesWon={badgesWon}
+          setBadgesWon={setBadgesWon}
         />
         <IgnoreButton
           points={points}
           setPoints={setPoints}
           label="abc"
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />
@@ -92,7 +117,7 @@ const ThirdCasePage = ({ points, setPoints, alias, pageNum, setPageNum }) => {
           setPoints={setPoints}
           label={alias}
           timeLeft={timeLeft}
-          pageNum={pageNum}
+          taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
         />

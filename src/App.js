@@ -12,26 +12,28 @@ import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
-import FirstCaseIntro from './pages/firstCaseIntro';
+import Intro from './components/Intro';
 
 function App() {
   const [points, setPoints] = React.useState(2);
   const badgeType = null;
   const alias = 'BrownFox';
-  const cases = {
-    case1: 'Troll Hunter',
+  const [timeLeft, setTimeLeft] = React.useState(30);
+
+  const [badgesWon, setBadgesWon] = React.useState({
+    case1: null,
     case2: null,
     case3: null
-  };
+  });
 
-  const [pageNum, setPageNum] = React.useState(0);
+  const [taskName, setTaskName] = React.useState(null);
   let failMessage = '';
 
-  pageNum === 1
+  taskName === 'Troll Hunter'
     ? (failMessage = `Try again – even though Sam is your
       friend, they might still spread Fake News. 
       It’s important to check.`)
-    : pageNum === 2
+    : taskName === 'phishingMessage'
     ? (failMessage = `Try again. It’s very easy to steal a logo and
     pretend you are from a certain company, and 
     ignoring these messages means
@@ -45,7 +47,7 @@ function App() {
   intro
     ? (document.body.className = 'light-theme')
     : (document.body.className = 'dark-theme');
-
+  console.log(badgesWon, taskName);
   return (
     <BrowserRouter>
       <main className="App">
@@ -57,49 +59,102 @@ function App() {
             <TrainingManual />
           </Route>
           <Route path="/profile" exact>
-            <NavBar points={points} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <Profile />
           </Route>
           <Route path="/cases" exact>
-            <NavBar points={points} />
-            <CasesPage alias={alias} cases={cases}></CasesPage>
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
+            <CasesPage
+              alias={alias}
+              badgesWon={badgesWon}
+              taskName={taskName}
+            />
           </Route>
           <Route path="/first-case-intro" exact>
-            <NavBar points={points} />
-            <FirstCaseIntro />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
+            <Intro taskName={taskName} />
           </Route>
           <Route path="/first-case-task" exact>
-            <NavBar points={points} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <FirstCasePage
               points={points}
               setPoints={setPoints}
-              setPageNum={setPageNum}
+              taskName={taskName}
+              setTaskName={setTaskName}
+              badgesWon={badgesWon}
+              setBadgesWon={setBadgesWon}
             />
           </Route>
           <Route path="/try-again" exact>
             <TryAgain failMessage={failMessage} />
           </Route>
           <Route path="/badge" exact>
-            <BadgePage badgeType={badgeType} alias={alias} />
+            <BadgePage
+              badgeType={taskName}
+              alias={alias}
+              taskName={taskName}
+              setTaskName={setTaskName}
+            />
           </Route>
-          <Route path="/second-case-intro" exact></Route>
+          <Route path="/second-case-intro" exact>
+            <Intro taskName={taskName} />
+          </Route>
           <Route path="/second-case-task" exact>
-            <NavBar points={points} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <SecondCasePage
               points={points}
               setPoints={setPoints}
-              setPageNum={setPageNum}
+              taskName={taskName}
+              setTaskName={setTaskName}
+              setBadgesWon={setBadgesWon}
+              badgesWon={badgesWon}
             />
           </Route>
-          <Route path="/third-case-intro" exact></Route>
+          <Route path="/third-case-intro" exact>
+            <Intro taskName={taskName} />
+          </Route>
           <Route path="/third-case-task" exact>
-            <NavBar points={points} />
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+            />
             <ThirdCasePage
               points={points}
               setPoints={setPoints}
               alias={alias}
-              pageNum={pageNum}
-              setPageNum={setPageNum}
+              taskName={taskName}
+              setTaskName={setTaskName}
+              badgesWon={badgesWon}
+              setBadgesWon={setBadgesWon}
+              timeLeft={timeLeft}
+              setTimeLeft={setTimeLeft}
             />
           </Route>
           <Route path="/game-over" exact>

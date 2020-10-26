@@ -4,14 +4,25 @@ import { badgePageTheme } from './../components/themes';
 import { H1, Text } from './../components/Text';
 import { Badge } from './../components/Image';
 import { Button } from './../components/Buttons';
+import { useHistory } from 'react-router-dom';
 
-const BadgePage = ({ alias, badgeType }) => {
+const BadgePage = ({ alias, badgeType, taskName, setTaskName }) => {
+  const history = useHistory();
+
+  const showbadgesWon = () => {
+    if (taskName === 'passwordChallenge') {
+      setTaskName('Complete');
+    }
+
+    history.push('/cases');
+  };
+
   return (
     <ThemeProvider theme={badgePageTheme}>
       <H1>You earned the badge!</H1>
       <Text>Well done {alias}!</Text>
       <Badge badgeType={badgeType} />
-      <Button>Accept</Button>
+      <Button onClick={showbadgesWon}>Accept</Button>
     </ThemeProvider>
   );
 };

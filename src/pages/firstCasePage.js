@@ -9,12 +9,19 @@ import {
 } from './../components/AnswerButtons';
 import eagle from './../images/eagleTakesChild.jpg';
 
-const FirstCasePage = ({ points, setPoints, setPageNum }) => {
+const FirstCasePage = ({
+  points,
+  setPoints,
+  taskName,
+  setTaskName,
+  badgesWon,
+  setBadgesWon
+}) => {
   const title = 'Case One';
 
   React.useEffect(() => {
-    setPageNum(1);
-  }, [setPageNum]);
+    setTaskName('Troll Hunter');
+  }, []);
 
   const img = eagle;
   const question = `Your friend Sam just shared a VIRAL video of 
@@ -28,6 +35,9 @@ const FirstCasePage = ({ points, setPoints, setPageNum }) => {
         setPoints={setPoints}
         label="Check it's true or fake"
         nextPage={'/badge'}
+        taskName={taskName}
+        setBadgesWon={setBadgesWon}
+        badgesWon={badgesWon}
       />
       <IgnoreButton
         points={points}

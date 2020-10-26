@@ -7,8 +7,12 @@ export function CorrectButton({
   points,
   setPoints,
   label,
+  timeLeft,
+  taskName,
   answerArray,
   setAnswerArray,
+  badgesWon,
+  setBadgesWon,
   nextPage
 }) {
   const history = useHistory();
@@ -16,8 +20,17 @@ export function CorrectButton({
     //change the number of points the player has
     setPoints(points + 3);
 
-    if (window.location.pathname === '/third-case-task') {
+    if (taskName === 'Troll Hunter') {
+      setBadgesWon({ ...badgesWon, case1: taskName });
+    }
+    if (taskName === 'Thief Buster') {
+      setBadgesWon({ ...badgesWon, case2: taskName });
+    }
+
+    //third task special case
+    if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
+      setBadgesWon({ ...badgesWon, case3: taskName });
     }
 
     //go to the next page
@@ -32,10 +45,9 @@ export function WrongButton({
   setPoints,
   label,
   timeLeft,
-  pageNum,
+  taskName,
   answerArray,
-  setAnswerArray,
-  nextPage
+  setAnswerArray
 }) {
   const history = useHistory();
   const handleWrongClick = () => {
@@ -44,17 +56,9 @@ export function WrongButton({
       setPoints(points - 2);
     }
 
-    if (window.location.pathname === '/third-case-task') {
+    //third task special case
+    if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-    }
-
-    if (points <= 0) {
-      if (pageNum == 3 && timeLeft <= 0) {
-        history.push('/game-over');
-      }
-    } else {
-      //go to the next page
-      history.push(nextPage);
     }
   };
 
@@ -67,31 +71,21 @@ export function IgnoreButton({
   setPoints,
   label,
   timeLeft,
-  pageNum,
+  taskName,
   answerArray,
-  setAnswerArray,
-  nextPage
+  setAnswerArray
 }) {
   const history = useHistory();
 
   const handleIgnoreClick = () => {
     //change the number of points the player has
     if (points > 0) {
-      setPoints(points - 2);
+      setPoints(points - 1);
     }
 
-    if (window.location.pathname === '/third-case-task') {
+    //third task special case
+    if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
-    }
-
-    //go to the next page
-    if (points <= 0) {
-      if (pageNum == 3 && timeLeft <= 0) {
-        history.push('/game-over');
-      }
-    } else {
-      //go to the next page
-      history.push(nextPage);
     }
   };
 

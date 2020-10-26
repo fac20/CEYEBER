@@ -1,5 +1,3 @@
-import { findByLabelText } from '@testing-library/react';
-
 export const landingPageTheme = {
   btnColor: 'var(--color-2)',
   btnTextColor: 'var(--color-4)',

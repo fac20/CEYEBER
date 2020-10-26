@@ -5,6 +5,8 @@ import { H1, H2, Text } from '../components/Text';
 import { casesPageTheme } from './../components/themes';
 import styled from 'styled-components';
 import Checklist from '../components/Checklist.js';
+import { Button } from '../components/Buttons';
+import { useHistory } from 'react-router-dom';
 
 const BadgeDisplay = styled.div`
   display: flex;
@@ -17,25 +19,38 @@ const SubTitle = styled(H2)`
   align-self: flex-start;
 `;
 
-const CasesPage = ({ alias, cases }) => {
-  const displayBadges = cases => {
+const CasesPage = ({ alias, badgesWon, taskName }) => {
+  const displayBadges = badgesWon => {
     let badgeArray = [];
-    for (const property in cases) {
-      badgeArray.push(<Badge badgeType={cases[property]} size="small" />);
+    for (const property in badgesWon) {
+      badgeArray.push(<Badge badgeType={badgesWon[property]} size="small" />);
     }
     return badgeArray;
   };
 
-  const Badges = displayBadges(cases);
+  const history = useHistory();
+
+  const nextChallenge = () => {
+    if (taskName === 'Troll Hunter') {
+      history.push('/second-case-intro');
+    } else if (taskName === 'Thief Buster') {
+      history.push('/third-case-intro');
+    }
+  };
+
+  const Badges = displayBadges(badgesWon);
 
   return (
     <ThemeProvider theme={casesPageTheme}>
       <H1>Cases solved</H1>
       <Avatar className="avatar" />
       <Text>Alias: {alias}</Text>
-      <Checklist cases={cases} />
+      <Checklist badgesWon={badgesWon} />
       <SubTitle>Badge</SubTitle>
       <BadgeDisplay>{Badges}</BadgeDisplay>
+      {taskName !== 'passwordChallenge' ? (
+        <Button onClick={nextChallenge}>Next Case</Button>
+      ) : null}
     </ThemeProvider>
   );
 };
