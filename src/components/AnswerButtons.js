@@ -16,7 +16,7 @@ export function CorrectButton({
     //change the number of points the player has
     setPoints(points + 3);
 
-    if (window.location.pathname === '/third-case-task') {
+    if (window.location.pathname === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
     }
 
@@ -44,14 +44,20 @@ export function WrongButton({
       setPoints(points - 2);
     }
 
-    if (window.location.pathname === '/third-case-task') {
+    //third task special case
+    if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
+
+      if (points === 0 && timeLeft === 0) {
+        history.push('/game-over');
+      } else if (points < 10 && timeLeft === 0) {
+        history.push(nextPage);
+      }
     }
 
+    //1st and 2nd task-
     if (points <= 0) {
-      if (taskName === 3 && timeLeft <= 0) {
-        history.push('/game-over');
-      }
+      history.push('/game-over');
     } else {
       //go to the next page
       history.push(nextPage);
@@ -80,17 +86,20 @@ export function IgnoreButton({
       setPoints(points - 1);
     }
 
-    if (window.location.pathname === '/third-case-task') {
+    //third task special case
+    if (taskName === 'passwordChallenge') {
       setAnswerArray([...answerArray, label]);
+
+      if (points === 0 && timeLeft === 0) {
+        history.push('/game-over');
+      } else if (points < 10 && timeLeft === 0) {
+        history.push(nextPage);
+      }
     }
 
-    //go to the next page
+    //1st and 2nd task-
     if (points <= 0) {
-      if (taskName === 3) {
-        if (timeLeft <= 0) {
-          history.push('/game-over');
-        }
-      }
+      history.push('/game-over');
     } else {
       //go to the next page
       history.push(nextPage);
