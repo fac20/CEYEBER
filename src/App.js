@@ -41,12 +41,14 @@ function App() {
     : (failMessage = `Oh dear. Using a combination of capital letters, 
     numbers and punctuation like "!?" might help. Don't use things a hacker
     could easily guess like your name or birthday! `);
-
-  const intro = window.location.pathname.includes('intro');
-
-  intro
-    ? (document.body.className = 'light-theme')
-    : (document.body.className = 'dark-theme');
+  const [theme, setTheme] = React.useState(true);
+  console.log('THEME', theme);
+  React.useEffect(() => {
+    setTheme(window.location.pathname.includes('intro'));
+    theme
+      ? (document.body.className = 'light-theme')
+      : (document.body.className = 'dark-theme');
+  }, []);
   console.log(badgesWon, taskName);
   return (
     <BrowserRouter>
