@@ -1,38 +1,51 @@
+//Remove 'skip' from each test to run them
+
 describe('Checks routes on third task', function () {
-  it('Gains over 10 points and wins badge', function () {
+  it.skip('Gains over 10 points and wins badge', function () {
     cy.visit('/third-case-task');
+    cy.contains('2 Points');
     cy.contains('!!').click();
     cy.contains('?').click();
     cy.contains('01').click();
-    cy.url().should('contain', '/badge', { timeout: 310000 });
-    cy.contains('Thief Buster');
+    cy.wait(30000).then(() => {
+      cy.url().should('contain', '/badge');
+    });
+    cy.contains('Password Challenge');
     cy.contains('Accept').click();
     cy.url().should('contain', '/cases');
-    cy.contains('Next Case').click();
-    cy.url().should('contain', '/third-case-intro');
   });
 
-  // it('Clicks ignore button on second task, retries on fail, decrements 1 point', function () {
-  //   cy.visit('/second-case-task');
-  //   cy.contains('2 Points');
-  //   cy.contains('better to ignore it').click();
-  //   cy.url().should('contain', '/try-again');
-  //   cy.contains(`ignoring these messages means they can come back again!`);
-  //   cy.contains('TRY AGAIN').click();
-  //   cy.url().should('contain', '/second-case-task');
-  //   cy.contains('1 Points');
-  // });
+  //Fails: try again on password challenge will not let you
+  it.skip('Gains 0-9 points and tries again', function () {
+    cy.visit('/third-case-task');
+    cy.contains('2 Points');
+    cy.wait(30000).then(() => {
+      cy.url().should('contain', '/try-again');
+    });
+    cy.contains('TRY AGAIN').click();
+    cy.url().should('contain', '/third-case-task');
+  });
 
-  // it('Clicks incorrect button on second task, try again, game over', function () {
-  //   cy.visit('/second-case-task');
-  //   cy.contains('2 Points');
-  //   cy.contains('this is from Netflix').click();
-  //   cy.url().should('contain', '/try-again');
-  //   cy.contains(`It’s very easy to steal a logo`);
-  //   cy.contains('TRY AGAIN').click();
-  //   cy.url().should('contain', '/game-over');
-  //   cy.contains('TRY AGAIN').click();
-  //   cy.url().should('contain', '/');
-  //   cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
-  // });
+  it('Gets 0 points with time to spare, remains on page', function () {
+    cy.visit('/third-case-task');
+    cy.contains('2 Points');
+    cy.contains('BrownFox').click();
+    cy.contains('0 Points');
+    cy.wait(5000).then(() => {
+      cy.url().should('contain', '/third-case-task');
+    });
+  });
+
+  it('Gets 0 points and runs down timer, game over', function () {
+    cy.visit('/third-case-task');
+    cy.contains('2 Points');
+    cy.contains('BrownFox').click();
+    cy.contains('0 Points');
+    cy.wait(30000).then(() => {
+      cy.url().should('contain', '/game-over');
+    });
+    cy.contains('TRY AGAIN').click();
+    cy.url().should('contain', '/');
+    cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
+  });
 });

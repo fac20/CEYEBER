@@ -9,7 +9,8 @@ import { gameOverPageTheme } from './../components/themes';
 
 const TryAgain = ({ failMessage }) => {
   const history = useHistory();
-  const createProfile = () => {
+
+  const handleClick = () => {
     history.goBack();
   };
 
@@ -18,7 +19,7 @@ const TryAgain = ({ failMessage }) => {
       <H1>Incorrect!</H1>
       <div className="alert" />
       <H2>{failMessage}</H2>
-      <Button onClick={createProfile}>TRY AGAIN</Button>
+      <Button onClick={handleClick}>TRY AGAIN</Button>
     </ThemeProvider>
   );
 };
