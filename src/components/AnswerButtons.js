@@ -33,7 +33,7 @@ export function CorrectButton({
     }
 
     //third task special case
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setAnswerArray([...answerArray, label]);
       setBadgesWon({ ...badgesWon, case3: taskName });
     }
@@ -63,7 +63,7 @@ export function WrongButton({
     }
 
     //third task special case
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setAnswerArray([...answerArray, label]);
     }
   };
@@ -95,7 +95,7 @@ export function IgnoreButton({
     }
 
     //third task special case
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setAnswerArray([...answerArray, label]);
     }
   };

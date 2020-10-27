@@ -28,7 +28,7 @@ const ThirdCasePage = ({
   console.log('Third task name is', taskName);
 
   React.useEffect(() => {
-    setTaskName('passwordChallenge');
+    setTaskName('Password Challenge');
   }, []);
 
   const img = hacker;

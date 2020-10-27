@@ -15,26 +15,27 @@ const LI = styled(Text)`
 
   &:before {
     ${props =>
-      props.case.case3 === props.name ? 'content: "✅ "' : 'content: "⭕ "'};
+      props.case.case2 === props.name ? 'content: "✅ "' : ''};
     ${props =>
-      props.case.case2 === props.name ? 'content: "✅ "' : 'content: "⭕ "'};
+      props.case.case3 === props.name ? 'content: "✅ "' : ''};
     ${props =>
-      props.case.case1 === props.name ? 'content: "✅ "' : 'content: "⭕ "'};
+      props.case.case1 === props.name ? 'content: "✅ "' : ''};
   }
 `;
 
 const Checklist = ({ badgesWon }) => {
+  console.log(badgesWon)
   return (
     <>
       <UL>
         <LI case={badgesWon} name="Troll Hunter">
           Social media Fake News
         </LI>
-        <LI case={badgesWon} name="Phish Phood">
+        <LI case={badgesWon} name="Thief Buster">
           Evading Deception: Phish Phood
         </LI>
-        <LI case={badgesWon} name="Password">
-          Password ???
+        <LI case={badgesWon} name="Password Challenge">
+          Defeat the Hacker: Password Change
         </LI>
       </UL>
     </>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
-import {countriesArray} from './countriesArray';
+import { countriesArray } from './countriesArray';
 
 const Form = styled.form`
   width: 60%;
@@ -85,7 +85,7 @@ const Countries = ({ id }) => {
   );
 };
 
-export const LandingPageForm = () => {
+export const LandingPageForm = ({alias, setAlias}) => {
   const history = useHistory();
 
   const handleSubmit = event => {
@@ -95,7 +95,7 @@ export const LandingPageForm = () => {
     const alias = event.target.elements.alias.value;
     const age = event.target.elements.age.value;
     const country = event.target.elements.country.value;
-
+    setAlias(alias);
     console.log('Profile: ', alias, age, country);
   };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
-import { BrowserRouter, Switch, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import FirstCasePage from './pages/firstCasePage';
 import SecondCasePage from './pages/secondCasePage';
@@ -17,7 +17,7 @@ import Intro from './components/Intro';
 function App() {
   const [points, setPoints] = React.useState(2);
 
-  const alias = 'BrownFox';
+  const [alias, setAlias] = React.useState('BrownFox');
   const [timeLeft, setTimeLeft] = React.useState(30);
 
   const [badgesWon, setBadgesWon] = React.useState({
@@ -59,7 +59,7 @@ function App() {
       <main className="App">
         <Switch>
           <Route path="/" exact>
-            <LandingPage />
+            <LandingPage alais={alias} setAlias={setAlias} />
           </Route>
           <Route path="/training-manual" exact>
             <TrainingManual theme={theme} setTheme={setTheme}/>
@@ -71,7 +71,7 @@ function App() {
               timeLeft={timeLeft}
               taskName={taskName}
             />
-            <Profile theme={theme} setTheme={setTheme}/>
+            <Profile theme={theme} setTheme={setTheme} alias={alias}/>
           </Route>
           <Route path="/cases" exact>
             <NavBar
@@ -84,6 +84,8 @@ function App() {
               alias={alias}
               badgesWon={badgesWon}
               taskName={taskName}
+              theme={theme}
+              setTheme={setTheme}
             />
           </Route>
           <Route path="/first-case-intro" exact>

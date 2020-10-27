@@ -10,7 +10,7 @@ const BadgePage = ({ alias, badgeType, taskName, setTaskName }) => {
   const history = useHistory();
 
   const showbadgesWon = () => {
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setTaskName('Complete');
     }
 

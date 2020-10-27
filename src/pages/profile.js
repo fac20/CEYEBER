@@ -8,7 +8,7 @@ import { ratingPageTheme } from './../components/themes';
 import RatingBar from '../components/RatingBar.js';
 import { Avatar } from '../components/Image';
 
-const Profile = ({theme, setTheme}) => {
+const Profile = ({theme, setTheme, alias}) => {
 
   setTheme('dark-theme');
 
@@ -20,7 +20,7 @@ const Profile = ({theme, setTheme}) => {
   return (
     <Container>
       <ThemeProvider theme={ratingPageTheme}>
-        <H1>Hello Brown Fox!</H1>
+        <H1>Hello {alias}!</H1>
         <Avatar className="avatar" />
         <H2>RATE YOUR SKILLS!</H2>
         <RatingBar />

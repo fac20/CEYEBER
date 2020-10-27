@@ -63,7 +63,7 @@ export const NavBar = ({ setPoints, points, timeLeft, taskName }) => {
 
 const PointsBar = ({ points, timeLeft, taskName, setPoints }) => {
   const history = useHistory();
-  console.log(taskName !== 'passwordChallenge', taskName);
+  console.log(taskName !== 'Password Challenge', taskName);
 
   React.useEffect(() => {
     if (points <= 0) {
@@ -71,11 +71,11 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints }) => {
     } else if (points >= 11) {
       setPoints(11)
     }
-    if (taskName !== 'passwordChallenge' && points <= 0) {
+    if (taskName !== 'Password Challenge' && points <= 0) {
       console.log('ITS HERE ACTUALLLY');
       history.push('/game-over');
     }
-    if (taskName === 'passwordChallenge' && timeLeft === 0) {
+    if (taskName === 'Password Challenge' && timeLeft === 0) {
       if (points <= 0) {
         console.log('ITS HERE');
         history.push('/game-over');
