@@ -19,7 +19,9 @@ const SubTitle = styled(H2)`
   align-self: flex-start;
 `;
 
-const CasesPage = ({ alias, badgesWon, taskName }) => {
+const CasesPage = ({ alias, badgesWon, taskName, theme, setTheme }) => {
+
+  setTheme('dark-theme');
   const displayBadges = badgesWon => {
     let badgeArray = [];
     for (const property in badgesWon) {
@@ -48,7 +50,7 @@ const CasesPage = ({ alias, badgesWon, taskName }) => {
       <Checklist badgesWon={badgesWon} />
       <SubTitle>Badge</SubTitle>
       <BadgeDisplay>{Badges}</BadgeDisplay>
-      {taskName !== 'passwordChallenge' ? (
+      {taskName !== 'Password Challenge' ? (
         <Button onClick={nextChallenge}>Next Case</Button>
       ) : null}
     </ThemeProvider>

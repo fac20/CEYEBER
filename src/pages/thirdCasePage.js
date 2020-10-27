@@ -20,13 +20,15 @@ const ThirdCasePage = ({
   timeLeft,
   setTimeLeft,
   badgesWon,
-  setBadgesWon
+  setBadgesWon,
+  theme, setTheme
 }) => {
+  setTheme('dark-theme');
   const title = 'Case Three';
   console.log('Third task name is', taskName);
 
   React.useEffect(() => {
-    setTaskName('passwordChallenge');
+    setTaskName('Password Challenge');
   }, []);
 
   const img = hacker;
@@ -61,6 +63,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <IgnoreButton
           points={points}
@@ -70,6 +73,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <CorrectButton
           points={points}
@@ -81,6 +85,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <WrongButton
           points={points}
@@ -90,6 +95,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <CorrectButton
           points={points}
@@ -101,6 +107,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <IgnoreButton
           points={points}
@@ -110,6 +117,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <WrongButton
           points={points}
@@ -119,6 +127,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
       </div>
     </ThemeProvider>
