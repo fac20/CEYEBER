@@ -38,6 +38,7 @@
   "devDependencies": {
     "codecov": "^3.8.0",
     "cypress": "^5.4.0",
+    "cypress-wait-until": "^1.7.1",
     "prettier": "^2.1.2",
     "wait-on": "^5.2.0"
   }
