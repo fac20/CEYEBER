@@ -4,6 +4,7 @@ import { H1, Text, SpeechBubbleText } from './Text.js';
 import { caseIntroPage } from './themes.js';
 import { Button } from './Buttons';
 import { useHistory } from 'react-router-dom';
+import {task1, task2, task3 } from './taskIntroText';
 
 const TheGuyImage = styled.div``;
 
@@ -11,6 +12,11 @@ const Intro = ({ taskName, theme, setTheme }) => {
   const history = useHistory();
 
   setTheme("light-theme")
+  let task = {};
+  if (taskName === null) {task = task1 }
+  if (taskName === 'Troll Hunter') {task = task2 } 
+  if (taskName === 'Thief Buster') {task = task3 } 
+
 
   const goToTheMission = () => {
     if (taskName === null) {
@@ -24,16 +30,15 @@ const Intro = ({ taskName, theme, setTheme }) => {
 
   return (
     <ThemeProvider theme={caseIntroPage}>
-      <H1>1st Case: Hunting the trolls</H1>
+      <H1>{task.title}</H1>
       <div className="speech-bubble">
         <SpeechBubbleText>
-          Find the people who are spreading the fake news
+          {task.bubble}
         </SpeechBubbleText>
       </div>
       <TheGuyImage className="theguy" />
       <Text>
-        Your mission is to choose which of the following people on Twitter are
-        spreading false information.{' '}
+        {task.message}
       </Text>
       <Button onClick={goToTheMission}>Accept</Button>
     </ThemeProvider>
