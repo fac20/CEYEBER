@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import { Label } from './Forms';
+//import fbIcon from '../images/facebook.svg';
+import { Avatar } from '../components/Image';
 
 const StarRating = styled.div`
   border-style: solid;
@@ -43,9 +45,33 @@ const DivContainer = styled.div`
   }
 `;
 
+// facebook
+// whatsapp
+// twitter
+// insta
+// snapchat
+// tiktok
+// youtube
+
+//label for each with icon
+
+//each rating should produce a label underneath with a p tag explaining what they have chosen
+
+//make each bar start at 0
+
 const RatingBar = () => {
-  const [ratingValue, updateRatingValue] = useState({ phishing: 0, scams: 0 });
-  console.log(ratingValue);
+  //const fbIconSrc = fbIcon;
+
+  const [ratingValue, updateRatingValue] = useState({
+    Facebook: 0,
+    Whatsapp: 0,
+    Twitter: 0,
+    Instagram: 0,
+    Snapchat: 0,
+    TikTok: 0,
+    Youtube: 0
+  });
+
   const isStarSelected = event => {
     const name = event.target.name;
     console.log(name);
@@ -58,34 +84,122 @@ const RatingBar = () => {
   return (
     <>
       <DivContainer>
-        <Label htmlfor="phishing">Phishing</Label>
+        <Label htmlfor="Facebook">Facebook</Label>
+        {/* <img src={fbIconSrc} alt="Facebook logo" /> */}
         <StarRating>
           {ratingArray.map(val => {
             return (
               <StarIcon
                 key={`star ${val}`}
                 onClick={isStarSelected}
-                id="phishing"
-                name="phishing"
+                id="Facebook"
+                name="Facebook"
                 value={val}
-                ratingValue={ratingValue.phishing}
+                ratingValue={ratingValue.Facebook}
+              />
+            );
+          })}
+        </StarRating>
+        {/* <p>{ratingValue.Facebook}</p> */}
+      </DivContainer>
+      <DivContainer>
+        <Label htmlfor="Whatsapp">Whatsapp</Label>
+        <StarRating>
+          {ratingArray.map(val => {
+            return (
+              <StarIcon
+                key={`star ${val}`}
+                onClick={isStarSelected}
+                name="Whatsapp"
+                id="Whatsapp"
+                value={val}
+                ratingValue={ratingValue.Whatsapp}
               />
             );
           })}
         </StarRating>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="scams">Scams</Label>
+        <Label htmlfor="Twitter">Twitter</Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
               <StarIcon
                 key={`star ${val}`}
                 onClick={isStarSelected}
-                name="scams"
-                id="scams"
+                name="Twitter"
+                id="Twitter"
                 value={val}
-                ratingValue={ratingValue.scams}
+                ratingValue={ratingValue.Twitter}
+              />
+            );
+          })}
+        </StarRating>
+      </DivContainer>
+      <DivContainer>
+        <Label htmlfor="Instagram">Instagram</Label>
+        <StarRating>
+          {ratingArray.map(val => {
+            return (
+              <StarIcon
+                key={`star ${val}`}
+                onClick={isStarSelected}
+                name="Instagram"
+                id="Instagram"
+                value={val}
+                ratingValue={ratingValue.Instagram}
+              />
+            );
+          })}
+        </StarRating>
+      </DivContainer>
+      <DivContainer>
+        <Label htmlfor="Snapchat">Snapchat</Label>
+        <StarRating>
+          {ratingArray.map(val => {
+            return (
+              <StarIcon
+                key={`star ${val}`}
+                onClick={isStarSelected}
+                name="Snapchat"
+                id="Snapchat"
+                value={val}
+                ratingValue={ratingValue.Snapchat}
+              />
+            );
+          })}
+        </StarRating>
+      </DivContainer>
+      <DivContainer>
+        <Label htmlfor="TikTok">TikTok</Label>
+        <StarRating>
+          {ratingArray.map(val => {
+            return (
+              <StarIcon
+                key={`star ${val}`}
+                onClick={isStarSelected}
+                name="TikTok"
+                id="TikTok"
+                value={val}
+                ratingValue={ratingValue.TikTok}
+              />
+            );
+          })}
+        </StarRating>
+      </DivContainer>
+
+      <DivContainer>
+        <Label htmlfor="Youtube">Youtube</Label>
+        <StarRating>
+          {ratingArray.map(val => {
+            return (
+              <StarIcon
+                key={`star ${val}`}
+                onClick={isStarSelected}
+                name="Youtube"
+                id="Youtube"
+                value={val}
+                ratingValue={ratingValue.Youtube}
               />
             );
           })}
