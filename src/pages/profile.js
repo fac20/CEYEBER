@@ -19,7 +19,7 @@ const Profile = () => {
       <ThemeProvider theme={ratingPageTheme}>
         <H1>Hello Brown Fox!</H1>
         <Avatar className="avatar" />
-        <H2>RATE YOUR SKILLS!</H2>
+        <H2>RATE YOUR SOCIAL MEDIA SKILLS!</H2>
         <RatingBar />
         <Button onClick={createProfile}>START YOUR FIRST TASK</Button>
       </ThemeProvider>

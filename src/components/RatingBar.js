@@ -74,10 +74,24 @@ const RatingBar = () => {
 
   const isStarSelected = event => {
     const name = event.target.name;
-    console.log(name);
+    //console.log(name);
     const value = event.target.value;
-    console.log(value);
+    //console.log(value);
     updateRatingValue({ ...ratingValue, [name]: value });
+
+    //need to pass in a p tag displaying message depending on what user has selected
+    //   let rating = Object.keys(ratingValue)[
+    //     Object.keys(ratingValue).indexOf(name)
+    //   ];
+
+    //   let skillMessage = '';
+    // if (ratingValue === 0) {
+    //   skillMessage = `I've never heard of it!`;
+    // } else if (ratingValue === 1) {
+    //   skillMessage = "I'm a beginer!";
+    // } else if (ratingValue === 2) {
+    //   skillMessage = 'I use it sometimes';
+    // }
   };
   let ratingArray = [...Array(5).keys()];
 
@@ -100,7 +114,7 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
-        {/* <p>{ratingValue.Facebook}</p> */}
+        {/* <p>{skillMessage}</p> */}
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Whatsapp">Whatsapp</Label>
@@ -187,7 +201,6 @@ const RatingBar = () => {
           })}
         </StarRating>
       </DivContainer>
-
       <DivContainer>
         <Label htmlfor="Youtube">Youtube</Label>
         <StarRating>
