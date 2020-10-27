@@ -10,11 +10,15 @@ import ThirdCasePage from './pages/thirdCasePage';
 import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
+import Congrats from './pages/certificate';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
+import { useHistory } from 'react-router-dom';
 
 function App() {
+  const history = useHistory();
+
   const [points, setPoints] = React.useState(2);
   const badgeType = null;
   const alias = 'BrownFox';
@@ -50,6 +54,7 @@ function App() {
       : (document.body.className = 'dark-theme');
   }, []);
   console.log(badgesWon, taskName);
+
   return (
     <BrowserRouter>
       <main className="App">
@@ -66,6 +71,7 @@ function App() {
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
+              badgesWon={badgesWon}
             />
             <Profile />
           </Route>
@@ -75,6 +81,7 @@ function App() {
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
+              badgesWon={badgesWon}
             />
             <CasesPage
               alias={alias}
@@ -88,6 +95,7 @@ function App() {
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
+              badgesWon={badgesWon}
             />
             <Intro taskName={taskName} />
           </Route>
@@ -97,6 +105,7 @@ function App() {
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
+              badgesWon={badgesWon}
             />
             <FirstCasePage
               points={points}
@@ -127,6 +136,7 @@ function App() {
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
+              badgesWon={badgesWon}
             />
             <SecondCasePage
               points={points}
@@ -146,6 +156,7 @@ function App() {
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
+              badgesWon={badgesWon}
             />
             <ThirdCasePage
               points={points}
@@ -161,6 +172,9 @@ function App() {
           </Route>
           <Route path="/game-over" exact>
             <GameOver />
+          </Route>
+          <Route path="/certificate" exact>
+            <Congrats />
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>

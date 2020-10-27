@@ -79,7 +79,6 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
-          setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
         />
