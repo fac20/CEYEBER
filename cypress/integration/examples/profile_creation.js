@@ -3,7 +3,7 @@ describe('Attempts to create a profile', function () {
     cy.visit('/');
     cy.get('#alias').type('Dragon');
     cy.get('#age').type(9);
-    cy.get('#location').select('United Kingdom');
+    cy.get('#country').select('United Kingdom');
     cy.contains('CLICK HERE').click();
     cy.url().should('contain', '/profile');
     cy.get('#Facebook').click();
