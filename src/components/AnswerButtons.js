@@ -18,7 +18,11 @@ export function CorrectButton({
   const history = useHistory();
   const handleCorrectClick = () => {
     //change the number of points the player has
-    setPoints(points + 3);
+    if (points >= 8) {
+      setPoints(11)
+    } else {
+      setPoints(points + 3);
+    }
 
     if (taskName === 'Troll Hunter') {
       setBadgesWon({ ...badgesWon, case1: taskName });

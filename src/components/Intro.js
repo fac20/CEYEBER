@@ -7,8 +7,10 @@ import { useHistory } from 'react-router-dom';
 
 const TheGuyImage = styled.div``;
 
-const Intro = ({ taskName }) => {
+const Intro = ({ taskName, theme, setTheme }) => {
   const history = useHistory();
+
+  setTheme("light-theme")
 
   const goToTheMission = () => {
     if (taskName === null) {

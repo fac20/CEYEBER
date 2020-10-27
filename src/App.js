@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link, useLocation } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import FirstCasePage from './pages/firstCasePage';
 import SecondCasePage from './pages/secondCasePage';
@@ -16,7 +16,7 @@ import Intro from './components/Intro';
 
 function App() {
   const [points, setPoints] = React.useState(2);
-  const badgeType = null;
+
   const alias = 'BrownFox';
   const [timeLeft, setTimeLeft] = React.useState(30);
 
@@ -41,14 +41,18 @@ function App() {
     : (failMessage = `Oh dear. Using a combination of capital letters, 
     numbers and punctuation like "!?" might help. Don't use things a hacker
     could easily guess like your name or birthday! `);
-  const [theme, setTheme] = React.useState(true);
-  console.log('THEME', theme);
-  React.useEffect(() => {
-    setTheme(window.location.pathname.includes('intro'));
-    theme
-      ? (document.body.className = 'light-theme')
-      : (document.body.className = 'dark-theme');
-  }, []);
+    
+    const [theme, setTheme] = React.useState('dark-theme');
+    
+    
+    const location = window.location.pathname
+    console.log(location)
+    
+    // React.useEffect(()=> {
+    //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
+    // }, []);
+    
+    document.body.className = theme;
   console.log(badgesWon, taskName);
   return (
     <BrowserRouter>
@@ -58,7 +62,7 @@ function App() {
             <LandingPage />
           </Route>
           <Route path="/training-manual" exact>
-            <TrainingManual />
+            <TrainingManual theme={theme} setTheme={setTheme}/>
           </Route>
           <Route path="/profile" exact>
             <NavBar
@@ -67,7 +71,7 @@ function App() {
               timeLeft={timeLeft}
               taskName={taskName}
             />
-            <Profile />
+            <Profile theme={theme} setTheme={setTheme}/>
           </Route>
           <Route path="/cases" exact>
             <NavBar
@@ -89,7 +93,7 @@ function App() {
               timeLeft={timeLeft}
               taskName={taskName}
             />
-            <Intro taskName={taskName} />
+            <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/first-case-task" exact>
             <NavBar
@@ -105,6 +109,7 @@ function App() {
               setTaskName={setTaskName}
               badgesWon={badgesWon}
               setBadgesWon={setBadgesWon}
+              theme={theme} setTheme={setTheme}
             />
           </Route>
           <Route path="/try-again" exact>
@@ -119,7 +124,7 @@ function App() {
             />
           </Route>
           <Route path="/second-case-intro" exact>
-            <Intro taskName={taskName} />
+            <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/second-case-task" exact>
             <NavBar
@@ -135,10 +140,11 @@ function App() {
               setTaskName={setTaskName}
               setBadgesWon={setBadgesWon}
               badgesWon={badgesWon}
+              theme={theme} setTheme={setTheme}
             />
           </Route>
           <Route path="/third-case-intro" exact>
-            <Intro taskName={taskName} />
+            <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/third-case-task" exact>
             <NavBar
@@ -157,6 +163,7 @@ function App() {
               setBadgesWon={setBadgesWon}
               timeLeft={timeLeft}
               setTimeLeft={setTimeLeft}
+              theme={theme} setTheme={setTheme}
             />
           </Route>
           <Route path="/game-over" exact>

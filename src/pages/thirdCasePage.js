@@ -20,8 +20,10 @@ const ThirdCasePage = ({
   timeLeft,
   setTimeLeft,
   badgesWon,
-  setBadgesWon
+  setBadgesWon,
+  theme, setTheme
 }) => {
+  setTheme('dark-theme');
   const title = 'Case Three';
   console.log('Third task name is', taskName);
 

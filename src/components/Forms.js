@@ -31,7 +31,7 @@ const Fieldset = styled.fieldset`
 export const Label = styled.label`
   font-family: var(--info-font);
   font-size: 1.2rem;
-  margin-bottom: 1ch;
+  margin-top: 1ch;
   color: ${props => props.theme.labelColor};
 `;
 
@@ -68,6 +68,7 @@ const Option = styled.option`
 const Countries = ({ id }) => {
   const options = countriesArray.map(country => {
     if (country === "United Kingdom") {
+
       return (
         <Option key={country} value={country} selected>
           {country}
@@ -107,10 +108,11 @@ export const LandingPageForm = () => {
           type="text"
           placeholder="BrownFox"
           data-cy="alias"
+          maxLength="8"
           required
         />
         <Label htmlFor="age">Age:</Label>
-        <Input id="age" type="number" min="8" placeholder="8" required />
+        <Input id="age" type="number" min="8" max="18" placeholder="8" required />
         <Label htmlFor="country">Location:</Label>
         <Countries id="country" required />
       </Fieldset>

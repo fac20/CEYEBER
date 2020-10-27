@@ -8,7 +8,10 @@ import { ratingPageTheme } from './../components/themes';
 import RatingBar from '../components/RatingBar.js';
 import { Avatar } from '../components/Image';
 
-const Profile = () => {
+const Profile = ({theme, setTheme}) => {
+
+  setTheme('dark-theme');
+
   const history = useHistory();
   const createProfile = () => {
     history.push('/first-case-intro');
