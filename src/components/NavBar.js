@@ -75,8 +75,8 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon }) => {
   React.useEffect(() => {
     if (points <= 0) {
       setPoints(0);
-    } else if (points >= 11) {
-      setPoints(11)
+    } else if (points >= 20) {
+      setPoints(20);
     }
     if (taskName !== 'Password Challenge' && points <= 0) {
       console.log('ITS HERE ACTUALLLY');

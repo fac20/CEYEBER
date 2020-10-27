@@ -20,7 +20,7 @@ export function CorrectButton({
   const handleCorrectClick = () => {
     //change the number of points the player has
     if (points >= 8) {
-      setPoints(11)
+      setPoints(11);
     } else {
       setPoints(points + 3);
     }
@@ -41,7 +41,11 @@ export function CorrectButton({
     //go to the next page
     history.push(nextPage);
   };
-  return <Button disabled={disabled} onClick={handleCorrectClick}>{label}</Button>;
+  return (
+    <Button disabled={disabled} onClick={handleCorrectClick}>
+      {label}
+    </Button>
+  );
 }
 
 //WRONG button:
@@ -53,13 +57,19 @@ export function WrongButton({
   taskName,
   answerArray,
   setAnswerArray,
+  nextPage,
   disabled
 }) {
   const history = useHistory();
+
   const handleWrongClick = () => {
     //change the number of points the player has
     if (points > 0) {
       setPoints(points - 2);
+    }
+
+    if (taskName !== 'Password Challenge') {
+      history.push(nextPage);
     }
 
     //third task special case
@@ -84,6 +94,7 @@ export function IgnoreButton({
   taskName,
   answerArray,
   setAnswerArray,
+  nextPage,
   disabled
 }) {
   const history = useHistory();
@@ -92,6 +103,10 @@ export function IgnoreButton({
     //change the number of points the player has
     if (points > 0) {
       setPoints(points - 1);
+    }
+
+    if (taskName !== 'Password Challenge') {
+      history.push(nextPage);
     }
 
     //third task special case
