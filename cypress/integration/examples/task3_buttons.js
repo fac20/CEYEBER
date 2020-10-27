@@ -45,7 +45,6 @@ describe('Checks routes on third task', function () {
       cy.url().should('contain', '/game-over');
     });
     cy.contains('TRY AGAIN').click();
-    cy.url().should('contain', '/');
     cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
   });
 });

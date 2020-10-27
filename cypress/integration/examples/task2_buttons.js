@@ -30,7 +30,6 @@ describe('Checks all buttons on second task', function () {
     cy.contains('TRY AGAIN').click();
     cy.url().should('contain', '/game-over');
     cy.contains('TRY AGAIN').click();
-    cy.url().should('contain', '/');
     cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
   });
 });
