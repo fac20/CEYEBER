@@ -11,10 +11,14 @@ export const Button = styled.button`
   border-style: none;
   color: ${props => props.theme.btnTextColor};
   background-color: ${props => props.theme.btnColor};
-  :hover {
+  :hover::not([disabled]) {
     color: ${props => props.theme.btnColor};
     background-color: ${props => props.theme.btnTextColor};
     border-color: ${props => props.theme.btnColor};
     border-style: solid;
+  }
+  :disabled {
+    color: ${props => props.theme.pBarBgColor};
+    background-color: ${props => props.theme.pBarValueColor};
   }
 `;

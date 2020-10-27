@@ -63,6 +63,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <IgnoreButton
           points={points}
@@ -72,6 +73,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <CorrectButton
           points={points}
@@ -81,9 +83,9 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
-          setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <WrongButton
           points={points}
@@ -93,6 +95,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <CorrectButton
           points={points}
@@ -104,6 +107,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           badgesWon={badgesWon}
           setBadgesWon={setBadgesWon}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <IgnoreButton
           points={points}
@@ -113,6 +117,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
         <WrongButton
           points={points}
@@ -122,6 +127,7 @@ const ThirdCasePage = ({
           taskName={taskName}
           answerArray={answerArray}
           setAnswerArray={setAnswerArray}
+          disabled={answerArray.join().length >= 24 ? true : false }
         />
       </div>
     </ThemeProvider>

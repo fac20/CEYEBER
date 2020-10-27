@@ -15,9 +15,9 @@ const Intro = ({ taskName, theme, setTheme }) => {
   const goToTheMission = () => {
     if (taskName === null) {
       history.push('/first-case-task');
-    } else if (taskName == 'Troll Hunter') {
+    } else if (taskName === 'Troll Hunter') {
       history.push('/second-case-task');
-    } else if (taskName == 'Thief Buster') {
+    } else if (taskName === 'Thief Buster') {
       history.push('/third-case-task');
     }
   };
