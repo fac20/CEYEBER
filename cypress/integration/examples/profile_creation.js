@@ -6,8 +6,8 @@ describe('Attempts to create a profile', function () {
     cy.get('#location').type('The Moon');
     cy.contains('CLICK HERE').click();
     cy.url().should('contain', '/profile');
-    cy.get('#phishing').click();
-    cy.get('#scams').click();
+    cy.get('#Facebook').click();
+    cy.get('#Whatsapp').click();
     cy.contains('START YOUR FIRST TASK').click();
     cy.url().should('contain', '/first-case-intro');
   });

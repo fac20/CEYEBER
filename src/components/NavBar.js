@@ -34,7 +34,13 @@ const Li = styled.li`
   width: 50%;
 `;
 
-export const NavBar = ({ setPoints, points, timeLeft, taskName }) => {
+export const NavBar = ({
+  setPoints,
+  points,
+  timeLeft,
+  taskName,
+  badgesWon
+}) => {
   return (
     <ThemeProvider theme={navBarTheme}>
       <StyledNavBar>
@@ -53,6 +59,7 @@ export const NavBar = ({ setPoints, points, timeLeft, taskName }) => {
               timeLeft={timeLeft}
               taskName={taskName}
               setPoints={setPoints}
+              badgesWon={badgesWon}
             />
           </Li>
         </Ul>
@@ -61,7 +68,7 @@ export const NavBar = ({ setPoints, points, timeLeft, taskName }) => {
   );
 };
 
-const PointsBar = ({ points, timeLeft, taskName, setPoints }) => {
+const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon }) => {
   const history = useHistory();
   console.log(taskName !== 'Password Challenge', taskName);
 
@@ -86,9 +93,13 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints }) => {
       }
     }
     if (taskName === 'Complete') {
-      history.push('/cases');
+      if (Object.values(badgesWon).indexOf(null) == -1) {
+        history.push('/certificate');
+      } else {
+        history.push('/cases');
+      }
     }
-  }, [points, timeLeft, taskName]);
+  }, [points, timeLeft, taskName, badgesWon]);
   return (
     <>
       <Label htmlFor="gamePoints">{points} Points</Label>
