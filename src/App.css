@@ -56,10 +56,13 @@ a {
   background-position: center;
 }
 
-.facebook {
-  height: 2rem;
+.trophy {
+  height: 10rem;
   width: auto;
-  background-image: url(./images/facebook.svg);
+  background-image: url(./images/trophy.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .skull {

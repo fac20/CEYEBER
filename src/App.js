@@ -10,6 +10,7 @@ import ThirdCasePage from './pages/thirdCasePage';
 import Profile from './pages/profile';
 import TryAgain from './pages/tryAgain';
 import GameOver from './pages/gameoverPage';
+import Congrats from './pages/certificate';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
@@ -161,6 +162,9 @@ function App() {
           </Route>
           <Route path="/game-over" exact>
             <GameOver />
+          </Route>
+          <Route path="/certificate" exact>
+            <Congrats />
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>
