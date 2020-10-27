@@ -4,6 +4,7 @@ import { Text } from './Text.js';
 
 const UL = styled.ul`
   align-self: flex-start;
+  flex-direction: column;
 `;
 
 const LI = styled(Text)`
