@@ -16,7 +16,8 @@ const FirstCasePage = ({
   setTaskName,
   badgesWon,
   setBadgesWon,
-  theme, setTheme
+  theme,
+  setTheme
 }) => {
   setTheme('dark-theme');
   const title = 'Case One';

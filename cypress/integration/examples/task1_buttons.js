@@ -14,6 +14,7 @@ describe('Checks all buttons on first task', function () {
   it('Clicks ignore button on first task, retries on fail, decrements 1 point', function () {
     cy.visit('/first-case-intro');
     cy.contains('Accept').click();
+    cy.contains('2 Points');
     cy.contains('Ignore the video').click();
     cy.url().should('contain', '/try-again');
     cy.contains(
@@ -27,6 +28,7 @@ describe('Checks all buttons on first task', function () {
   it('Clicks incorrect button on first task, try again, game over', function () {
     cy.visit('/first-case-intro');
     cy.contains('Accept').click();
+    cy.contains('2 Points');
     cy.contains('Share the video').click();
     cy.url().should('contain', '/try-again');
     cy.contains(

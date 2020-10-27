@@ -20,17 +20,23 @@ function App() {
   const history = useHistory();
 
   const [points, setPoints] = React.useState(2);
-
   const [alias, setAlias] = React.useState('BrownFox');
   const [timeLeft, setTimeLeft] = React.useState(30);
-
   const [badgesWon, setBadgesWon] = React.useState({
     case1: null,
     case2: null,
     case3: null
   });
-
   const [taskName, setTaskName] = React.useState(null);
+  const [theme, setTheme] = React.useState('dark-theme');
+  document.body.className = theme;
+
+  //const location = window.location.pathname;
+
+  // React.useEffect(()=> {
+  //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
+  // }, []);
+
   let failMessage = '';
 
   taskName === 'Troll Hunter'
@@ -46,24 +52,12 @@ function App() {
     numbers and punctuation like "!?" might help. Don't use things a hacker
     could easily guess like your name or birthday! `);
 
-  const [theme, setTheme] = React.useState('dark-theme');
-
-  const location = window.location.pathname;
-  console.log(location);
-
-  // React.useEffect(()=> {
-  //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
-  // }, []);
-
-  document.body.className = theme;
-  console.log(badgesWon, taskName);
-
   return (
     <BrowserRouter>
       <main className="App">
         <Switch>
           <Route path="/" exact>
-            <LandingPage alais={alias} setAlias={setAlias} />
+            <LandingPage alias={alias} setAlias={setAlias} />
           </Route>
           <Route path="/training-manual" exact>
             <TrainingManual theme={theme} setTheme={setTheme} />
