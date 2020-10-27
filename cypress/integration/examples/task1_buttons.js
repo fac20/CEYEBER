@@ -1,6 +1,7 @@
 describe('Checks all buttons on first task', function () {
   it('Clicks correct button on first task, gets badge and goes to second', function () {
-    cy.visit('/first-case-task');
+    cy.visit('/first-case-intro');
+    cy.contains('Accept').click();
     cy.contains("Check it's true or fake").click();
     cy.url().should('contain', '/badge');
     cy.contains('Troll Hunter');
@@ -11,7 +12,8 @@ describe('Checks all buttons on first task', function () {
   });
 
   it('Clicks ignore button on first task, retries on fail, decrements 1 point', function () {
-    cy.visit('/first-case-task');
+    cy.visit('/first-case-intro');
+    cy.contains('Accept').click();
     cy.contains('Ignore the video').click();
     cy.url().should('contain', '/try-again');
     cy.contains(
@@ -23,7 +25,8 @@ describe('Checks all buttons on first task', function () {
   });
 
   it('Clicks incorrect button on first task, try again, game over', function () {
-    cy.visit('/first-case-task');
+    cy.visit('/first-case-intro');
+    cy.contains('Accept').click();
     cy.contains('Share the video').click();
     cy.url().should('contain', '/try-again');
     cy.contains(
