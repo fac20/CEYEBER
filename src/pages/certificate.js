@@ -9,7 +9,7 @@ import { badgePageTheme } from '../components/themes';
 
 const Congrats = () => {
   const history = useHistory();
-  const goTolandingPage = () => {
+  const handleClick = () => {
     history.push('/');
   };
 
@@ -22,7 +22,7 @@ const Congrats = () => {
           You have won all <br /> of the badges!
           <br />
         </H2>
-        <Button onClick={goTolandingPage}>PLAY AGAIN</Button>
+        <Button onClick={handleClick}>PLAY AGAIN</Button>
       </ThemeProvider>
     </Container>
   );

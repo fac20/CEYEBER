@@ -1,4 +1,4 @@
-describe('Attempts to create a profile', function () {
+describe('Attempts to create a profile and begin', function () {
   it('Enters user info', function () {
     cy.visit('/');
     cy.get('#alias').type('Dragon');
@@ -10,5 +10,6 @@ describe('Attempts to create a profile', function () {
     cy.get('#Whatsapp').click();
     cy.contains('START YOUR FIRST TASK').click();
     cy.url().should('contain', '/first-case-intro');
+    cy.contains('Accept').click();
   });
 });
