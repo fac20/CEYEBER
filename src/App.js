@@ -37,7 +37,7 @@ function App() {
     ? (failMessage = `Try again – even though Sam is your
       friend, they might still spread Fake News. 
       It’s important to check.`)
-    : taskName === 'phishingMessage'
+    : taskName === 'Thief Buster'
     ? (failMessage = `Try again. It’s very easy to steal a logo and
     pretend you are from a certain company, and 
     ignoring these messages means
@@ -45,18 +45,17 @@ function App() {
     : (failMessage = `Oh dear. Using a combination of capital letters, 
     numbers and punctuation like "!?" might help. Don't use things a hacker
     could easily guess like your name or birthday! `);
-    
-    const [theme, setTheme] = React.useState('dark-theme');
-    
-    
-    const location = window.location.pathname
-    console.log(location)
-    
-    // React.useEffect(()=> {
-    //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
-    // }, []);
-    
-    document.body.className = theme;
+
+  const [theme, setTheme] = React.useState('dark-theme');
+
+  const location = window.location.pathname;
+  console.log(location);
+
+  // React.useEffect(()=> {
+  //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
+  // }, []);
+
+  document.body.className = theme;
   console.log(badgesWon, taskName);
 
   return (
@@ -67,7 +66,7 @@ function App() {
             <LandingPage alais={alias} setAlias={setAlias} />
           </Route>
           <Route path="/training-manual" exact>
-            <TrainingManual theme={theme} setTheme={setTheme}/>
+            <TrainingManual theme={theme} setTheme={setTheme} />
           </Route>
           <Route path="/profile" exact>
             <NavBar
@@ -77,7 +76,7 @@ function App() {
               taskName={taskName}
               badgesWon={badgesWon}
             />
-            <Profile theme={theme} setTheme={setTheme} alias={alias}/>
+            <Profile theme={theme} setTheme={setTheme} alias={alias} />
           </Route>
           <Route path="/cases" exact>
             <NavBar
@@ -120,7 +119,8 @@ function App() {
               setTaskName={setTaskName}
               badgesWon={badgesWon}
               setBadgesWon={setBadgesWon}
-              theme={theme} setTheme={setTheme}
+              theme={theme}
+              setTheme={setTheme}
             />
           </Route>
           <Route path="/try-again" exact>
@@ -152,7 +152,8 @@ function App() {
               setTaskName={setTaskName}
               setBadgesWon={setBadgesWon}
               badgesWon={badgesWon}
-              theme={theme} setTheme={setTheme}
+              theme={theme}
+              setTheme={setTheme}
             />
           </Route>
           <Route path="/third-case-intro" exact>
@@ -176,11 +177,12 @@ function App() {
               setBadgesWon={setBadgesWon}
               timeLeft={timeLeft}
               setTimeLeft={setTimeLeft}
-              theme={theme} setTheme={setTheme}
+              theme={theme}
+              setTheme={setTheme}
             />
           </Route>
           <Route path="/game-over" exact>
-            <GameOver />
+            <GameOver points={points} setPoints={setPoints} />
           </Route>
           <Route path="/certificate" exact>
             <Congrats />
