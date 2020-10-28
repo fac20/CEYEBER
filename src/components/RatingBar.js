@@ -45,53 +45,19 @@ const DivContainer = styled.div`
   }
 `;
 
-// facebook
-// whatsapp
-// twitter
-// insta
-// snapchat
-// tiktok
-// youtube
-
 //label for each with icon
 
 //each rating should produce a label underneath with a p tag explaining what they have chosen
 
 //make each bar start at 0
 
-const RatingBar = () => {
+const RatingBar = ({ ratingValue, updateRatingValue }) => {
   //const fbIconSrc = fbIcon;
-
-  const [ratingValue, updateRatingValue] = useState({
-    Facebook: 0,
-    Whatsapp: 0,
-    Twitter: 0,
-    Instagram: 0,
-    Snapchat: 0,
-    TikTok: 0,
-    Youtube: 0
-  });
 
   const isStarSelected = event => {
     const name = event.target.name;
-    //console.log(name);
     const value = event.target.value;
-    //console.log(value);
     updateRatingValue({ ...ratingValue, [name]: value });
-
-    //need to pass in a p tag displaying message depending on what user has selected
-    //   let rating = Object.keys(ratingValue)[
-    //     Object.keys(ratingValue).indexOf(name)
-    //   ];
-
-    //   let skillMessage = '';
-    // if (ratingValue === 0) {
-    //   skillMessage = `I've never heard of it!`;
-    // } else if (ratingValue === 1) {
-    //   skillMessage = "I'm a beginer!";
-    // } else if (ratingValue === 2) {
-    //   skillMessage = 'I use it sometimes';
-    // }
   };
   let ratingArray = [...Array(5).keys()];
 

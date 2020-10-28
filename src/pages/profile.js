@@ -8,7 +8,17 @@ import { ratingPageTheme } from './../components/themes';
 import RatingBar from '../components/RatingBar.js';
 import { Avatar } from '../components/Image';
 
-const Profile = ({theme, setTheme, alias}) => {
+const Profile = ({ theme, setTheme, alias }) => {
+  const [ratingValue, updateRatingValue] = React.useState({
+    Facebook: 0,
+    Whatsapp: 0,
+    Twitter: 0,
+    Instagram: 0,
+    Snapchat: 0,
+    TikTok: 0,
+    Youtube: 0
+  });
+  console.log(ratingValue);
 
   setTheme('dark-theme');
 
@@ -23,7 +33,10 @@ const Profile = ({theme, setTheme, alias}) => {
         <H1>Hello {alias}!</H1>
         <Avatar className="avatar" />
         <H2>RATE YOUR SOCIAL MEDIA SKILLS!</H2>
-        <RatingBar />
+        <RatingBar
+          ratingValue={ratingValue}
+          updateRatingValue={updateRatingValue}
+        />
         <Button onClick={createProfile}>START YOUR FIRST TASK</Button>
       </ThemeProvider>
     </Container>

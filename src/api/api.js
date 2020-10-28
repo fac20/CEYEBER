@@ -27,4 +27,19 @@ function signUp(alias, age, location) {
   });
 }
 
-export { signUp };
+function sendSkills(alias, age, location) {
+  return request('user', {
+    method: 'POST',
+    body: JSON.stringify({
+      facebook: Facebook,
+      age: age,
+      location: location,
+      created_at: '2020-10-28 14:33:57'
+    }),
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+}
+
+export { signUp, sendSkills };
