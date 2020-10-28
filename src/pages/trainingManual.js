@@ -5,8 +5,10 @@ import { Button } from './../components/Buttons';
 import { fieldPageTheme } from './../components/themes';
 import { useHistory } from 'react-router-dom';
 
-const TrainingManual = () => {
+const TrainingManual = ({theme, setTheme}) => {
   const history = useHistory();
+
+  setTheme('dark-theme');
 
   const goBack = () => {
     history.goBack();

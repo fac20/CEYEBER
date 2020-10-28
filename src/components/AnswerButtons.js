@@ -13,12 +13,17 @@ export function CorrectButton({
   setAnswerArray,
   badgesWon,
   setBadgesWon,
-  nextPage
+  nextPage,
+  disabled
 }) {
   const history = useHistory();
   const handleCorrectClick = () => {
     //change the number of points the player has
-    setPoints(points + 3);
+    if (points >= 8) {
+      setPoints(11);
+    } else {
+      setPoints(points + 3);
+    }
 
     if (taskName === 'Troll Hunter') {
       setBadgesWon({ ...badgesWon, case1: taskName });
@@ -28,7 +33,7 @@ export function CorrectButton({
     }
 
     //third task special case
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setAnswerArray([...answerArray, label]);
       setBadgesWon({ ...badgesWon, case3: taskName });
     }
@@ -36,7 +41,11 @@ export function CorrectButton({
     //go to the next page
     history.push(nextPage);
   };
-  return <Button onClick={handleCorrectClick}>{label}</Button>;
+  return (
+    <Button disabled={disabled} onClick={handleCorrectClick}>
+      {label}
+    </Button>
+  );
 }
 
 //WRONG button:
@@ -47,22 +56,33 @@ export function WrongButton({
   timeLeft,
   taskName,
   answerArray,
-  setAnswerArray
+  setAnswerArray,
+  nextPage,
+  disabled
 }) {
   const history = useHistory();
+
   const handleWrongClick = () => {
     //change the number of points the player has
     if (points > 0) {
       setPoints(points - 2);
     }
 
+    if (taskName !== 'Password Challenge') {
+      history.push(nextPage);
+    }
+
     //third task special case
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setAnswerArray([...answerArray, label]);
     }
   };
 
-  return <Button onClick={handleWrongClick}>{label}</Button>;
+  return (
+    <Button disabled={disabled} onClick={handleWrongClick}>
+      {label}
+    </Button>
+  );
 }
 
 //IGNORE button:
@@ -73,7 +93,9 @@ export function IgnoreButton({
   timeLeft,
   taskName,
   answerArray,
-  setAnswerArray
+  setAnswerArray,
+  nextPage,
+  disabled
 }) {
   const history = useHistory();
 
@@ -83,11 +105,19 @@ export function IgnoreButton({
       setPoints(points - 1);
     }
 
+    if (taskName !== 'Password Challenge') {
+      history.push(nextPage);
+    }
+
     //third task special case
-    if (taskName === 'passwordChallenge') {
+    if (taskName === 'Password Challenge') {
       setAnswerArray([...answerArray, label]);
     }
   };
 
-  return <Button onClick={handleIgnoreClick}>{label}</Button>;
+  return (
+    <Button disabled={disabled} onClick={handleIgnoreClick}>
+      {label}
+    </Button>
+  );
 }

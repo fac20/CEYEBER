@@ -15,8 +15,11 @@ const FirstCasePage = ({
   taskName,
   setTaskName,
   badgesWon,
-  setBadgesWon
+  setBadgesWon,
+  theme,
+  setTheme
 }) => {
+  setTheme('dark-theme');
   const title = 'Case One';
 
   React.useEffect(() => {
