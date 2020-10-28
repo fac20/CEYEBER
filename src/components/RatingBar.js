@@ -86,7 +86,7 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
               <StarIcon
                 key={`star ${val}`}
                 onClick={isStarSelected}
-                id="Facebook"
+                id={`Facebook${val}`}
                 name="Facebook"
                 value={val}
                 ratingValue={ratingValue.Facebook}
@@ -107,7 +107,7 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
                 key={`star ${val}`}
                 onClick={isStarSelected}
                 name="Whatsapp"
-                id="Whatsapp"
+                id={`Whatsapp${val}`}
                 value={val}
                 ratingValue={ratingValue.Whatsapp}
               />
