@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useState } from 'react';
 import { Label } from './Forms';
 //import fbIcon from '../images/facebook.svg';
-import { Avatar } from '../components/Image';
+import { Text } from './Text';
 
 const StarRating = styled.div`
   border-style: solid;
@@ -45,14 +45,28 @@ const DivContainer = styled.div`
   }
 `;
 
-//label for each with icon
-
-//each rating should produce a label underneath with a p tag explaining what they have chosen
-
-//make each bar start at 0
+const SmallDivContainer = styled.div`
+  margin: auto;
+  @media only screen and (min-width: 700px) {
+    width: 150px;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  @media only screen and (max-width: 460px) {
+    margin: 0.5rem;
+  }
+`;
 
 const RatingBar = ({ ratingValue, updateRatingValue }) => {
   //const fbIconSrc = fbIcon;
+
+  const skills = {
+    0: 'Never used it!',
+    1: 'Once a week',
+    2: 'Up to three times a week',
+    3: 'Every day, up to an hour',
+    4: 'More than an hour a day'
+  };
 
   const isStarSelected = event => {
     const name = event.target.name;
@@ -80,7 +94,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
-        {/* <p>{skillMessage}</p> */}
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Facebook]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Whatsapp">Whatsapp</Label>
@@ -98,6 +114,7 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
+        <Text>{skills[ratingValue.Whatsapp]}</Text>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Twitter">Twitter</Label>
@@ -115,6 +132,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Twitter]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Instagram">Instagram</Label>
@@ -132,6 +152,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Instagram]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Snapchat">Snapchat</Label>
@@ -149,6 +172,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Snapchat]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="TikTok">TikTok</Label>
@@ -166,6 +192,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.TikTok]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Youtube">Youtube</Label>
@@ -183,6 +212,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Youtube]}</Text>
+        </SmallDivContainer>
       </DivContainer>
     </>
   );

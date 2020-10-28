@@ -18,8 +18,7 @@ function signUp(alias, age, location) {
     body: JSON.stringify({
       alias: alias,
       age: age,
-      location: location,
-      created_at: '2020-10-28 14:33:57'
+      location: location
     }),
     headers: {
       'content-type': 'application/json'
@@ -27,14 +26,27 @@ function signUp(alias, age, location) {
   });
 }
 
-function sendSkills(alias, age, location) {
-  return request('user', {
+function sendSkills({
+  Facebook,
+  Whatsapp,
+  Twitter,
+  Instagram,
+  Snapchat,
+  TikTok,
+  Youtube
+}) {
+  const id = window.sessionStorage.getItem('user_id');
+  return request('skills', {
     method: 'POST',
     body: JSON.stringify({
+      user_id: id,
       facebook: Facebook,
-      age: age,
-      location: location,
-      created_at: '2020-10-28 14:33:57'
+      instagram: Instagram,
+      snapchat: Snapchat,
+      tiktok: TikTok,
+      twitter: Twitter,
+      whatsApp: Whatsapp,
+      youtube: Youtube
     }),
     headers: {
       'content-type': 'application/json'
