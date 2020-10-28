@@ -21,7 +21,7 @@ function App() {
 
   const [points, setPoints] = React.useState(2);
   const [alias, setAlias] = React.useState('BrownFox');
-  const [timeLeft, setTimeLeft] = React.useState(30);
+  const [timeLeft, setTimeLeft] = React.useState(15);
   const [badgesWon, setBadgesWon] = React.useState({
     case1: null,
     case2: null,
@@ -118,7 +118,7 @@ function App() {
             />
           </Route>
           <Route path="/try-again" exact>
-            <TryAgain failMessage={failMessage} />
+            <TryAgain failMessage={failMessage} setTimeLeft={setTimeLeft} />
           </Route>
           <Route path="/badge" exact>
             <BadgePage
