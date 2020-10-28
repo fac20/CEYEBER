@@ -46,11 +46,7 @@ const DivContainer = styled.div`
 `;
 
 const SmallDivContainer = styled.div`
-  display: flex;
   margin: auto;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem;
   @media only screen and (min-width: 700px) {
     width: 150px;
     margin: auto;

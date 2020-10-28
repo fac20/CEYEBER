@@ -50,7 +50,9 @@ function App() {
     they can come back again! `)
     : (failMessage = `Oh dear. Using a combination of capital letters, 
     numbers and punctuation like "!?" might help. Don't use things a hacker
-    could easily guess like your name or birthday! `);
+    could easily guess like your name or birthday! 
+    This time, get more than 10 points to win!
+    `);
 
   return (
     <BrowserRouter>
