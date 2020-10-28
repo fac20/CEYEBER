@@ -7,10 +7,17 @@ import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
 import { badgePageTheme } from '../components/themes';
 
-const Congrats = () => {
+const Congrats = ({ setPoints, setBadgesWon, setTaskName }) => {
   const history = useHistory();
   const handleClick = () => {
     history.push('/');
+    setPoints(2);
+    setTaskName(null);
+    setBadgesWon({
+      case1: null,
+      case2: null,
+      case3: null
+    });
   };
 
   return (

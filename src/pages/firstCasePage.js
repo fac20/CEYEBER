@@ -33,15 +33,6 @@ const FirstCasePage = ({
   return (
     <ThemeProvider theme={fieldPageTheme}>
       <ImageQuestion title={title} img={img} question={question} />
-      <CorrectButton
-        points={points}
-        setPoints={setPoints}
-        label="Check it's true or fake"
-        nextPage={'/badge'}
-        taskName={taskName}
-        setBadgesWon={setBadgesWon}
-        badgesWon={badgesWon}
-      />
       <IgnoreButton
         points={points}
         setPoints={setPoints}
@@ -53,6 +44,15 @@ const FirstCasePage = ({
         setPoints={setPoints}
         label="Share the video"
         nextPage={'try-again'}
+      />
+      <CorrectButton
+        points={points}
+        setPoints={setPoints}
+        label="Check it's true or fake"
+        nextPage={'/badge'}
+        taskName={taskName}
+        setBadgesWon={setBadgesWon}
+        badgesWon={badgesWon}
       />
     </ThemeProvider>
   );

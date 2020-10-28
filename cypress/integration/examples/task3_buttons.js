@@ -1,7 +1,7 @@
 //Remove 'skip' from each test to run them
 
 describe('Checks routes on third task', function () {
-  it.skip('Gains over 10 points and wins badge', function () {
+  it('Gains over 10 points and wins badge', function () {
     cy.visit('/third-case-task');
     cy.contains('2 Points');
     cy.contains('!!').click();
@@ -16,7 +16,7 @@ describe('Checks routes on third task', function () {
   });
 
   //Fails: try again on password challenge will not let you
-  it.skip('Gains 0-9 points and tries again', function () {
+  it('Gains 0-9 points and tries again', function () {
     cy.visit('/third-case-task');
     cy.contains('2 Points');
     cy.wait(30000).then(() => {
