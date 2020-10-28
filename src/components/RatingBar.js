@@ -57,18 +57,8 @@ const SmallDivContainer = styled.div`
   }
 `;
 
-const RatingBar = () => {
+const RatingBar = ({ ratingValue, updateRatingValue }) => {
   //const fbIconSrc = fbIcon;
-
-  const [ratingValue, updateRatingValue] = useState({
-    Facebook: 0,
-    Whatsapp: 0,
-    Twitter: 0,
-    Instagram: 0,
-    Snapchat: 0,
-    TikTok: 0,
-    Youtube: 0
-  });
 
   const skills = {
     0: 'Never used it!',
@@ -80,9 +70,7 @@ const RatingBar = () => {
 
   const isStarSelected = event => {
     const name = event.target.name;
-    //console.log(name);
     const value = event.target.value;
-    //console.log(value);
     updateRatingValue({ ...ratingValue, [name]: value });
   };
   let ratingArray = [...Array(5).keys()];
@@ -98,7 +86,7 @@ const RatingBar = () => {
               <StarIcon
                 key={`star ${val}`}
                 onClick={isStarSelected}
-                id="Facebook"
+                id={`Facebook${val}`}
                 name="Facebook"
                 value={val}
                 ratingValue={ratingValue.Facebook}
@@ -119,7 +107,7 @@ const RatingBar = () => {
                 key={`star ${val}`}
                 onClick={isStarSelected}
                 name="Whatsapp"
-                id="Whatsapp"
+                id={`Whatsapp${val}`}
                 value={val}
                 ratingValue={ratingValue.Whatsapp}
               />

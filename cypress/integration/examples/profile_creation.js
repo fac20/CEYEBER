@@ -6,8 +6,8 @@ describe('Attempts to create a profile and begin', function () {
     cy.get('#country').select('United Kingdom');
     cy.contains('CLICK HERE').click();
     cy.url().should('contain', '/profile');
-    cy.get('#Facebook').click();
-    cy.get('#Whatsapp').click();
+    cy.get('#Facebook3').click();
+    cy.get('#Whatsapp2').click();
     cy.contains('START YOUR FIRST TASK').click();
     cy.url().should('contain', '/first-case-intro');
     cy.contains('Accept').click();
