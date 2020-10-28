@@ -93,7 +93,7 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon }) => {
       }
     }
     if (taskName === 'Complete') {
-      if (Object.values(badgesWon).indexOf(null) == -1) {
+      if (Object.values(badgesWon).indexOf(null) === -1) {
         history.push('/certificate');
       } else {
         history.push('/cases');
