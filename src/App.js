@@ -179,7 +179,11 @@ function App() {
             <GameOver points={points} setPoints={setPoints} />
           </Route>
           <Route path="/certificate" exact>
-            <Congrats />
+            <Congrats
+              setPoints={setPoints}
+              setBadgesWon={setBadgesWon}
+              setTaskName={setTaskName}
+            />
           </Route>
           <Route>
             <h1>Oops! Page not found.</h1>
