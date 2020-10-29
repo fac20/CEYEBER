@@ -42,8 +42,10 @@ const Congrats = ({
   return (
     <ThemeProvider theme={badgePageTheme}>
       <Wrapper>
+        <H1>CONGRATS
+          <br/>
+          {agent}!</H1>
         <div className="trophy" />
-        <H1>CONGRATULATIONS {agent}!</H1>
         <H2>
           You have won all <br /> of the badges!
           <br />

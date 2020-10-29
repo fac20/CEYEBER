@@ -38,8 +38,8 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
   return (
     <ThemeProvider theme={gameOverPageTheme}>
       <Wrapper>
-        <div className="skull" />
         <H1>GAME OVER!</H1>
+        <div className="skull" />
         <H2>
           Oh no! You have lost a badge!
           <br />

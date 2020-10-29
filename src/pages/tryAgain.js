@@ -3,14 +3,15 @@ import { Button } from '../components/Buttons';
 import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
+import { Wrapper } from './../components/Wrapper';
 
 import { H1, H2 } from '../components/Text';
 import { gameOverPageTheme } from './../components/themes';
 
 const Container = styled.div`
-  width: 80%;
+  width: 400px;
   text-align: center;
-  padding: 5rem;
+  /* padding: 5rem; */
 `;
 
 const AlertImage = styled.div`
@@ -33,12 +34,12 @@ const TryAgain = ({
 
   return (
     <ThemeProvider theme={gameOverPageTheme}>
-      <Container>
-        <H1>Incorrect!</H1>
-        <AlertImage className="alert" />
-        <H2>{failMessage}</H2>
-        <Button onClick={handleClick}>TRY AGAIN</Button>
-      </Container>
+      <Wrapper>
+          <H1>Incorrect!</H1>
+          <AlertImage className="alert" />
+          <H2>{failMessage}</H2>
+          <Button onClick={handleClick}>TRY AGAIN</Button>
+      </Wrapper>
     </ThemeProvider>
   );
 };

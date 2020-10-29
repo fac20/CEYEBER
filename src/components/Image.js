@@ -19,7 +19,7 @@ export const BadgeImage = styled.div`
 
 export const BadgeContainer = styled.div`
   border: ${props => (props.size === 'small' ? '1px' : '5px')} solid;
-  padding: ${props => (props.size === 'small' ? '1rem' : '2rem')};
+  padding: ${props => (props.size === 'small' ? '0.7rem' : '2rem')};
   border-radius: ${props => (props.size === 'small' ? '25px' : '50px')};
   border-color: ${props => props.theme.borderColor};
   margin: 0.5rem;
