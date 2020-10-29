@@ -22,7 +22,7 @@ function App() {
 
   const [points, setPoints] = React.useState(2);
   const [agent, setAgent] = React.useState('BrownFox');
-  const [timeLeft, setTimeLeft] = React.useState(15);
+  const [timeLeft, setTimeLeft] = React.useState(30);
   const [badgesWon, setBadgesWon] = React.useState({
     case1: null,
     case2: null,
@@ -40,7 +40,7 @@ function App() {
     q3a1: null,
     q3a2: null
   });
-  const [passwordPoints, setPasswordPoints] = React.useState(0)
+  const [passwordPoints, setPasswordPoints] = React.useState(0);
 
   let failMessage = '';
 
@@ -226,6 +226,7 @@ function App() {
               setBadgesWon={setBadgesWon}
               setTaskName={setTaskName}
               answers={answers}
+              agent={agent}
               setAnswers={setAnswers}
             />
           </Route>

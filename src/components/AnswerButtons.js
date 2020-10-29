@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './Buttons.js';
+import { Button, SubmitButton } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
 import { collectData } from './collectData';
 
@@ -177,3 +177,9 @@ export function IgnoreButton({
     </Button>
   );
 }
+
+export const SubmitPasswordButton = ({ setTimeLeft }) => {
+  return (
+    <SubmitButton onClick={() => setTimeLeft(0)}>Submit Password!</SubmitButton>
+  );
+};

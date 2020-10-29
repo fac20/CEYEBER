@@ -8,6 +8,14 @@ import { task1, task2, task3 } from './taskIntroText';
 
 const TheGuyImage = styled.div``;
 
+const Container = styled.div`
+  width: 400px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+`;
+
 const Intro = ({ setTaskName, taskName, theme, setTheme }) => {
   const history = useHistory();
 
@@ -22,7 +30,7 @@ const Intro = ({ setTaskName, taskName, theme, setTheme }) => {
   if (taskName === 'Thief Buster') {
     task = task3;
   }
-  
+
   const goToTheMission = () => {
     if (taskName === null) {
       history.push('/first-case-task');
@@ -35,13 +43,15 @@ const Intro = ({ setTaskName, taskName, theme, setTheme }) => {
 
   return (
     <ThemeProvider theme={caseIntroPage}>
-      <H1>{task.title}</H1>
-      <div className="speech-bubble">
-        <SpeechBubbleText>{task.bubble}</SpeechBubbleText>
-      </div>
-      <TheGuyImage className="theguy" />
-      <Text>{task.message}</Text>
-      <Button onClick={goToTheMission}>Accept</Button>
+      <Container>
+        <H1>{task.title}</H1>
+        <div className="speech-bubble">
+          <SpeechBubbleText>{task.bubble}</SpeechBubbleText>
+        </div>
+        <TheGuyImage className="theguy" />
+        <Text>{task.message}</Text>
+        <Button onClick={goToTheMission}>Accept</Button>
+      </Container>
     </ThemeProvider>
   );
 };

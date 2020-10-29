@@ -4,15 +4,15 @@ import { fieldPageTheme } from './../components/themes';
 import { TimedQuestion } from './../components/Questions';
 import { PasswordText } from './../components/Text';
 import { PasswordStrength } from './../components/ProgressBar';
-import {Label } from './../components/Forms';
+import { Label } from './../components/Forms';
 import hacker from './../images/hacker.gif';
-import { collectData } from "./../components/collectData"
-
+import { collectData } from './../components/collectData';
 
 import {
   CorrectButton,
   IgnoreButton,
-  WrongButton
+  WrongButton,
+  SubmitPasswordButton
 } from './../components/AnswerButtons';
 
 const ThirdCasePage = ({
@@ -28,16 +28,16 @@ const ThirdCasePage = ({
   theme,
   setTheme,
   answers,
-  setAnswers, 
+  setAnswers,
   setPasswordPoints,
   passwordPoints
 }) => {
   setTheme('dark-theme');
   const title = 'Case Three';
- 
+  const [answerArray, setAnswerArray] = React.useState([]);
 
-  if (timeLeft === 0){
-    collectData(taskName, answers, setAnswers, passwordPoints); 
+  if (timeLeft === 0) {
+    collectData(taskName, answers, setAnswers, passwordPoints);
   }
 
   React.useEffect(() => {
@@ -46,13 +46,11 @@ const ThirdCasePage = ({
 
   const img = hacker;
   const question = `
-    A hacker has been detected nearby. 
-    You haven’t changed your password in years!
-    Quick, make your password stronger
-    - get more than 10 points to win!`;
 
-  const [answerArray, setAnswerArray] = React.useState([]);
-  console.log(passwordPoints)
+  A hacker has been detected nearby. 
+  You haven’t changed your password in years!
+  Quick, make your password stronger
+  - get more than 10 points to win!`;
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
@@ -67,8 +65,8 @@ const ThirdCasePage = ({
       />
 
       <Label htmlFor="passwordStrength">Password Strength</Label>
-      <PasswordStrength id="passwordStrength" value={passwordPoints} max="27"/>
-      
+      <PasswordStrength id="passwordStrength" value={passwordPoints} max="27" />
+
       <PasswordText>{answerArray}</PasswordText>
 
       <div>
@@ -148,6 +146,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           disabled={answerArray.join().length >= 24 ? true : false}
         />
+        <SubmitPasswordButton setTimeLeft={setTimeLeft} />
       </div>
     </ThemeProvider>
   );

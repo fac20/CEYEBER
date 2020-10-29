@@ -15,7 +15,9 @@ export const fieldPageTheme = {
   labelColor: 'var(--color-5)',
   pBarColor: 'var(--color-3)',
   pBarBgColor: 'var(--color-4)',
-  pBarValueColor: 'var(--color-1)'
+  pBarValueColor: 'var(--color-1)',
+  submitBtnColor: 'var(--color-2)',
+  submitBtnTextColor: 'var(--color-4)'
 };
 
 export const ratingPageTheme = {
