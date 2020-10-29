@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
 import { countriesArray } from './countriesArray';
+import { signUp } from '../api/api';
 
 const Form = styled.form`
   width: 60%;
@@ -63,21 +64,24 @@ const Select = styled.select`
 const Option = styled.option`
   background-color: ${props => props.theme.optionColor};
   color: ${props => props.theme.btnTextColor};
-`
+`;
 
 const Countries = ({ id }) => {
   const options = countriesArray.map(country => {
-    if (country === "United Kingdom") {
-
+    if (country === 'United Kingdom') {
       return (
         <Option key={country} value={country} selected>
           {country}
         </Option>
       );
     } else {
-      return <Option key={country} value={country}>{country}</Option>;
+      return (
+        <Option key={country} value={country}>
+          {country}
+        </Option>
+      );
     }
-  })
+  });
   return (
     <Select id={id} name={id}>
       {options}
@@ -85,7 +89,7 @@ const Countries = ({ id }) => {
   );
 };
 
-export const LandingPageForm = ({alias, setAlias}) => {
+export const LandingPageForm = ({ alias, setAlias }) => {
   const history = useHistory();
 
   const handleSubmit = event => {
@@ -97,6 +101,8 @@ export const LandingPageForm = ({alias, setAlias}) => {
     const country = event.target.elements.country.value;
     setAlias(alias);
     console.log('Profile: ', alias, age, country);
+    signUp(alias, age, country) //sent the data to the backend and database, your backend will send you the user id
+      .then(user => user.id);
   };
 
   return (
@@ -112,7 +118,14 @@ export const LandingPageForm = ({alias, setAlias}) => {
           required
         />
         <Label htmlFor="age">Age:</Label>
-        <Input id="age" type="number" min="8" max="18" placeholder="8" required />
+        <Input
+          id="age"
+          type="number"
+          min="8"
+          max="18"
+          placeholder="8"
+          required
+        />
         <Label htmlFor="country">Location:</Label>
         <Countries id="country" required />
       </Fieldset>
