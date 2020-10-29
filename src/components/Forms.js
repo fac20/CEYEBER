@@ -13,11 +13,6 @@ const Form = styled.form`
   flex-direction: column;
 `;
 
-export const Container = styled.div`
-  padding: 3rem;
-  text-align: center;
-`;
-
 const Fieldset = styled.fieldset`
   color: ${props => props.theme.formColor};
   border-style: solid;
@@ -75,22 +70,14 @@ const ErrorDiv = styled.div`
 
 const Countries = ({ id }) => {
   const options = countriesArray.map(country => {
-    if (country === 'United Kingdom') {
-      return (
-        <Option key={country} value={country} selected>
-          {country}
-        </Option>
-      );
-    } else {
       return (
         <Option key={country} value={country}>
           {country}
         </Option>
       );
-    }
   });
   return (
-    <Select id={id} name={id}>
+    <Select id={id} name={id} defaultValue="United Kingdom">
       {options}
     </Select>
   );

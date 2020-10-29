@@ -48,7 +48,6 @@ a {
 
 .avatar {
   height: 10rem;
-  width: 10rem;
   background-image: url(./images/avatar.svg);
   background-repeat: no-repeat;
   background-size: contain;

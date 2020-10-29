@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { sendAnswers } from './../api/api';
 import { H1, H2 } from '../components/Text';
-import { Container } from '../components/Forms';
+import { Wrapper } from '../components/Wrapper';
 import { gameOverPageTheme } from '../components/themes';
 
 const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAnswers }) => {
@@ -36,8 +36,8 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
 
 
   return (
-    <Container>
-      <ThemeProvider theme={gameOverPageTheme}>
+    <ThemeProvider theme={gameOverPageTheme}>
+      <Wrapper>
         <div className="skull" />
         <H1>GAME OVER!</H1>
         <H2>
@@ -47,8 +47,8 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
           <br /> on how to spot fake news
         </H2>
         <Button onClick={handleClick}>TRY AGAIN</Button>
-      </ThemeProvider>
-    </Container>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 
