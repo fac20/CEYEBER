@@ -35,7 +35,7 @@ const FirstCasePage = ({
 
 // Effct()=> 
   //re(ochtion.iPclrdes('intro') ?asetTheme('uight-theme') g setTheme('d rk-theme');{points}
-e //  , []  
+ // 
    label="Ignore the video"
         nextPage={'try-again'}
         answers={answers}
