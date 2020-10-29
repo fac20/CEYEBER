@@ -72,7 +72,15 @@ export const NavBar = ({
   );
 };
 
-const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon, setPasswordPoints, passwordPoints }) => {
+const PointsBar = ({
+  points,
+  timeLeft,
+  taskName,
+  setPoints,
+  badgesWon,
+  setPasswordPoints,
+  passwordPoints
+}) => {
   const history = useHistory();
 
   React.useEffect(() => {
@@ -87,24 +95,21 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon, setPasswo
     }
     if (taskName === 'Hack Attack' && timeLeft === 0) {
       if (passwordPoints < 0) {
-        setPoints(points -2)
+        setPoints(points - 2);
         history.push('/try-again');
-        setPasswordPoints(0)
-      } else if (passwordPoints <= 10) {
+        setPasswordPoints(0);
+      } else if (passwordPoints < 9) {
         setPoints(points - 1);
         history.push('/try-again');
-        setPasswordPoints(0)
-      } else if (passwordPoints > 10) {
+        setPasswordPoints(0);
+      } else if (passwordPoints >= 9) {
         setPoints(points + 3);
         history.push('/badge');
       }
 
-
-      if (points <= 0){
+      if (points <= 0) {
         history.push('/game-over');
       }
-
-      
     }
     if (taskName === 'Complete') {
       if (Object.values(badgesWon).indexOf(null) === -1) {
@@ -116,8 +121,9 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon, setPasswo
   }, [points, timeLeft, taskName, badgesWon]);
   return (
     <>
-    
-      <Label htmlFor="gamePoints">{points} {points > 1 ? 'Points' : 'Point' }</Label>
+      <Label htmlFor="gamePoints">
+        {points} {points > 1 ? 'Points' : 'Point'}
+      </Label>
       <Progress id="gamePoints" value={points} max="11"></Progress>
     </>
   );
