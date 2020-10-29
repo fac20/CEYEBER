@@ -40,3 +40,7 @@ body {
   -webkit-font-smoothing: antiagented;
   -moz-osx-font-smoothing: grayscale;
 }
+
+button {
+  cursor: pointer;
+}
