@@ -27,6 +27,6 @@ describe('Gets to certificate page', function () {
     cy.contains('Accept').click();
     cy.url().should('contain', '/certificate');
     cy.contains('PLAY AGAIN').click();
-    cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
+    cy.url().should('contain', '/first-case-intro');
   });
 });
