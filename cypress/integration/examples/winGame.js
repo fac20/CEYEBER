@@ -24,7 +24,7 @@ describe('Gets to certificate page', function () {
     cy.wait(30000).then(() => {
       cy.url().should('contain', '/badge');
     });
-    cy.contains('Password Challenge');
+    cy.contains('Hack Attack');
     cy.contains('Accept').click();
     cy.url().should('contain', '/certificate');
     cy.contains('PLAY AGAIN').click();

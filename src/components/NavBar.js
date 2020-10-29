@@ -39,7 +39,9 @@ export const NavBar = ({
   points,
   timeLeft,
   taskName,
-  badgesWon
+  badgesWon,
+  setPasswordPoints,
+  passwordPoints
 }) => {
   return (
     <ThemeProvider theme={navBarTheme}>
@@ -60,6 +62,8 @@ export const NavBar = ({
               taskName={taskName}
               setPoints={setPoints}
               badgesWon={badgesWon}
+              passwordPoints={passwordPoints}
+              setPasswordPoints={setPasswordPoints}
             />
           </Li>
         </Ul>
@@ -68,9 +72,8 @@ export const NavBar = ({
   );
 };
 
-const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon }) => {
+const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon, setPasswordPoints, passwordPoints }) => {
   const history = useHistory();
-  console.log(taskName !== 'Password Challenge', taskName);
 
   React.useEffect(() => {
     if (points <= 0) {
@@ -78,19 +81,30 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon }) => {
     } else if (points >= 20) {
       setPoints(20);
     }
-    if (taskName !== 'Password Challenge' && points <= 0) {
+    if (taskName !== 'Hack Attack' && points <= 0) {
       console.log('ITS HERE ACTUALLLY');
       history.push('/game-over');
     }
-    if (taskName === 'Password Challenge' && timeLeft === 0) {
-      if (points <= 0) {
-        console.log('ITS HERE');
-        history.push('/game-over');
-      } else if (points > 0 && points <= 10) {
+    if (taskName === 'Hack Attack' && timeLeft === 0) {
+      if (passwordPoints < 0) {
+        setPoints(points -2)
         history.push('/try-again');
-      } else if (points > 10) {
+        setPasswordPoints(0)
+      } else if (passwordPoints <= 10) {
+        setPoints(points - 1);
+        history.push('/try-again');
+        setPasswordPoints(0)
+      } else if (passwordPoints > 10) {
+        setPoints(points + 3);
         history.push('/badge');
       }
+
+
+      if (points <= 0){
+        history.push('/game-over');
+      }
+
+      
     }
     if (taskName === 'Complete') {
       if (Object.values(badgesWon).indexOf(null) === -1) {
