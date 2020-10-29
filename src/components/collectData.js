@@ -1,4 +1,4 @@
-const collectData = (taskName, answers, setAnswers, score) => {
+export const collectData = (taskName, answers, setAnswers, score) => {
   if (q3a2 !== null) {
     switch (taskName) {
       case 'Troll Hunter':

@@ -5,19 +5,9 @@ import { H1, Text } from './../components/Text';
 import { Badge } from './../components/Image';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
-import collectData from 'collectData';
 
-const BadgePage = ({
-  alias,
-  badgeType,
-  taskName,
-  setTaskName,
-  answers,
-  setAnswers
-}) => {
+const BadgePage = ({ alias, badgeType, taskName, setTaskName }) => {
   const history = useHistory();
-
-  collectData(taskName, answers, setAnswers, 3);
 
   const showbadgesWon = () => {
     if (taskName === 'Password Challenge') {

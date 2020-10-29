@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
-import collectData from 'collectData';
+import { collectData } from 'collectData';
 
 //CORRECT button:
 export function CorrectButton({
@@ -28,9 +28,11 @@ export function CorrectButton({
 
     if (taskName === 'Troll Hunter') {
       setBadgesWon({ ...badgesWon, case1: taskName });
+      collectData(taskName, answers, setAnswers, 3);
     }
     if (taskName === 'Thief Buster') {
       setBadgesWon({ ...badgesWon, case2: taskName });
+      collectData(taskName, answers, setAnswers, 3);
     }
 
     //third task special case
@@ -70,6 +72,7 @@ export function WrongButton({
     }
 
     if (taskName !== 'Password Challenge') {
+      collectData(taskName, answers, setAnswers, -2);
       history.push(nextPage);
     }
 
@@ -96,7 +99,8 @@ export function IgnoreButton({
   answerArray,
   setAnswerArray,
   nextPage,
-  disabled
+  disabled,
+  setAnswer
 }) {
   const history = useHistory();
 
@@ -107,6 +111,7 @@ export function IgnoreButton({
     }
 
     if (taskName !== 'Password Challenge') {
+      collectData(taskName, answers, setAnswers, -1);
       history.push(nextPage);
     }
 

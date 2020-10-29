@@ -119,6 +119,8 @@ function App() {
               setBadgesWon={setBadgesWon}
               theme={theme}
               setTheme={setTheme}
+              answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/try-again" exact>
@@ -126,8 +128,6 @@ function App() {
               failMessage={failMessage}
               setTimeLeft={setTimeLeft}
               taskname={taskName}
-              answers={answers}
-              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/badge" exact>
@@ -136,8 +136,6 @@ function App() {
               alias={alias}
               taskName={taskName}
               setTaskName={setTaskName}
-              answers={answers}
-              setAnwers={setAnswers}
             />
           </Route>
           <Route path="/second-case-intro" exact>
@@ -160,6 +158,8 @@ function App() {
               badgesWon={badgesWon}
               theme={theme}
               setTheme={setTheme}
+              answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/third-case-intro" exact>
