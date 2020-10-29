@@ -13,6 +13,7 @@ import Congrats from './pages/certificate';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
+import LandingPage from './pages/landingPage';
 import { useHistory } from 'react-router-dom';
 
 function App() {
@@ -38,7 +39,6 @@ function App() {
     q3a1: null,
     q3a2: null
   });
-
   let failMessage = '';
 
   taskName === 'Troll Hunter'

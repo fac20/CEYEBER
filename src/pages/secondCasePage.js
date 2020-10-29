@@ -55,6 +55,7 @@ const SecondCasePage = ({
         nextPage={'try-again'}
         answers={answers}
         setAnswers={setAnswers}
+        taskName={taskName}
       />
       <WrongButton
         points={points}
@@ -63,6 +64,7 @@ const SecondCasePage = ({
         nextPage={'try-again'}
         answers={answers}
         setAnswers={setAnswers}
+        taskName={taskName}
       />
     </ThemeProvider>
   );

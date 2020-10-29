@@ -23,6 +23,7 @@ const ThirdCasePage = ({
   setBadgesWon,
   theme,
   setTheme,
+  answers,
   setAnswers
 }) => {
   setTheme('dark-theme');

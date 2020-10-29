@@ -42,6 +42,7 @@ const FirstCasePage = ({
         nextPage={'try-again'}
         answers={answers}
         setAnswers={setAnswers}
+        taskName={taskName}
       />
       <WrongButton
         points={points}
@@ -50,6 +51,7 @@ const FirstCasePage = ({
         nextPage={'try-again'}
         answers={answers}
         setAnswers={setAnswers}
+        taskName={taskName}
       />
       <CorrectButton
         points={points}

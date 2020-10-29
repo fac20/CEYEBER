@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
-import { collectData } from 'collectData';
+import { collectData } from './collectData';
 
 //CORRECT button:
 export function CorrectButton({
@@ -76,8 +76,9 @@ export function WrongButton({
     }
 
     if (taskName !== 'Password Challenge') {
-      collectData(taskName, answers, setAnswers, -2);
+      collectData(taskName, answers, setAnswers, 10);
       history.push(nextPage);
+      console.log('meep meep!');
     }
 
     //third task special case
