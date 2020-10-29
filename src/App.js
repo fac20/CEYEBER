@@ -132,6 +132,13 @@ function App() {
             />
           </Route>
           <Route path="/second-case-intro" exact>
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+              badgesWon={badgesWon}
+            />
             <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/second-case-task" exact>
@@ -154,10 +161,17 @@ function App() {
             />
           </Route>
           <Route path="/third-case-intro" exact>
+            <NavBar
+              setPoints={setPoints}
+              points={points}
+              timeLeft={timeLeft}
+              taskName={taskName}
+              badgesWon={badgesWon}
+            />
             <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/third-case-task" exact>
-              setPoints={setPoints}
+            setPoints={setPoints}
             <NavBar
               points={points}
               timeLeft={timeLeft}
@@ -179,7 +193,12 @@ function App() {
             />
           </Route>
           <Route path="/game-over" exact>
-            <GameOver points={points} setPoints={setPoints} setTaskName={setTaskName} setBadgesWon={setBadgesWon} />
+            <GameOver
+              points={points}
+              setPoints={setPoints}
+              setTaskName={setTaskName}
+              setBadgesWon={setBadgesWon}
+            />
           </Route>
           <Route path="/certificate" exact>
             <Congrats
