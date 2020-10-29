@@ -3,8 +3,11 @@ import { ThemeProvider } from 'styled-components';
 import { fieldPageTheme } from './../components/themes';
 import { TimedQuestion } from './../components/Questions';
 import { PasswordText } from './../components/Text';
+import { PasswordStrength } from './../components/ProgressBar';
+import {Label } from './../components/Forms';
 import hacker from './../images/hacker.gif';
 import { collectData } from "./../components/collectData"
+
 
 import {
   CorrectButton,
@@ -34,8 +37,7 @@ const ThirdCasePage = ({
  
 
   if (timeLeft === 0){
-    collectData(taskName, answers, setAnswers, passwordPoints);
-    console.log(answers)  
+    collectData(taskName, answers, setAnswers, passwordPoints); 
   }
 
   React.useEffect(() => {
@@ -64,11 +66,15 @@ const ThirdCasePage = ({
         // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
       />
 
+      <Label htmlFor="passwordStrength">Password Strength</Label>
+      <PasswordStrength id="passwordStrength" value={passwordPoints} max="27"/>
+      
       <PasswordText>{answerArray}</PasswordText>
+
       <div>
         <CorrectButton
           passwordPoints={passwordPoints}
-        setPasswordPoints={setPasswordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="!!"
           timeLeft={timeLeft}
           taskName={taskName}

@@ -18,6 +18,9 @@
   /* light blue */
   --color-6: hsl(208, 31%, 77%);
 
+  /* red */
+  --color-7: hsl(0, 100%, 39%);
+
   --title-font: 'Orbitron', sans-serif;
   --info-font: 'Aldrich', sans-serif;
 }

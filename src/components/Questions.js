@@ -15,14 +15,6 @@ export const ImageQuestion = ({ title, img, question }) => {
   );
 };
 
-//timed question
-//progress bar of time ticking down
-//multiple choice options to add to password- numbers, captial letters, punctuation, their agent,
-//cat, dog, bird
-//adding something that makes your password stronger gives 2 points
-//adding something that makes it weaker takes points away
-//if points is high when timer runs out, you win badge
-//if low, try again
 
 export function TimedQuestion({
   title,
@@ -34,15 +26,12 @@ export function TimedQuestion({
   nextPage,
   taskName
 }) {
-  //states of timeLeft and setTimeLeft held on page
-  //remember to import useHistory on the page!
+  
   const history = useHistory();
 
   React.useEffect(() => {
-    //  if there is not timeLeft then go to try again page
-    //if (timeLeft <= 0) history.push(nextPage);
+    
 
-    // else create set interval function for every second
     const startInterval = setInterval(() => {
       setTimeLeft(timeLeft - 1);
     }, 1000);
@@ -53,12 +42,7 @@ export function TimedQuestion({
 
   return (
     <>
-      <H2>{timeLeft}</H2>
-      <Label htmlFor="game">Time Left:</Label>
-      <Progress id="game" value={timeLeft} max="30">
-        {' '}
-        {timeLeft}{' '}
-      </Progress>
+      <H2>{timeLeft} {timeLeft > 1 ? 'Seconds' : 'Second' }</H2>
       <H1>{title}</H1>
       <Img src={img} />
       <Text>{question}</Text>

@@ -217,6 +217,7 @@ function App() {
               setTaskName={setTaskName}
               setBadgesWon={setBadgesWon}
               answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/certificate" exact>
@@ -225,6 +226,7 @@ function App() {
               setBadgesWon={setBadgesWon}
               setTaskName={setTaskName}
               answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route>
