@@ -6,7 +6,6 @@ import { countriesArray } from './countriesArray';
 import { signUp } from './../api/api';
 
 const Form = styled.form`
-  /* width: 60%; */
   margin: 5vh auto;
   display: flex;
   justify-content: center;
@@ -25,15 +24,18 @@ const Fieldset = styled.fieldset`
 `;
 
 export const Label = styled.label`
+  text-align: ${props => props.align};
+  width: ${props => props.width};
   font-family: var(--info-font);
   font-size: 1.2rem;
   margin-top: 1ch;
+  margin-bottom: 1ch;
   color: ${props => props.theme.labelColor};
 `;
 
 const Input = styled.input`
   font-family: var(--info-font);
-  margin: 1ch;
+  margin-bottom: 1ch;
   font-size: 1.2rem;
   padding: 0.2rem;
   color: ${props => props.theme.formColor};
@@ -46,7 +48,7 @@ const Input = styled.input`
 
 const Select = styled.select`
   font-family: var(--info-font);
-  margin: 1ch;
+  margin-bottom: 1ch;
   font-size: 1.2rem;
   padding: 0.2rem;
   color: ${props => props.theme.formColor};

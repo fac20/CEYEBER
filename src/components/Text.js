@@ -24,6 +24,13 @@ export const Text = styled.p`
   font-family: var(--info-font);
 `;
 
+export const FixedWidthText = styled.p`
+  width: 150px;
+  height: 3ch;
+  color: ${props => props.theme.textColor};
+  font-family: var(--info-font);
+`;
+
 export const SpeechBubbleText = styled.p`
   color: ${props => props.theme.textColor};
   font-family: var(--info-font);
