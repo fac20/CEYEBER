@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
@@ -14,6 +13,7 @@ import Congrats from './pages/certificate';
 import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
+import LandingPage from './pages/landingPage';
 import { useHistory } from 'react-router-dom';
 import NotFoundPage from './pages/pageNotFound';
 
@@ -32,12 +32,14 @@ function App() {
   const [theme, setTheme] = React.useState('dark-theme');
   document.body.className = theme;
 
-  //const location = window.location.pathname;
-
-  // React.useEffect(()=> {
-  //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
-  // }, []);
-
+  const [answers, setAnswers] = React.useState({
+    q1a1: null,
+    q1a2: null,
+    q2a1: null,
+    q2a2: null,
+    q3a1: null,
+    q3a2: null
+  });
   let failMessage = '';
 
   taskName === 'Troll Hunter'
@@ -118,10 +120,16 @@ function App() {
               setBadgesWon={setBadgesWon}
               theme={theme}
               setTheme={setTheme}
+              answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/try-again" exact>
-            <TryAgain failMessage={failMessage} setTimeLeft={setTimeLeft} />
+            <TryAgain
+              failMessage={failMessage}
+              setTimeLeft={setTimeLeft}
+              taskname={taskName}
+            />
           </Route>
           <Route path="/badge" exact>
             <BadgePage
@@ -158,6 +166,8 @@ function App() {
               badgesWon={badgesWon}
               theme={theme}
               setTheme={setTheme}
+              answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/third-case-intro" exact>
@@ -190,6 +200,8 @@ function App() {
               setTimeLeft={setTimeLeft}
               theme={theme}
               setTheme={setTheme}
+              answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/game-over" exact>
@@ -198,6 +210,7 @@ function App() {
               setPoints={setPoints}
               setTaskName={setTaskName}
               setBadgesWon={setBadgesWon}
+              answers={answers}
             />
           </Route>
           <Route path="/certificate" exact>
@@ -205,6 +218,7 @@ function App() {
               setPoints={setPoints}
               setBadgesWon={setBadgesWon}
               setTaskName={setTaskName}
+              answers={answers}
             />
           </Route>
           <Route>

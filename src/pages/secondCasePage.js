@@ -16,7 +16,10 @@ const SecondCasePage = ({
   setTaskName,
   badgesWon,
   setBadgesWon,
-  theme, setTheme
+  theme,
+  setTheme,
+  answers,
+  setAnswers
 }) => {
   setTheme('dark-theme');
   const title = 'Case Two';
@@ -41,6 +44,8 @@ const SecondCasePage = ({
         taskName={taskName}
         setBadgesWon={setBadgesWon}
         badgesWon={badgesWon}
+        answers={answers}
+        setAnswers={setAnswers}
       />
       <IgnoreButton
         points={points}
@@ -48,12 +53,18 @@ const SecondCasePage = ({
         label="Don’t know, better to
         ignore it"
         nextPage={'try-again'}
+        answers={answers}
+        setAnswers={setAnswers}
+        taskName={taskName}
       />
       <WrongButton
         points={points}
         setPoints={setPoints}
         label="Click the link - this is from Netflix"
         nextPage={'try-again'}
+        answers={answers}
+        setAnswers={setAnswers}
+        taskName={taskName}
       />
     </ThemeProvider>
   );

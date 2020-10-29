@@ -7,7 +7,7 @@ import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
 import { gameOverPageTheme } from '../components/themes';
 
-const GameOver = ({ points, setPoints, setTaskName, setBadgesWon }) => {
+const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers }) => {
   const history = useHistory();
   const landingPage = () => {
     setPoints(2);
@@ -21,6 +21,8 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon }) => {
     history.push('/');
     
   };
+
+  console.log(answers);
 
   return (
     <Container>

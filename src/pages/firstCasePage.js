@@ -17,7 +17,9 @@ const FirstCasePage = ({
   badgesWon,
   setBadgesWon,
   theme,
-  setTheme
+  setTheme,
+  answers,
+  setAnswers
 }) => {
   setTheme('dark-theme');
   const title = 'Case One';
@@ -38,12 +40,18 @@ const FirstCasePage = ({
         setPoints={setPoints}
         label="Ignore the video"
         nextPage={'try-again'}
+        answers={answers}
+        setAnswers={setAnswers}
+        taskName={taskName}
       />
       <WrongButton
         points={points}
         setPoints={setPoints}
         label="Share the video"
         nextPage={'try-again'}
+        answers={answers}
+        setAnswers={setAnswers}
+        taskName={taskName}
       />
       <CorrectButton
         points={points}
@@ -53,6 +61,8 @@ const FirstCasePage = ({
         taskName={taskName}
         setBadgesWon={setBadgesWon}
         badgesWon={badgesWon}
+        answers={answers}
+        setAnswers={setAnswers}
       />
     </ThemeProvider>
   );

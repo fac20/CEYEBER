@@ -13,7 +13,6 @@ const BadgePage = ({ agent, badgeType, taskName, setTaskName }) => {
     if (taskName === 'Password Challenge') {
       setTaskName('Complete');
     }
-
     history.push('/cases');
   };
 

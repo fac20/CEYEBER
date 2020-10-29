@@ -22,7 +22,9 @@ const ThirdCasePage = ({
   badgesWon,
   setBadgesWon,
   theme,
-  setTheme
+  setTheme,
+  answers,
+  setAnswers
 }) => {
   setTheme('dark-theme');
   const title = 'Case Three';

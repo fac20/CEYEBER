@@ -7,7 +7,7 @@ import { H1, H2 } from '../components/Text';
 import { Container } from '../components/Forms';
 import { badgePageTheme } from '../components/themes';
 
-const Congrats = ({ setPoints, setBadgesWon, setTaskName }) => {
+const Congrats = ({ setPoints, setBadgesWon, setTaskName, answers }) => {
   const history = useHistory();
   const handleClick = () => {
     setPoints(2);
@@ -19,6 +19,8 @@ const Congrats = ({ setPoints, setBadgesWon, setTaskName }) => {
     });
     history.push('/');
   };
+
+  console.log(answers);
 
   return (
     <Container>
