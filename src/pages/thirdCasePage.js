@@ -52,9 +52,6 @@ const ThirdCasePage = ({
   Quick, make your password stronger
   - get more than 10 points to win!`;
 
-  const [answerArray, setAnswerArray] = React.useState([]);
-  console.log(passwordPoints);
-
   return (
     <ThemeProvider theme={fieldPageTheme}>
       <TimedQuestion
