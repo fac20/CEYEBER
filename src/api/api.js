@@ -1,5 +1,7 @@
-function request(url, options) {
-  return fetch(url, options).then(response => {
+const url = process.env.REACT_APP_DB_URL;
+
+function request(path, options) {
+  return fetch(url + path, options).then(response => {
     if (!response.ok) {
       const error = new Error('Error!');
       error.status = response.status;
@@ -11,13 +13,12 @@ function request(url, options) {
 }
 
 function signUp(alias, age, location) {
-  return request('https://ceyeber.herokuapp.com/user', {
+  return request('user', {
     method: 'POST',
     body: JSON.stringify({
       alias: alias,
       age: age,
-      location: location,
-      created_at: 'Thu Oct 29 2015 08:46:30 GMT+0100'
+      location: location
     }),
     headers: {
       'content-type': 'application/json'
@@ -25,4 +26,32 @@ function signUp(alias, age, location) {
   });
 }
 
-export { signUp };
+function sendSkills({
+  Facebook,
+  Whatsapp,
+  Twitter,
+  Instagram,
+  Snapchat,
+  TikTok,
+  Youtube
+}) {
+  const id = window.sessionStorage.getItem('user_id');
+  return request('skills', {
+    method: 'POST',
+    body: JSON.stringify({
+      user_id: id,
+      facebook: Facebook,
+      instagram: Instagram,
+      snapchat: Snapchat,
+      tiktok: TikTok,
+      twitter: Twitter,
+      whatsApp: Whatsapp,
+      youtube: Youtube
+    }),
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+}
+
+export { signUp, sendSkills };

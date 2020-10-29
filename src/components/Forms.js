@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
 import { countriesArray } from './countriesArray';
-import { signUp } from '../api/api';
+import { signUp } from './../api/api';
 
 const Form = styled.form`
   width: 60%;
@@ -95,14 +95,14 @@ export const LandingPageForm = ({ alias, setAlias }) => {
   const handleSubmit = event => {
     event.preventDefault();
     history.push('/profile');
-    console.log(event.target.elements);
+
     const alias = event.target.elements.alias.value;
     const age = event.target.elements.age.value;
     const country = event.target.elements.country.value;
     setAlias(alias);
-    console.log('Profile: ', alias, age, country);
-    signUp(alias, age, country) //sent the data to the backend and database, your backend will send you the user id
-      .then(user => user.id);
+    signUp(alias, age, country)
+      .then(user => user.id)
+      .then(id => window.sessionStorage.setItem('user_id', id));
   };
 
   return (

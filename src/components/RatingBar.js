@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useState } from 'react';
 import { Label } from './Forms';
 //import fbIcon from '../images/facebook.svg';
-import { Avatar } from '../components/Image';
+import { Text } from './Text';
 
 const StarRating = styled.div`
   border-style: solid;
@@ -45,53 +45,33 @@ const DivContainer = styled.div`
   }
 `;
 
-// facebook
-// whatsapp
-// twitter
-// insta
-// snapchat
-// tiktok
-// youtube
+const SmallDivContainer = styled.div`
+  margin: auto;
+  @media only screen and (min-width: 700px) {
+    width: 150px;
+    margin: auto;
+    padding: 0.5rem;
+  }
+  @media only screen and (max-width: 460px) {
+    margin: 0.5rem;
+  }
+`;
 
-//label for each with icon
-
-//each rating should produce a label underneath with a p tag explaining what they have chosen
-
-//make each bar start at 0
-
-const RatingBar = () => {
+const RatingBar = ({ ratingValue, updateRatingValue }) => {
   //const fbIconSrc = fbIcon;
 
-  const [ratingValue, updateRatingValue] = useState({
-    Facebook: 0,
-    Whatsapp: 0,
-    Twitter: 0,
-    Instagram: 0,
-    Snapchat: 0,
-    TikTok: 0,
-    Youtube: 0
-  });
+  const skills = {
+    0: 'Never used it!',
+    1: 'Once a week',
+    2: 'Up to three times a week',
+    3: 'Every day, up to an hour',
+    4: 'More than an hour a day'
+  };
 
   const isStarSelected = event => {
     const name = event.target.name;
-    //console.log(name);
     const value = event.target.value;
-    //console.log(value);
     updateRatingValue({ ...ratingValue, [name]: value });
-
-    //need to pass in a p tag displaying message depending on what user has selected
-    //   let rating = Object.keys(ratingValue)[
-    //     Object.keys(ratingValue).indexOf(name)
-    //   ];
-
-    //   let skillMessage = '';
-    // if (ratingValue === 0) {
-    //   skillMessage = `I've never heard of it!`;
-    // } else if (ratingValue === 1) {
-    //   skillMessage = "I'm a beginer!";
-    // } else if (ratingValue === 2) {
-    //   skillMessage = 'I use it sometimes';
-    // }
   };
   let ratingArray = [...Array(5).keys()];
 
@@ -106,7 +86,7 @@ const RatingBar = () => {
               <StarIcon
                 key={`star ${val}`}
                 onClick={isStarSelected}
-                id="Facebook"
+                id={`Facebook${val}`}
                 name="Facebook"
                 value={val}
                 ratingValue={ratingValue.Facebook}
@@ -114,7 +94,9 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
-        {/* <p>{skillMessage}</p> */}
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Facebook]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Whatsapp">Whatsapp</Label>
@@ -125,13 +107,14 @@ const RatingBar = () => {
                 key={`star ${val}`}
                 onClick={isStarSelected}
                 name="Whatsapp"
-                id="Whatsapp"
+                id={`Whatsapp${val}`}
                 value={val}
                 ratingValue={ratingValue.Whatsapp}
               />
             );
           })}
         </StarRating>
+        <Text>{skills[ratingValue.Whatsapp]}</Text>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Twitter">Twitter</Label>
@@ -149,6 +132,9 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Twitter]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Instagram">Instagram</Label>
@@ -166,6 +152,9 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Instagram]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Snapchat">Snapchat</Label>
@@ -183,6 +172,9 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Snapchat]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="TikTok">TikTok</Label>
@@ -200,6 +192,9 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.TikTok]}</Text>
+        </SmallDivContainer>
       </DivContainer>
       <DivContainer>
         <Label htmlfor="Youtube">Youtube</Label>
@@ -217,6 +212,9 @@ const RatingBar = () => {
             );
           })}
         </StarRating>
+        <SmallDivContainer>
+          <Text>{skills[ratingValue.Youtube]}</Text>
+        </SmallDivContainer>
       </DivContainer>
     </>
   );
