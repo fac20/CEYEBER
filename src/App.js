@@ -15,6 +15,7 @@ import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
 import { useHistory } from 'react-router-dom';
+import NotFoundPage from './pages/pageNotFound';
 
 function App() {
   const history = useHistory();
@@ -188,8 +189,7 @@ function App() {
             />
           </Route>
           <Route>
-            <h1>Oops! Page not found.</h1>
-            <Link to="/">Back to Home</Link>
+            <NotFoundPage />
           </Route>
         </Switch>
       </main>

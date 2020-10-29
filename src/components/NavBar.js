@@ -102,7 +102,8 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon }) => {
   }, [points, timeLeft, taskName, badgesWon]);
   return (
     <>
-      <Label htmlFor="gamePoints">{points} Points</Label>
+    
+      <Label htmlFor="gamePoints">{points} {points > 1 ? 'Points' : 'Point' }</Label>
       <Progress id="gamePoints" value={points} max="11"></Progress>
     </>
   );
