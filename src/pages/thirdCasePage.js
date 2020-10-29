@@ -3,7 +3,11 @@ import { ThemeProvider } from 'styled-components';
 import { fieldPageTheme } from './../components/themes';
 import { TimedQuestion } from './../components/Questions';
 import { PasswordText } from './../components/Text';
+import { PasswordStrength } from './../components/ProgressBar';
+import {Label } from './../components/Forms';
 import hacker from './../images/hacker.gif';
+import { collectData } from "./../components/collectData"
+
 
 import {
   CorrectButton,
@@ -24,14 +28,20 @@ const ThirdCasePage = ({
   theme,
   setTheme,
   answers,
-  setAnswers
+  setAnswers, 
+  setPasswordPoints,
+  passwordPoints
 }) => {
   setTheme('dark-theme');
   const title = 'Case Three';
-  console.log('Third task name is', taskName);
+ 
+
+  if (timeLeft === 0){
+    collectData(taskName, answers, setAnswers, passwordPoints); 
+  }
 
   React.useEffect(() => {
-    setTaskName('Password Challenge');
+    setTaskName('Hack Attack');
   }, []);
 
   const img = hacker;
@@ -42,6 +52,7 @@ const ThirdCasePage = ({
     - get more than 10 points to win!`;
 
   const [answerArray, setAnswerArray] = React.useState([]);
+  console.log(passwordPoints)
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
@@ -55,11 +66,15 @@ const ThirdCasePage = ({
         // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
       />
 
+      <Label htmlFor="passwordStrength">Password Strength</Label>
+      <PasswordStrength id="passwordStrength" value={passwordPoints} max="27"/>
+      
       <PasswordText>{answerArray}</PasswordText>
+
       <div>
         <CorrectButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="!!"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -70,8 +85,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <IgnoreButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="dog"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -80,8 +95,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <CorrectButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="01"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -92,8 +107,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <WrongButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="password"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -102,8 +117,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <CorrectButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="?"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -114,8 +129,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <IgnoreButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="abc"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -124,8 +139,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <WrongButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label={agent}
           timeLeft={timeLeft}
           taskName={taskName}

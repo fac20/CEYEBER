@@ -40,6 +40,8 @@ function App() {
     q3a1: null,
     q3a2: null
   });
+  const [passwordPoints, setPasswordPoints] = React.useState(0)
+
   let failMessage = '';
 
   taskName === 'Troll Hunter'
@@ -181,12 +183,14 @@ function App() {
             <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/third-case-task" exact>
-            setPoints={setPoints}
             <NavBar
               points={points}
+              setPoints={setPoints}
               timeLeft={timeLeft}
               taskName={taskName}
               badgesWon={badgesWon}
+              setPasswordPoints={setPasswordPoints}
+              passwordPoints={passwordPoints}
             />
             <ThirdCasePage
               points={points}
@@ -202,6 +206,8 @@ function App() {
               setTheme={setTheme}
               answers={answers}
               setAnswers={setAnswers}
+              setPasswordPoints={setPasswordPoints}
+              passwordPoints={passwordPoints}
             />
           </Route>
           <Route path="/game-over" exact>
@@ -211,6 +217,7 @@ function App() {
               setTaskName={setTaskName}
               setBadgesWon={setBadgesWon}
               answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/certificate" exact>
@@ -219,6 +226,7 @@ function App() {
               setBadgesWon={setBadgesWon}
               setTaskName={setTaskName}
               answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route>

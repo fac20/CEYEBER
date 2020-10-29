@@ -37,7 +37,6 @@ function sendSkills({
   Youtube
 }) {
   const id = window.sessionStorage.getItem('user_id');
-  console.log(id, Youtube)
   return request('skills', {
     method: 'POST',
     body: JSON.stringify({
@@ -56,4 +55,31 @@ function sendSkills({
   });
 }
 
-export { signUp, sendSkills };
+function sendAnswers({
+  q1a1,
+  q1a2,
+  q2a1,
+  q2a2,
+  q3a1,
+  q3a2
+}) {
+  const id = window.sessionStorage.getItem('user_id');
+  return request('answers', {
+    method: 'POST',
+    body: JSON.stringify({
+      user_id: id,
+      q1a1: q1a1,
+      q1a2: q1a2,
+      q2a1: q2a1,
+      q2a2: q2a2,
+      q3a1: q3a1,
+      q3a2: q3a2
+    }),
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+}
+
+
+export { signUp, sendSkills, sendAnswers };

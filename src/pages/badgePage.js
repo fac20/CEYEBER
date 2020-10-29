@@ -10,7 +10,7 @@ const BadgePage = ({ agent, badgeType, taskName, setTaskName }) => {
   const history = useHistory();
 
   const showbadgesWon = () => {
-    if (taskName === 'Password Challenge') {
+    if (taskName === 'Hack Attack') {
       setTaskName('Complete');
     }
     history.push('/cases');
