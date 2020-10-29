@@ -28,7 +28,13 @@ const ThirdCasePage = ({
 }) => {
   setTheme('dark-theme');
   const title = 'Case Three';
-  console.log('Third task name is', taskName);
+ 
+
+  //set new points state here
+  const [passwordPoints, setPasswordPoints] = React.useState(0)
+  if (timeLeft === 0){
+    console.log(passwordPoints)
+  }
 
   React.useEffect(() => {
     setTaskName('Password Challenge');
@@ -58,8 +64,8 @@ const ThirdCasePage = ({
       <PasswordText>{answerArray}</PasswordText>
       <div>
         <CorrectButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+        setPasswordPoints={setPasswordPoints}
           label="!!"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -70,8 +76,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <IgnoreButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="dog"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -80,8 +86,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <CorrectButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="01"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -92,8 +98,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <WrongButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="password"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -102,8 +108,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <CorrectButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="?"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -114,8 +120,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <IgnoreButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label="abc"
           timeLeft={timeLeft}
           taskName={taskName}
@@ -124,8 +130,8 @@ const ThirdCasePage = ({
           disabled={answerArray.join().length >= 24 ? true : false}
         />
         <WrongButton
-          points={points}
-          setPoints={setPoints}
+          passwordPoints={passwordPoints}
+          setPasswordPoints={setPasswordPoints}
           label={agent}
           timeLeft={timeLeft}
           taskName={taskName}
