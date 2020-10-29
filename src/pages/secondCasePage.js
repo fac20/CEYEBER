@@ -7,6 +7,7 @@ import {
   IgnoreButton,
   WrongButton
 } from './../components/AnswerButtons';
+import { Wrapper } from './../components/Wrapper';
 import netflixMessage from './../images/netflixMessage.jpg';
 
 const SecondCasePage = ({
@@ -34,38 +35,40 @@ const SecondCasePage = ({
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
-      <ImageQuestion title={title} img={img} question={question} />
-      <CorrectButton
-        points={points}
-        setPoints={setPoints}
-        label="Doesn’t look right, 
+      <Wrapper>
+        <ImageQuestion title={title} img={img} question={question} />
+        <CorrectButton
+          points={points}
+          setPoints={setPoints}
+          label="Doesn’t look right, 
         report to Netflix"
-        nextPage={'/badge'}
-        taskName={taskName}
-        setBadgesWon={setBadgesWon}
-        badgesWon={badgesWon}
-        answers={answers}
-        setAnswers={setAnswers}
-      />
-      <IgnoreButton
-        points={points}
-        setPoints={setPoints}
-        label="Don’t know, better to
+          nextPage={'/badge'}
+          taskName={taskName}
+          setBadgesWon={setBadgesWon}
+          badgesWon={badgesWon}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+        <IgnoreButton
+          points={points}
+          setPoints={setPoints}
+          label="Don’t know, better to
         ignore it"
-        nextPage={'try-again'}
-        answers={answers}
-        setAnswers={setAnswers}
-        taskName={taskName}
-      />
-      <WrongButton
-        points={points}
-        setPoints={setPoints}
-        label="Click the link - this is from Netflix"
-        nextPage={'try-again'}
-        answers={answers}
-        setAnswers={setAnswers}
-        taskName={taskName}
-      />
+          nextPage={'try-again'}
+          answers={answers}
+          setAnswers={setAnswers}
+          taskName={taskName}
+        />
+        <WrongButton
+          points={points}
+          setPoints={setPoints}
+          label="Click the link - this is from Netflix"
+          nextPage={'try-again'}
+          answers={answers}
+          setAnswers={setAnswers}
+          taskName={taskName}
+        />
+      </Wrapper>
     </ThemeProvider>
   );
 };
