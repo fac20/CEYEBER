@@ -18,6 +18,7 @@ const SecondCasePage = ({
   setBadgesWon,
   theme,
   setTheme,
+  answers,
   setAnswers
 }) => {
   setTheme('dark-theme');
@@ -50,12 +51,16 @@ const SecondCasePage = ({
         label="Don’t know, better to
         ignore it"
         nextPage={'try-again'}
+        answers={answers}
+        setAnswers={setAnswers}
       />
       <WrongButton
         points={points}
         setPoints={setPoints}
         label="Click the link - this is from Netflix"
         nextPage={'try-again'}
+        answers={answers}
+        setAnswers={setAnswers}
       />
     </ThemeProvider>
   );

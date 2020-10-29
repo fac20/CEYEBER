@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
+import collectData from 'collectData';
 
 //CORRECT button:
 export function CorrectButton({

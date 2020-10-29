@@ -19,4 +19,3 @@ const collectData = (taskName, answers, setAnswers, score) => {
     }
   }
 };
-export default collectData;
