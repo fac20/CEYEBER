@@ -8,7 +8,8 @@ import hacker from './../images/hacker.gif';
 import {
   CorrectButton,
   IgnoreButton,
-  WrongButton
+  WrongButton,
+  SubmitPasswordButton
 } from './../components/AnswerButtons';
 
 const ThirdCasePage = ({
@@ -35,9 +36,6 @@ const ThirdCasePage = ({
     setTaskName('Password Challenge');
   }, []);
 
-  if (answerArray.join().lenght >= 24) {
-    setTimeLeft(0);
-  }
   const img = hacker;
   const question = `
   A hacker has been detected nearby. 
@@ -135,6 +133,7 @@ const ThirdCasePage = ({
           setAnswerArray={setAnswerArray}
           disabled={answerArray.join().length >= 24 ? true : false}
         />
+        <SubmitPasswordButton setTimeLeft={setTimeLeft} />
       </div>
     </ThemeProvider>
   );
