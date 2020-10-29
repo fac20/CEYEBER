@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
+import { collectData } from './collectData';
 
 //CORRECT button:
 export function CorrectButton({
@@ -14,7 +15,9 @@ export function CorrectButton({
   badgesWon,
   setBadgesWon,
   nextPage,
-  disabled
+  disabled,
+  answers,
+  setAnswers
 }) {
   const history = useHistory();
   const handleCorrectClick = () => {
@@ -27,9 +30,11 @@ export function CorrectButton({
 
     if (taskName === 'Troll Hunter') {
       setBadgesWon({ ...badgesWon, case1: taskName });
+      collectData(taskName, answers, setAnswers, 3);
     }
     if (taskName === 'Thief Buster') {
       setBadgesWon({ ...badgesWon, case2: taskName });
+      collectData(taskName, answers, setAnswers, 3);
     }
 
     //third task special case
@@ -58,7 +63,9 @@ export function WrongButton({
   answerArray,
   setAnswerArray,
   nextPage,
-  disabled
+  disabled,
+  answers,
+  setAnswers
 }) {
   const history = useHistory();
 
@@ -69,7 +76,9 @@ export function WrongButton({
     }
 
     if (taskName !== 'Password Challenge') {
+      collectData(taskName, answers, setAnswers, 10);
       history.push(nextPage);
+      console.log('meep meep!');
     }
 
     //third task special case
@@ -95,7 +104,9 @@ export function IgnoreButton({
   answerArray,
   setAnswerArray,
   nextPage,
-  disabled
+  disabled,
+  answers,
+  setAnswers
 }) {
   const history = useHistory();
 
@@ -106,6 +117,7 @@ export function IgnoreButton({
     }
 
     if (taskName !== 'Password Challenge') {
+      collectData(taskName, answers, setAnswers, -1);
       history.push(nextPage);
     }
 
