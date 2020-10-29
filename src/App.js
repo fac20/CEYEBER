@@ -17,6 +17,7 @@ import LandingPage from './pages/landingPage';
 import { useHistory } from 'react-router-dom';
 import NotFoundPage from './pages/pageNotFound';
 
+
 function App() {
   const history = useHistory();
 
@@ -61,180 +62,180 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main className="App">
-        <Switch>
-          <Route path="/" exact>
-            <LandingPage agent={agent} setAgent={setAgent} />
-          </Route>
-          <Route path="/training-manual" exact>
-            <TrainingManual theme={theme} setTheme={setTheme} />
-          </Route>
-          <Route path="/profile" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <Profile theme={theme} setTheme={setTheme} agent={agent} />
-          </Route>
-          <Route path="/cases" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <CasesPage
-              agent={agent}
-              badgesWon={badgesWon}
-              taskName={taskName}
-              theme={theme}
-              setTheme={setTheme}
-            />
-          </Route>
-          <Route path="/first-case-intro" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
-          </Route>
-          <Route path="/first-case-task" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <FirstCasePage
-              points={points}
-              setPoints={setPoints}
-              taskName={taskName}
-              setTaskName={setTaskName}
-              badgesWon={badgesWon}
-              setBadgesWon={setBadgesWon}
-              theme={theme}
-              setTheme={setTheme}
-              answers={answers}
-              setAnswers={setAnswers}
-            />
-          </Route>
-          <Route path="/try-again" exact>
-            <TryAgain
-              failMessage={failMessage}
-              setTimeLeft={setTimeLeft}
-              taskname={taskName}
-            />
-          </Route>
-          <Route path="/badge" exact>
-            <BadgePage
-              badgeType={taskName}
-              agent={agent}
-              taskName={taskName}
-              setTaskName={setTaskName}
-            />
-          </Route>
-          <Route path="/second-case-intro" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
-          </Route>
-          <Route path="/second-case-task" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <SecondCasePage
-              points={points}
-              setPoints={setPoints}
-              taskName={taskName}
-              setTaskName={setTaskName}
-              setBadgesWon={setBadgesWon}
-              badgesWon={badgesWon}
-              theme={theme}
-              setTheme={setTheme}
-              answers={answers}
-              setAnswers={setAnswers}
-            />
-          </Route>
-          <Route path="/third-case-intro" exact>
-            <NavBar
-              setPoints={setPoints}
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-            />
-            <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
-          </Route>
-          <Route path="/third-case-task" exact>
-            <NavBar
-              points={points}
-              setPoints={setPoints}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              badgesWon={badgesWon}
-              setPasswordPoints={setPasswordPoints}
-              passwordPoints={passwordPoints}
-            />
-            <ThirdCasePage
-              points={points}
-              setPoints={setPoints}
-              agent={agent}
-              taskName={taskName}
-              setTaskName={setTaskName}
-              badgesWon={badgesWon}
-              setBadgesWon={setBadgesWon}
-              timeLeft={timeLeft}
-              setTimeLeft={setTimeLeft}
-              theme={theme}
-              setTheme={setTheme}
-              answers={answers}
-              setAnswers={setAnswers}
-              setPasswordPoints={setPasswordPoints}
-              passwordPoints={passwordPoints}
-            />
-          </Route>
-          <Route path="/game-over" exact>
-            <GameOver
-              points={points}
-              setPoints={setPoints}
-              setTaskName={setTaskName}
-              setBadgesWon={setBadgesWon}
-              answers={answers}
-              setAnswers={setAnswers}
-            />
-          </Route>
-          <Route path="/certificate" exact>
-            <Congrats
-              setPoints={setPoints}
-              setBadgesWon={setBadgesWon}
-              setTaskName={setTaskName}
-              answers={answers}
-              agent={agent}
-              setAnswers={setAnswers}
-            />
-          </Route>
-          <Route>
-            <NotFoundPage />
-          </Route>
-        </Switch>
-      </main>
+        <main className="App">
+          <Switch>
+            <Route path="/" exact>
+              <LandingPage agent={agent} setAgent={setAgent} />
+            </Route>
+            <Route path="/training-manual" exact>
+              <TrainingManual theme={theme} setTheme={setTheme} />
+            </Route>
+            <Route path="/profile" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <Profile theme={theme} setTheme={setTheme} agent={agent} />
+            </Route>
+            <Route path="/cases" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <CasesPage
+                agent={agent}
+                badgesWon={badgesWon}
+                taskName={taskName}
+                theme={theme}
+                setTheme={setTheme}
+              />
+            </Route>
+            <Route path="/first-case-intro" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
+            </Route>
+            <Route path="/first-case-task" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <FirstCasePage
+                points={points}
+                setPoints={setPoints}
+                taskName={taskName}
+                setTaskName={setTaskName}
+                badgesWon={badgesWon}
+                setBadgesWon={setBadgesWon}
+                theme={theme}
+                setTheme={setTheme}
+                answers={answers}
+                setAnswers={setAnswers}
+              />
+            </Route>
+            <Route path="/try-again" exact>
+              <TryAgain
+                failMessage={failMessage}
+                setTimeLeft={setTimeLeft}
+                taskname={taskName}
+              />
+            </Route>
+            <Route path="/badge" exact>
+              <BadgePage
+                badgeType={taskName}
+                agent={agent}
+                taskName={taskName}
+                setTaskName={setTaskName}
+              />
+            </Route>
+            <Route path="/second-case-intro" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
+            </Route>
+            <Route path="/second-case-task" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <SecondCasePage
+                points={points}
+                setPoints={setPoints}
+                taskName={taskName}
+                setTaskName={setTaskName}
+                setBadgesWon={setBadgesWon}
+                badgesWon={badgesWon}
+                theme={theme}
+                setTheme={setTheme}
+                answers={answers}
+                setAnswers={setAnswers}
+              />
+            </Route>
+            <Route path="/third-case-intro" exact>
+              <NavBar
+                setPoints={setPoints}
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+              />
+              <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
+            </Route>
+            <Route path="/third-case-task" exact>
+              <NavBar
+                points={points}
+                setPoints={setPoints}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                badgesWon={badgesWon}
+                setPasswordPoints={setPasswordPoints}
+                passwordPoints={passwordPoints}
+              />
+              <ThirdCasePage
+                points={points}
+                setPoints={setPoints}
+                agent={agent}
+                taskName={taskName}
+                setTaskName={setTaskName}
+                badgesWon={badgesWon}
+                setBadgesWon={setBadgesWon}
+                timeLeft={timeLeft}
+                setTimeLeft={setTimeLeft}
+                theme={theme}
+                setTheme={setTheme}
+                answers={answers}
+                setAnswers={setAnswers}
+                setPasswordPoints={setPasswordPoints}
+                passwordPoints={passwordPoints}
+              />
+            </Route>
+            <Route path="/game-over" exact>
+              <GameOver
+                points={points}
+                setPoints={setPoints}
+                setTaskName={setTaskName}
+                setBadgesWon={setBadgesWon}
+                answers={answers}
+                setAnswers={setAnswers}
+              />
+            </Route>
+            <Route path="/certificate" exact>
+              <Congrats
+                setPoints={setPoints}
+                setBadgesWon={setBadgesWon}
+                setTaskName={setTaskName}
+                answers={answers}
+                agent={agent}
+                setAnswers={setAnswers}
+              />
+            </Route>
+            <Route>
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </main>
     </BrowserRouter>
   );
 }

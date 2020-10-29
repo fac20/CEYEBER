@@ -8,11 +8,19 @@ import { navBarTheme } from './../components/themes';
 import { useHistory } from 'react-router-dom';
 
 export const StyledNavBar = styled.nav`
-  background-color: var(--color-3);
+  background-color: ${props =>
+    window.location.pathname.includes('intro')
+      ? props.theme.lightBgColor
+      : props.theme.darkBgColor};
   padding: 0;
   list-style-type: none;
   /* margin-bottom: 1rem; */
-  width: 100%;
+  width: 95%;
+  border-bottom: solid 3px;
+  border-color: ${props =>
+    window.location.pathname.includes('intro')
+      ? props.theme.pBarBgColor
+      : props.theme.pBarColor};
 `;
 
 const InlineDiv = styled.div`
@@ -21,17 +29,34 @@ const InlineDiv = styled.div`
 `;
 const Ul = styled.ul`
   /* display: flex; */
-
   padding-left: 0;
 `;
 
 const Li = styled.li`
-  /* padding: 2rem; */
+  margin: 0.5rem;
   font-family: var(--info-font);
   font-size: 1.2rem;
   list-style-type: none;
   display: inline-block;
   width: 50%;
+  color: ${props => props.theme.labelColor};
+  transition: all 0.2s ease-in-out;
+  :hover:not(.points) {
+    transform: scale(1.1);
+  }
+`;
+
+const StyledLink = styled(Link)`
+  color: ${props =>
+    window.location.pathname.includes('intro')
+      ? props.theme.darkBgColor
+      : props.theme.lightBgColor};
+  :hover {
+    color: ${props =>
+      window.location.pathname.includes('intro')
+        ? props.theme.darkBgColor
+        : props.theme.labelColor};
+  }
 `;
 
 export const NavBar = ({
@@ -49,13 +74,13 @@ export const NavBar = ({
         <Ul>
           <InlineDiv>
             <Li>
-              <Link to="/training-manual">Training Manual</Link>
+              <StyledLink to="/training-manual">Training Manual</StyledLink>
             </Li>
             <Li>
-              <Link to="/profile">Profile</Link>
+              <StyledLink to="/profile">Profile</StyledLink>
             </Li>
           </InlineDiv>
-          <Li>
+          <Li className="points">
             <PointsBar
               points={points}
               timeLeft={timeLeft}
