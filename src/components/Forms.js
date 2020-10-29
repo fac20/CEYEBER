@@ -6,7 +6,7 @@ import { countriesArray } from './countriesArray';
 import { signUp } from './../api/api';
 
 const Form = styled.form`
-  width: 60%;
+  /* width: 60%; */
   margin: 5vh auto;
   display: flex;
   justify-content: center;

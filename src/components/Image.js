@@ -8,6 +8,8 @@ export const Img = styled.img`
 
 export const Avatar = styled.div``;
 
+export const Globe = styled.div``;
+
 export const BadgeImage = styled.div`
   ${props =>
     props.size === 'small'

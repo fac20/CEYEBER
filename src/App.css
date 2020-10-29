@@ -36,7 +36,6 @@ a {
 
 .globe {
   height: 10rem;
-  width: 10rem;
   background-image: url(./images/globe.svg);
   background-repeat: no-repeat;
   background-size: contain;
