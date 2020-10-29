@@ -9,10 +9,10 @@ import { useHistory } from 'react-router-dom';
 
 export const StyledNavBar = styled.nav`
   background-color: var(--color-3);
-  padding: 0
+  padding: 0;
   list-style-type: none;
   margin-bottom: 1rem;
-  width:100%;
+  width: 100%;
 `;
 
 const InlineDiv = styled.div`
@@ -50,9 +50,6 @@ export const NavBar = ({
           <InlineDiv>
             <Li>
               <Link to="/training-manual">Training Manual</Link>
-            </Li>
-            <Li>
-              <Link to="/profile">Profile</Link>
             </Li>
           </InlineDiv>
           <Li>
