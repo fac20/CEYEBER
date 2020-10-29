@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './pages/landingPage';
 import { NavBar } from './components/NavBar.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
@@ -31,11 +30,14 @@ function App() {
   const [theme, setTheme] = React.useState('dark-theme');
   document.body.className = theme;
 
-  //const location = window.location.pathname;
-
-  // React.useEffect(()=> {
-  //   location.includes('intro') ? setTheme('light-theme') : setTheme('dark-theme');
-  // }, []);
+  const [answers, setAnswers] = React.useState({
+    q1a1: null,
+    q1a2: null,
+    q2a1: null,
+    q2a2: null,
+    q3a1: null,
+    q3a2: null
+  });
 
   let failMessage = '';
 
@@ -120,7 +122,13 @@ function App() {
             />
           </Route>
           <Route path="/try-again" exact>
-            <TryAgain failMessage={failMessage} setTimeLeft={setTimeLeft} />
+            <TryAgain
+              failMessage={failMessage}
+              setTimeLeft={setTimeLeft}
+              taskname={taskName}
+              answers={answers}
+              setAnswers={setAnswers}
+            />
           </Route>
           <Route path="/badge" exact>
             <BadgePage
@@ -128,6 +136,8 @@ function App() {
               alias={alias}
               taskName={taskName}
               setTaskName={setTaskName}
+              answers={answers}
+              setAnwers={setAnswers}
             />
           </Route>
           <Route path="/second-case-intro" exact>
@@ -178,13 +188,14 @@ function App() {
             />
           </Route>
           <Route path="/game-over" exact>
-            <GameOver points={points} setPoints={setPoints} />
+            <GameOver points={points} setPoints={setPoints} answers={answers} />
           </Route>
           <Route path="/certificate" exact>
             <Congrats
               setPoints={setPoints}
               setBadgesWon={setBadgesWon}
               setTaskName={setTaskName}
+              answers={answers}
             />
           </Route>
           <Route>

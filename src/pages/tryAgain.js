@@ -7,7 +7,13 @@ import { ThemeProvider } from 'styled-components';
 import { H1, H2 } from '../components/Text';
 import { gameOverPageTheme } from './../components/themes';
 
-const TryAgain = ({ failMessage, setTimeLeft }) => {
+const TryAgain = ({
+  failMessage,
+  setTimeLeft,
+  taskName,
+  answers,
+  setAnswers
+}) => {
   const history = useHistory();
 
   const handleClick = () => {
