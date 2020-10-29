@@ -29,19 +29,21 @@ const ThirdCasePage = ({
   setTheme('dark-theme');
   const title = 'Case Three';
   console.log('Third task name is', taskName);
+  const [answerArray, setAnswerArray] = React.useState([]);
 
   React.useEffect(() => {
     setTaskName('Password Challenge');
   }, []);
 
+  if (answerArray.join().lenght >= 24) {
+    setTimeLeft(0);
+  }
   const img = hacker;
   const question = `
-    A hacker has been detected nearby. 
-    You haven’t changed your password in years!
-    Quick, make your password stronger
-    - get more than 10 points to win!`;
-
-  const [answerArray, setAnswerArray] = React.useState([]);
+  A hacker has been detected nearby. 
+  You haven’t changed your password in years!
+  Quick, make your password stronger
+  - get more than 10 points to win!`;
 
   return (
     <ThemeProvider theme={fieldPageTheme}>

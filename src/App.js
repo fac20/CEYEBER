@@ -219,6 +219,7 @@ function App() {
               setBadgesWon={setBadgesWon}
               setTaskName={setTaskName}
               answers={answers}
+              agent={agent}
             />
           </Route>
           <Route>
