@@ -16,7 +16,7 @@ export const collectData = (taskName, answers, setAnswers, score) => {
           ? setAnswers({ ...answers, q2a1: score })
           : setAnswers({ ...answers, q2a2: score });
         break;
-      case 'Password Challenge':
+      case 'Hack Attack':
         answers.q3a1 === null
           ? setAnswers({ ...answers, q3a1: score })
           : setAnswers({ ...answers, q3a2: score });

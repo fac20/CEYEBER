@@ -35,7 +35,7 @@ const Checklist = ({ badgesWon }) => {
         <LI case={badgesWon} name="Thief Buster">
           Evading Deception: Phish Phood
         </LI>
-        <LI case={badgesWon} name="Password Challenge">
+        <LI case={badgesWon} name="Hack Attack">
           Defeat the Hacker: Password Change
         </LI>
       </UL>

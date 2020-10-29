@@ -81,11 +81,11 @@ const PointsBar = ({ points, timeLeft, taskName, setPoints, badgesWon, setPasswo
     } else if (points >= 20) {
       setPoints(20);
     }
-    if (taskName !== 'Password Challenge' && points <= 0) {
+    if (taskName !== 'Hack Attack' && points <= 0) {
       console.log('ITS HERE ACTUALLLY');
       history.push('/game-over');
     }
-    if (taskName === 'Password Challenge' && timeLeft === 0) {
+    if (taskName === 'Hack Attack' && timeLeft === 0) {
       if (passwordPoints < 0) {
         setPoints(points -2)
         history.push('/try-again');

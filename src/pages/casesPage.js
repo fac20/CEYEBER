@@ -50,7 +50,7 @@ const CasesPage = ({ agent, badgesWon, taskName, theme, setTheme }) => {
       <Checklist badgesWon={badgesWon} />
       <SubTitle>Badge</SubTitle>
       <BadgeDisplay>{Badges}</BadgeDisplay>
-      {taskName !== 'Password Challenge' ? (
+      {taskName !== 'Hack Attack' ? (
         <Button onClick={nextChallenge}>Next Case</Button>
       ) : null}
     </ThemeProvider>

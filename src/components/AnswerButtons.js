@@ -39,7 +39,7 @@ export function CorrectButton({
     //   collectData(taskName, answers, setAnswers, 3);
     // }
 
-    if (taskName === 'Password Challenge') {
+    if (taskName === 'Hack Attack') {
       setAnswerArray([...answerArray, label]);
       setPasswordPoints((oldScore) => oldScore +3)
       setBadgesWon({ ...badgesWon, case3: taskName });
@@ -99,14 +99,14 @@ export function WrongButton({
     //   setPoints(points - 2);
     // }
 
-    // if (taskName !== 'Password Challenge') {
+    // if (taskName !== 'Hack Attack') {
     //   collectData(taskName, answers, setAnswers, 10);
     //   history.push(nextPage);
       
     // }
 
     //third task special case
-    if (taskName === 'Password Challenge') {
+    if (taskName === 'Hack Attack') {
       setAnswerArray([...answerArray, label]);
       setPasswordPoints((oldScore) => oldScore -2)
     } else {
@@ -151,13 +151,13 @@ export function IgnoreButton({
     //   setPoints(points - 1);
     // }
 
-    // if (taskName !== 'Password Challenge') {
+    // if (taskName !== 'Hack Attack') {
     //   collectData(taskName, answers, setAnswers, -1);
     //   history.push(nextPage);
     // }
 
     //third task special case
-    if (taskName === 'Password Challenge') {
+    if (taskName === 'Hack Attack') {
       setAnswerArray([...answerArray, label]);
       setPasswordPoints((oldScore) => oldScore -1)
     } else {

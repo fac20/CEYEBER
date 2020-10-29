@@ -10,12 +10,12 @@ describe('Checks routes on third task', function () {
     cy.wait(30000).then(() => {
       cy.url().should('contain', '/badge');
     });
-    cy.contains('Password Challenge');
+    cy.contains('Hack Attack');
     cy.contains('Accept').click();
     cy.url().should('contain', '/cases');
   });
 
-  //Fails: try again on password challenge will not let you
+  //Fails: try again on Hack Attack will not let you
   it('Gains 0-9 points and tries again', function () {
     cy.visit('/third-case-task');
     cy.contains('2 Points');

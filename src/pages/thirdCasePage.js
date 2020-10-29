@@ -41,7 +41,7 @@ const ThirdCasePage = ({
   }
 
   React.useEffect(() => {
-    setTaskName('Password Challenge');
+    setTaskName('Hack Attack');
   }, []);
 
   const img = hacker;
