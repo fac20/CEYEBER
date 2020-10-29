@@ -28,8 +28,7 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
         q3a1: null,
         q3a2: null
       }); 
-      history.push('/');
-
+      history.push('/first-case-intro');
     })
     .catch(err => 
       console.error(err));
