@@ -10,7 +10,6 @@ import { badgePageTheme } from '../components/themes';
 const Congrats = ({ setPoints, setBadgesWon, setTaskName }) => {
   const history = useHistory();
   const handleClick = () => {
-    history.push('/');
     setPoints(2);
     setTaskName(null);
     setBadgesWon({
@@ -18,6 +17,7 @@ const Congrats = ({ setPoints, setBadgesWon, setTaskName }) => {
       case2: null,
       case3: null
     });
+    history.push('/');
   };
 
   return (

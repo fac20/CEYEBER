@@ -178,7 +178,7 @@ function App() {
             />
           </Route>
           <Route path="/game-over" exact>
-            <GameOver points={points} setPoints={setPoints} />
+            <GameOver points={points} setPoints={setPoints} setTaskName={setTaskName} setBadgesWon={setBadgesWon} />
           </Route>
           <Route path="/certificate" exact>
             <Congrats

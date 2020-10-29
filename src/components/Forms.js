@@ -69,6 +69,8 @@ const Option = styled.option`
 const ErrorDiv = styled.div`
   font-family: var(--info-font);
   color: ${props => props.theme.errorMessageColor};
+  margin-left: 1ch;
+  margin-right: 1ch;
 `;
 
 const Countries = ({ id }) => {
