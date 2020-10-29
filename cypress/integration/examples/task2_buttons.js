@@ -18,7 +18,7 @@ describe('Checks all buttons on second task', function () {
     cy.contains(`ignoring these messages means they can come back again!`);
     cy.contains('TRY AGAIN').click();
     cy.url().should('contain', '/second-case-task');
-    cy.contains('1 Points');
+    cy.contains('1 Point');
   });
 
   it('Clicks incorrect button on second task, try again, game over', function () {

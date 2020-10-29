@@ -22,7 +22,7 @@ describe('Checks all buttons on first task', function () {
     );
     cy.contains('TRY AGAIN').click();
     cy.url().should('contain', '/first-case-task');
-    cy.contains('1 Points');
+    cy.contains('1 Point');
   });
 
   it('Clicks incorrect button on first task, try again, game over', function () {

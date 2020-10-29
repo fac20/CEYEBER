@@ -17,38 +17,20 @@ export function CorrectButton({
   nextPage,
   disabled,
   answers,
-  setAnswers, 
+  setAnswers,
   passwordPoints,
   setPasswordPoints
 }) {
   const history = useHistory();
   const handleCorrectClick = () => {
-    //change the number of points the player has
-    // if (points >= 8) {
-    //   setPoints(11);
-    // } else if (points < 8){
-    //   setPoints(points + 3);
-    // }
-
-    // if (taskName === 'Troll Hunter') {
-    //   setBadgesWon({ ...badgesWon, case1: taskName });
-    //   collectData(taskName, answers, setAnswers, 3);
-    // }
-    // if (taskName === 'Thief Buster') {
-    //   setBadgesWon({ ...badgesWon, case2: taskName });
-    //   collectData(taskName, answers, setAnswers, 3);
-    // }
-
     if (taskName === 'Hack Attack') {
       setAnswerArray([...answerArray, label]);
-      setPasswordPoints((oldScore) => oldScore +3)
+      setPasswordPoints(oldScore => oldScore + 3);
       setBadgesWon({ ...badgesWon, case3: taskName });
     } else {
-
-      if (points >8){
+      if (points > 8) {
         setPoints(11);
-      }
-      else {
+      } else {
         setPoints(points + 3);
       }
 
@@ -61,8 +43,6 @@ export function CorrectButton({
         setBadgesWon({ ...badgesWon, case2: taskName });
         collectData(taskName, answers, setAnswers, 3);
       }
-      
-
     }
 
     //go to the next page
@@ -94,23 +74,10 @@ export function WrongButton({
   const history = useHistory();
 
   const handleWrongClick = () => {
-    //change the number of points the player has
-    // if (points > 0) {
-    //   setPoints(points - 2);
-    // }
-
-    // if (taskName !== 'Hack Attack') {
-    //   collectData(taskName, answers, setAnswers, 10);
-    //   history.push(nextPage);
-      
-    // }
-
-    //third task special case
     if (taskName === 'Hack Attack') {
       setAnswerArray([...answerArray, label]);
-      setPasswordPoints((oldScore) => oldScore -2)
+      setPasswordPoints(oldScore => oldScore - 2);
     } else {
-
       if (points > 0) {
         setPoints(points - 2);
       }
@@ -146,22 +113,10 @@ export function IgnoreButton({
   const history = useHistory();
 
   const handleIgnoreClick = () => {
-    //change the number of points the player has
-    // if (points > 0) {
-    //   setPoints(points - 1);
-    // }
-
-    // if (taskName !== 'Hack Attack') {
-    //   collectData(taskName, answers, setAnswers, -1);
-    //   history.push(nextPage);
-    // }
-
-    //third task special case
     if (taskName === 'Hack Attack') {
       setAnswerArray([...answerArray, label]);
-      setPasswordPoints((oldScore) => oldScore -1)
+      setPasswordPoints(oldScore => oldScore - 1);
     } else {
-
       if (points > 0) {
         setPoints(points - 1);
       }
