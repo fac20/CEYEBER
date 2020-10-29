@@ -44,6 +44,10 @@ const Input = styled.input`
   text-align: center;
   border-color: ${props => props.theme.formColor};
   scrollbar-arrow-color: ${props => props.theme.formColor};
+  :focus {
+    outline-color: ${props => props.theme.focusColor};
+    border: 2px;
+  }
 `;
 
 const Select = styled.select`
@@ -56,6 +60,10 @@ const Select = styled.select`
   border-radius: 5px;
   text-align: center;
   border-color: ${props => props.theme.formColor};
+  :focus {
+    outline-color: ${props => props.theme.focusColor};
+    border: 2px;
+  }
 `;
 
 const Option = styled.option`

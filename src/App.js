@@ -17,6 +17,7 @@ import LandingPage from './pages/landingPage';
 import { useHistory } from 'react-router-dom';
 import NotFoundPage from './pages/pageNotFound';
 
+
 function App() {
   const history = useHistory();
 

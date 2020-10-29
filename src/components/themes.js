@@ -4,7 +4,8 @@ export const landingPageTheme = {
   formColor: 'var(--color-3)',
   h1Color: 'var(--color-5)',
   optionColor: 'var(--color-3)',
-  errorMessageColor: 'var(--color-2)'
+  errorMessageColor: 'var(--color-2)',
+  focusColor: 'var(--color-2)'
 };
 
 export const fieldPageTheme = {
@@ -69,5 +70,8 @@ export const caseIntroPage = {
 export const navBarTheme = {
   pBarColor: 'var(--color-3)',
   pBarBgColor: 'var(--color-4)',
-  pBarValueColor: 'var(--color-1)'
+  pBarValueColor: 'var(--color-3)',
+  darkBgColor: 'var(--color-4)',
+  lightBgColor: 'var(--color-6)',
+  labelColor: 'var(--color-5)',
 };
