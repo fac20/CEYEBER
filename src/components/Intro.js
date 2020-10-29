@@ -5,15 +5,15 @@ import { caseIntroPage } from './themes.js';
 import { Button } from './Buttons';
 import { useHistory } from 'react-router-dom';
 import { task1, task2, task3 } from './taskIntroText';
+import { Wrapper } from './Wrapper';
 
 const TheGuyImage = styled.div``;
 
 const Container = styled.div`
   width: 400px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  @media only screen and (max-width: 460px) {
+    width: auto;
+  }
 `;
 
 const Intro = ({ setTaskName, taskName, theme, setTheme }) => {
@@ -43,15 +43,17 @@ const Intro = ({ setTaskName, taskName, theme, setTheme }) => {
 
   return (
     <ThemeProvider theme={caseIntroPage}>
-      <Container>
-        <H1>{task.title}</H1>
-        <div className="speech-bubble">
-          <SpeechBubbleText>{task.bubble}</SpeechBubbleText>
-        </div>
-        <TheGuyImage className="theguy" />
-        <Text>{task.message}</Text>
-        <Button onClick={goToTheMission}>Accept</Button>
-      </Container>
+      <Wrapper>
+        <Container>
+          <H1>{task.title}</H1>
+          <div className="speech-bubble">
+            <SpeechBubbleText>{task.bubble}</SpeechBubbleText>
+          </div>
+          <TheGuyImage className="theguy" />
+          <Text>{task.message}</Text>
+          <Button onClick={goToTheMission}>Accept</Button>
+        </Container>
+      </Wrapper>
     </ThemeProvider>
   );
 };

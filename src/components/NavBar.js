@@ -11,7 +11,7 @@ export const StyledNavBar = styled.nav`
   background-color: var(--color-3);
   padding: 0
   list-style-type: none;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   width:100%;
 `;
 
