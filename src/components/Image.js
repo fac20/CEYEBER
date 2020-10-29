@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import React from 'react';
 
 export const Img = styled.img`
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export const Avatar = styled.div``;
+
+export const Globe = styled.div``;
 
 export const BadgeImage = styled.div`
   ${props =>
@@ -17,9 +19,10 @@ export const BadgeImage = styled.div`
 
 export const BadgeContainer = styled.div`
   border: ${props => (props.size === 'small' ? '1px' : '5px')} solid;
-  padding: ${props => (props.size === 'small' ? '1rem' : '2rem')};
+  padding: ${props => (props.size === 'small' ? '0.7rem' : '2rem')};
   border-radius: ${props => (props.size === 'small' ? '25px' : '50px')};
   border-color: ${props => props.theme.borderColor};
+  margin: 0.5rem;
 `;
 
 export const BadgeTitle = styled.h2`

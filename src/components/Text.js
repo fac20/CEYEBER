@@ -13,13 +13,20 @@ export const H2 = styled.h2`
 `;
 
 export const MainTitle = styled.span`
-  font-size: 4rem;
+  font-size: 3.8rem;
   color: var(--color-1);
   font-family: var(--title-font);
   display: block;
 `;
 
 export const Text = styled.p`
+  color: ${props => props.theme.textColor};
+  font-family: var(--info-font);
+`;
+
+export const FixedWidthText = styled.p`
+  width: 150px;
+  height: 3ch;
   color: ${props => props.theme.textColor};
   font-family: var(--info-font);
 `;
@@ -37,8 +44,11 @@ export const PasswordText = styled.p`
   border-radius: 2px;
   border-color: ${props => props.theme.textColor};
   width: 60%;
-  height: 1rem;
-  padding: 0.5rem;
+  margin: 1rem auto;
+  height: 2ch;
+  @media only screen and (max-width: 460px) {
+    width: 100%;
+  }
 `;
 
 export const Title = () => {

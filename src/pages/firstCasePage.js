@@ -8,6 +8,7 @@ import {
   WrongButton
 } from './../components/AnswerButtons';
 import eagle from './../images/eagleTakesChild.jpg';
+import { Wrapper } from './../components/Wrapper';
 
 const FirstCasePage = ({
   points,
@@ -34,36 +35,38 @@ const FirstCasePage = ({
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
-      <ImageQuestion title={title} img={img} question={question} />
-      <IgnoreButton
-        points={points}
-        setPoints={setPoints}
-        label="Ignore the video"
-        nextPage={'try-again'}
-        answers={answers}
-        setAnswers={setAnswers}
-        taskName={taskName}
-      />
-      <WrongButton
-        points={points}
-        setPoints={setPoints}
-        label="Share the video"
-        nextPage={'try-again'}
-        answers={answers}
-        setAnswers={setAnswers}
-        taskName={taskName}
-      />
-      <CorrectButton
-        points={points}
-        setPoints={setPoints}
-        label="Check it's true or fake"
-        nextPage={'/badge'}
-        taskName={taskName}
-        setBadgesWon={setBadgesWon}
-        badgesWon={badgesWon}
-        answers={answers}
-        setAnswers={setAnswers}
-      />
+      <Wrapper>
+        <ImageQuestion title={title} img={img} question={question} />
+        <IgnoreButton
+          points={points}
+          setPoints={setPoints}
+          label="Ignore the video"
+          nextPage={'try-again'}
+          answers={answers}
+          setAnswers={setAnswers}
+          taskName={taskName}
+        />
+        <WrongButton
+          points={points}
+          setPoints={setPoints}
+          label="Share the video"
+          nextPage={'try-again'}
+          answers={answers}
+          setAnswers={setAnswers}
+          taskName={taskName}
+        />
+        <CorrectButton
+          points={points}
+          setPoints={setPoints}
+          label="Check it's true or fake"
+          nextPage={'/badge'}
+          taskName={taskName}
+          setBadgesWon={setBadgesWon}
+          badgesWon={badgesWon}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </Wrapper>
     </ThemeProvider>
   );
 };

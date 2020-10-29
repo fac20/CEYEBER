@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
 import { H1, H2 } from './../components/Text';
-import { Container } from './../components/Forms';
+import { Wrapper } from './../components/Wrapper';
 import { ThemeProvider } from 'styled-components';
 import { ratingPageTheme } from './../components/themes';
 import RatingBar from '../components/RatingBar.js';
@@ -29,8 +29,8 @@ const Profile = ({ theme, setTheme, agent }) => {
   };
 
   return (
-    <Container>
-      <ThemeProvider theme={ratingPageTheme}>
+    <ThemeProvider theme={ratingPageTheme}>
+      <Wrapper>
         <H1>Hello {agent}!</H1>
         <Avatar className="avatar" />
         <H2>HOW OFTEN DO YOU USE THESE APPS?</H2>
@@ -39,8 +39,8 @@ const Profile = ({ theme, setTheme, agent }) => {
           updateRatingValue={updateRatingValue}
         />
         <Button onClick={createProfile}>START YOUR FIRST TASK</Button>
-      </ThemeProvider>
-    </Container>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 

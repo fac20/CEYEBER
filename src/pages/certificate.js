@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { sendAnswers } from './../api/api';
 import { H1, H2 } from '../components/Text';
-import { Container } from '../components/Forms';
+import { Wrapper } from '../components/Wrapper';
 import { badgePageTheme } from '../components/themes';
 
 const Congrats = ({
@@ -34,23 +34,25 @@ const Congrats = ({
           q3a1: null,
           q3a2: null
         });
-        history.push('/');
+        history.push('/first-case-intro');
       })
       .catch(err => console.error(err));
   };
 
   return (
-    <Container>
-      <ThemeProvider theme={badgePageTheme}>
+    <ThemeProvider theme={badgePageTheme}>
+      <Wrapper>
+        <H1>CONGRATS
+          <br/>
+          {agent}!</H1>
         <div className="trophy" />
-        <H1>CONGRATULATIONS {agent}!</H1>
         <H2>
           You have won all <br /> of the badges!
           <br />
         </H2>
         <Button onClick={handleClick}>PLAY AGAIN</Button>
-      </ThemeProvider>
-    </Container>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 

@@ -7,16 +7,11 @@ import styled from 'styled-components';
 import Checklist from '../components/Checklist.js';
 import { Button } from '../components/Buttons';
 import { useHistory } from 'react-router-dom';
+import { Wrapper } from './../components/Wrapper';
 
 const BadgeDisplay = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
-`;
-
-const SubTitle = styled(H2)`
-  margin-left: 2.5rem;
-  align-self: flex-start;
 `;
 
 const CasesPage = ({ agent, badgesWon, taskName, theme, setTheme }) => {
@@ -44,15 +39,17 @@ const CasesPage = ({ agent, badgesWon, taskName, theme, setTheme }) => {
 
   return (
     <ThemeProvider theme={casesPageTheme}>
-      <H1>Cases solved</H1>
-      <Avatar className="avatar" />
-      <Text>agent: {agent}</Text>
-      <Checklist badgesWon={badgesWon} />
-      <SubTitle>Badge</SubTitle>
-      <BadgeDisplay>{Badges}</BadgeDisplay>
-      {taskName !== 'Hack Attack' ? (
-        <Button onClick={nextChallenge}>Next Case</Button>
-      ) : null}
+      <Wrapper>
+        <H1>Cases solved</H1>
+        <Avatar className="avatar" />
+        <Text>agent: {agent}</Text>
+        <Checklist badgesWon={badgesWon} />
+        <H2>Badges</H2>
+        <BadgeDisplay>{Badges}</BadgeDisplay>
+        {taskName !== 'Hack Attack' ? (
+          <Button onClick={nextChallenge}>Next Case</Button>
+        ) : null}
+      </Wrapper>
     </ThemeProvider>
   );
 };

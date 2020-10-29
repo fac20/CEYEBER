@@ -6,16 +6,10 @@ import { countriesArray } from './countriesArray';
 import { signUp } from './../api/api';
 
 const Form = styled.form`
-  width: 60%;
   margin: 5vh auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-`;
-
-export const Container = styled.div`
-  padding: 3rem;
-  text-align: center;
 `;
 
 const Fieldset = styled.fieldset`
@@ -30,15 +24,18 @@ const Fieldset = styled.fieldset`
 `;
 
 export const Label = styled.label`
+  text-align: ${props => props.align};
+  width: ${props => props.width};
   font-family: var(--info-font);
   font-size: 1.2rem;
   margin-top: 1ch;
+  margin-bottom: 1ch;
   color: ${props => props.theme.labelColor};
 `;
 
 const Input = styled.input`
   font-family: var(--info-font);
-  margin: 1ch;
+  margin-bottom: 1ch;
   font-size: 1.2rem;
   padding: 0.2rem;
   color: ${props => props.theme.formColor};
@@ -51,7 +48,7 @@ const Input = styled.input`
 
 const Select = styled.select`
   font-family: var(--info-font);
-  margin: 1ch;
+  margin-bottom: 1ch;
   font-size: 1.2rem;
   padding: 0.2rem;
   color: ${props => props.theme.formColor};
@@ -75,22 +72,14 @@ const ErrorDiv = styled.div`
 
 const Countries = ({ id }) => {
   const options = countriesArray.map(country => {
-    if (country === 'United Kingdom') {
-      return (
-        <Option key={country} value={country} selected>
-          {country}
-        </Option>
-      );
-    } else {
       return (
         <Option key={country} value={country}>
           {country}
         </Option>
       );
-    }
   });
   return (
-    <Select id={id} name={id}>
+    <Select id={id} name={id} defaultValue="United Kingdom">
       {options}
     </Select>
   );
@@ -122,7 +111,7 @@ export const LandingPageForm = ({ agent, setAgent }) => {
   };
 
   return (
-    <Form onSubmit={event => handleSubmit(event)}>
+    <Form autoComplete="off" onSubmit={event => handleSubmit(event)}>
       <Fieldset>
         <Label htmlFor="agent">Agent:</Label>
         <Input

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React, { useState } from 'react';
 import { Label } from './Forms';
 //import fbIcon from '../images/facebook.svg';
-import { Text } from './Text';
+import { FixedWidthText } from './Text';
 
 const StarRating = styled.div`
   border-style: solid;
@@ -12,7 +12,7 @@ const StarRating = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  min-width: 100px;
+  min-width: 150px;
   max-width: 200px;
   justify-content: space-between;
 `;
@@ -33,20 +33,22 @@ const DivContainer = styled.div`
   display: flex;
   margin: auto;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   margin: 1rem;
-  @media only screen and (min-width: 700px) {
+  /* @media only screen and (min-width: 700px) {
     width: 450px;
     margin: auto;
     padding: 0.5rem;
-  }
+  } */
   @media only screen and (max-width: 460px) {
     margin: 0.5rem;
+    flex-direction: column;
+    align-items: center
   }
 `;
 
 const SmallDivContainer = styled.div`
-  margin: auto;
+  /* margin: auto;
   @media only screen and (min-width: 700px) {
     width: 150px;
     margin: auto;
@@ -54,7 +56,7 @@ const SmallDivContainer = styled.div`
   }
   @media only screen and (max-width: 460px) {
     margin: 0.5rem;
-  }
+  } */
 `;
 
 const RatingBar = ({ ratingValue, updateRatingValue }) => {
@@ -78,8 +80,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
   return (
     <>
       <DivContainer>
-        <Label htmlfor="Facebook">Facebook</Label>
-        {/* <img src={fbIconSrc} alt="Facebook logo" /> */}
+        <Label width="150px" htmlfor="Facebook">
+          Facebook
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -95,11 +98,13 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <Text>{skills[ratingValue.Facebook]}</Text>
+          <FixedWidthText width="150px">{skills[ratingValue.Facebook]}</FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="Whatsapp">Whatsapp</Label>
+        <Label width="150px" htmlfor="Whatsapp">
+          Whatsapp
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -114,10 +119,12 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
             );
           })}
         </StarRating>
-        <Text>{skills[ratingValue.Whatsapp]}</Text>
+        <FixedWidthText>{skills[ratingValue.Whatsapp]}</FixedWidthText>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="Twitter">Twitter</Label>
+        <Label width="150px" htmlfor="Twitter">
+          Twitter
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -133,11 +140,13 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <Text>{skills[ratingValue.Twitter]}</Text>
+          <FixedWidthText>{skills[ratingValue.Twitter]}</FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="Instagram">Instagram</Label>
+        <Label width="150px" htmlfor="Instagram">
+          Instagram
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -153,11 +162,13 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <Text>{skills[ratingValue.Instagram]}</Text>
+          <FixedWidthText>{skills[ratingValue.Instagram]}</FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="Snapchat">Snapchat</Label>
+        <Label width="150px" htmlfor="Snapchat">
+          Snapchat
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -173,11 +184,13 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <Text>{skills[ratingValue.Snapchat]}</Text>
+          <FixedWidthText>{skills[ratingValue.Snapchat]}</FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="TikTok">TikTok</Label>
+        <Label width="150px" htmlfor="TikTok">
+          TikTok
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -193,11 +206,13 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <Text>{skills[ratingValue.TikTok]}</Text>
+          <FixedWidthText>{skills[ratingValue.TikTok]}</FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
       <DivContainer>
-        <Label htmlfor="Youtube">Youtube</Label>
+        <Label width="150px" htmlfor="Youtube">
+          Youtube
+        </Label>
         <StarRating>
           {ratingArray.map(val => {
             return (
@@ -213,7 +228,7 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <Text>{skills[ratingValue.Youtube]}</Text>
+          <FixedWidthText>{skills[ratingValue.Youtube]}</FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
     </>

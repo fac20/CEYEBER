@@ -25,6 +25,13 @@
   --info-font: 'Aldrich', sans-serif;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .light-theme {
   --background-clr: hsl(208, 31%, 77%);
 }
@@ -39,4 +46,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antiagented;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
 }
