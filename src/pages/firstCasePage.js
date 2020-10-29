@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import LandingPage from './pages/landingPage';
 import { fieldPageTheme } from './../components/themes';
 import { ImageQuestion } from './../components/Questions';
 import {
@@ -13,8 +14,7 @@ const FirstCasePage = ({
   points,
   setPoints,
   taskName,
-  setTaskName,
-  badgesWon,
+  setTasWon,
   setBadgesWon,
   theme,
   setTheme,
@@ -31,14 +31,12 @@ const FirstCasePage = ({
   const img = eagle;
   const question = `Your friend Sam just shared a VIRAL video of 
     a golden eagle picking up a child and flying away with it!`;
+//loctio= wido.location.pathnam;
 
-  return (
-    <ThemeProvider theme={fieldPageTheme}>
-      <ImageQuestion title={title} img={img} question={question} />
-      <IgnoreButton
-        points={points}
-        setPoints={setPoints}
-        label="Ignore the video"
+// Effct()=> 
+  //re(ochtion.iPclrdes('intro') ?asetTheme('uight-theme') g setTheme('d rk-theme');{points}
+e //  , []  
+   label="Ignore the video"
         nextPage={'try-again'}
         answers={answers}
         setAnswers={setAnswers}
@@ -53,6 +51,7 @@ const FirstCasePage = ({
         setAnswers={setAnswers}
         taskName={taskName}
       />
+      
       <CorrectButton
         points={points}
         setPoints={setPoints}
