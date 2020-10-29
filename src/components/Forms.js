@@ -122,7 +122,7 @@ export const LandingPageForm = ({ agent, setAgent }) => {
   };
 
   return (
-    <Form onSubmit={event => handleSubmit(event)}>
+    <Form autoComplete="off" onSubmit={event => handleSubmit(event)}>
       <Fieldset>
         <Label htmlFor="agent">Agent:</Label>
         <Input
