@@ -6,7 +6,7 @@ import { Badge } from './../components/Image';
 import { Button } from './../components/Buttons';
 import { useHistory } from 'react-router-dom';
 
-const BadgePage = ({ alias, badgeType, taskName, setTaskName }) => {
+const BadgePage = ({ agent, badgeType, taskName, setTaskName }) => {
   const history = useHistory();
 
   const showbadgesWon = () => {
@@ -19,7 +19,7 @@ const BadgePage = ({ alias, badgeType, taskName, setTaskName }) => {
   return (
     <ThemeProvider theme={badgePageTheme}>
       <H1>You earned the badge!</H1>
-      <Text>Well done {alias}!</Text>
+      <Text>Well done {agent}!</Text>
       <Badge badgeType={badgeType} />
       <Button onClick={showbadgesWon}>Accept</Button>
     </ThemeProvider>

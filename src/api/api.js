@@ -2,21 +2,22 @@ const url = process.env.REACT_APP_DB_URL;
 
 function request(path, options) {
   return fetch(url + path, options).then(response => {
-    if (!response.ok) {
+    if (!response.ok && response.status !== 409) {
       const error = new Error('Error!');
       error.status = response.status;
       throw error;
     } else {
+      console.log(response)
       return response.json();
     }
   });
 }
 
-function signUp(alias, age, location) {
+function signUp(agent, age, location) {
   return request('user', {
     method: 'POST',
     body: JSON.stringify({
-      alias: alias,
+      agent: agent,
       age: age,
       location: location
     }),
@@ -36,6 +37,7 @@ function sendSkills({
   Youtube
 }) {
   const id = window.sessionStorage.getItem('user_id');
+  console.log(id, Youtube)
   return request('skills', {
     method: 'POST',
     body: JSON.stringify({
@@ -45,7 +47,7 @@ function sendSkills({
       snapchat: Snapchat,
       tiktok: TikTok,
       twitter: Twitter,
-      whatsApp: Whatsapp,
+      whatsapp: Whatsapp,
       youtube: Youtube
     }),
     headers: {

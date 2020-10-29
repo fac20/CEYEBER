@@ -1,20 +1,22 @@
 import React from 'react';
-import { Title } from './../components/Text';
-import { LandingPageForm } from './../components/Forms';
+import { H1 } from './../components/Text';
 import { ThemeProvider } from 'styled-components';
 import { landingPageTheme } from './../components/themes';
 import { useHistory } from 'react-router-dom';
+import { Button } from './../components/Buttons';
 
-const LandingPage = ({agent, setAgent}) => {
+const NotFoundPage = () => {
   const history = useHistory();
-  history.push('/');
+  const goToLandingPage = () => {
+    history.push('/');
+  }
   return (
     <ThemeProvider theme={landingPageTheme}>
-      <Title />
+      <H1>Oops! Page not found!</H1>
       <div className="globe" />
-      <LandingPageForm agent={agent} setAgent={setAgent}/>
+      <Button onClick={goToLandingPage}>Go Back to Home</Button>
     </ThemeProvider>
   );
 };
 
-export default LandingPage;
+export default NotFoundPage;
