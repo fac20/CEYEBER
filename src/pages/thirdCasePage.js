@@ -14,7 +14,7 @@ import {
 const ThirdCasePage = ({
   points,
   setPoints,
-  alias,
+  agent,
   taskName,
   setTaskName,
   timeLeft,
@@ -124,7 +124,7 @@ const ThirdCasePage = ({
         <WrongButton
           points={points}
           setPoints={setPoints}
-          label={alias}
+          label={agent}
           timeLeft={timeLeft}
           taskName={taskName}
           answerArray={answerArray}

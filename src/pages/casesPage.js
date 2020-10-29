@@ -19,7 +19,7 @@ const SubTitle = styled(H2)`
   align-self: flex-start;
 `;
 
-const CasesPage = ({ alias, badgesWon, taskName, theme, setTheme }) => {
+const CasesPage = ({ agent, badgesWon, taskName, theme, setTheme }) => {
 
   setTheme('dark-theme');
   const displayBadges = badgesWon => {
@@ -46,7 +46,7 @@ const CasesPage = ({ alias, badgesWon, taskName, theme, setTheme }) => {
     <ThemeProvider theme={casesPageTheme}>
       <H1>Cases solved</H1>
       <Avatar className="avatar" />
-      <Text>Alias: {alias}</Text>
+      <Text>agent: {agent}</Text>
       <Checklist badgesWon={badgesWon} />
       <SubTitle>Badge</SubTitle>
       <BadgeDisplay>{Badges}</BadgeDisplay>

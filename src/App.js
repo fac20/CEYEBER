@@ -20,7 +20,7 @@ function App() {
   const history = useHistory();
 
   const [points, setPoints] = React.useState(2);
-  const [alias, setAlias] = React.useState('BrownFox');
+  const [agent, setAgent] = React.useState('BrownFox');
   const [timeLeft, setTimeLeft] = React.useState(15);
   const [badgesWon, setBadgesWon] = React.useState({
     case1: null,
@@ -59,7 +59,7 @@ function App() {
       <main className="App">
         <Switch>
           <Route path="/" exact>
-            <LandingPage alias={alias} setAlias={setAlias} />
+            <LandingPage agent={agent} setAgent={setAgent} />
           </Route>
           <Route path="/training-manual" exact>
             <TrainingManual theme={theme} setTheme={setTheme} />
@@ -72,7 +72,7 @@ function App() {
               taskName={taskName}
               badgesWon={badgesWon}
             />
-            <Profile theme={theme} setTheme={setTheme} alias={alias} />
+            <Profile theme={theme} setTheme={setTheme} agent={agent} />
           </Route>
           <Route path="/cases" exact>
             <NavBar
@@ -83,7 +83,7 @@ function App() {
               badgesWon={badgesWon}
             />
             <CasesPage
-              alias={alias}
+              agent={agent}
               badgesWon={badgesWon}
               taskName={taskName}
               theme={theme}
@@ -125,7 +125,7 @@ function App() {
           <Route path="/badge" exact>
             <BadgePage
               badgeType={taskName}
-              alias={alias}
+              agent={agent}
               taskName={taskName}
               setTaskName={setTaskName}
             />
@@ -156,8 +156,8 @@ function App() {
             <Intro theme={theme} setTheme={setTheme} taskName={taskName} />
           </Route>
           <Route path="/third-case-task" exact>
-            <NavBar
               setPoints={setPoints}
+            <NavBar
               points={points}
               timeLeft={timeLeft}
               taskName={taskName}
@@ -166,7 +166,7 @@ function App() {
             <ThirdCasePage
               points={points}
               setPoints={setPoints}
-              alias={alias}
+              agent={agent}
               taskName={taskName}
               setTaskName={setTaskName}
               badgesWon={badgesWon}

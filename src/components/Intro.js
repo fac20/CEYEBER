@@ -22,7 +22,7 @@ const Intro = ({ setTaskName, taskName, theme, setTheme }) => {
   if (taskName === 'Thief Buster') {
     task = task3;
   }
-
+  
   const goToTheMission = () => {
     if (taskName === null) {
       history.push('/first-case-task');

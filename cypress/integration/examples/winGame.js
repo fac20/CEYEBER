@@ -29,7 +29,7 @@ describe('Gets to certificate page', function () {
     cy.url().should('contain', '/certificate');
     cy.contains('PLAY AGAIN').click();
     cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
-    cy.get('#alias').type('Dragon');
+    cy.get('#agent').type('Dragon');
     cy.get('#age').type(9);
     cy.get('#country').select('United Kingdom');
     cy.contains('CLICK HERE').click();

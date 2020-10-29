@@ -66,6 +66,11 @@ const Option = styled.option`
   color: ${props => props.theme.btnTextColor};
 `;
 
+const ErrorDiv = styled.div`
+  font-family: var(--info-font);
+  color: ${props => props.theme.errorMessageColor};
+`;
+
 const Countries = ({ id }) => {
   const options = countriesArray.map(country => {
     if (country === 'United Kingdom') {
@@ -89,34 +94,44 @@ const Countries = ({ id }) => {
   );
 };
 
-export const LandingPageForm = ({ alias, setAlias }) => {
+export const LandingPageForm = ({ agent, setAgent }) => {
   const history = useHistory();
 
+  const [errorMessage, setErrorMessage] = React.useState('');
   const handleSubmit = event => {
     event.preventDefault();
-    history.push('/profile');
-
-    const alias = event.target.elements.alias.value;
+    const agent = event.target.elements.agent.value;
     const age = event.target.elements.age.value;
     const country = event.target.elements.country.value;
-    setAlias(alias);
-    signUp(alias, age, country)
-      .then(user => user.id)
-      .then(id => window.sessionStorage.setItem('user_id', id));
+    signUp(agent, age, country)
+    .then(res => {
+      if (res.id){
+        window.sessionStorage.setItem('user_id', res.id)
+        setAgent(agent);
+        history.push('/profile');
+      } else {
+        //ask to pick another
+        console.log(res.message)
+        setErrorMessage(res.message); 
+      }   
+    })
+    //.then(id => window.sessionStorage.setItem('user_id', id))
+    .catch(error=> console.log(error))
   };
 
   return (
     <Form onSubmit={event => handleSubmit(event)}>
       <Fieldset>
-        <Label htmlFor="alias">Alias:</Label>
+        <Label htmlFor="agent">Agent:</Label>
         <Input
-          id="alias"
+          id="agent"
           type="text"
           placeholder="BrownFox"
-          data-cy="alias"
+          data-cy="agent"
           maxLength="8"
           required
         />
+        <ErrorDiv>{errorMessage}</ErrorDiv>
         <Label htmlFor="age">Age:</Label>
         <Input
           id="age"

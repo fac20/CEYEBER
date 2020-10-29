@@ -9,7 +9,7 @@ import RatingBar from '../components/RatingBar.js';
 import { Avatar } from '../components/Image';
 import { sendSkills } from '../api/api';
 
-const Profile = ({ theme, setTheme, alias }) => {
+const Profile = ({ theme, setTheme, agent }) => {
   const [ratingValue, updateRatingValue] = React.useState({
     Facebook: 0,
     Whatsapp: 0,
@@ -31,7 +31,7 @@ const Profile = ({ theme, setTheme, alias }) => {
   return (
     <Container>
       <ThemeProvider theme={ratingPageTheme}>
-        <H1>Hello {alias}!</H1>
+        <H1>Hello {agent}!</H1>
         <Avatar className="avatar" />
         <H2>HOW OFTEN DO YOU USE THESE APPS?</H2>
         <RatingBar

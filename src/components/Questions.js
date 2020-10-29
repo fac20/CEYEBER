@@ -17,7 +17,7 @@ export const ImageQuestion = ({ title, img, question }) => {
 
 //timed question
 //progress bar of time ticking down
-//multiple choice options to add to password- numbers, captial letters, punctuation, their alias,
+//multiple choice options to add to password- numbers, captial letters, punctuation, their agent,
 //cat, dog, bird
 //adding something that makes your password stronger gives 2 points
 //adding something that makes it weaker takes points away

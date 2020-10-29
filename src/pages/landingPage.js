@@ -5,14 +5,14 @@ import { ThemeProvider } from 'styled-components';
 import { landingPageTheme } from './../components/themes';
 import { useHistory } from 'react-router-dom';
 
-const LandingPage = ({alias, setAlias}) => {
+const LandingPage = ({agent, setAgent}) => {
   const history = useHistory();
   history.push('/');
   return (
     <ThemeProvider theme={landingPageTheme}>
       <Title />
       <div className="globe" />
-      <LandingPageForm alias={alias} setAlias={setAlias}/>
+      <LandingPageForm agent={agent} setAgent={setAgent}/>
     </ThemeProvider>
   );
 };

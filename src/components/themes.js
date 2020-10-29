@@ -3,7 +3,8 @@ export const landingPageTheme = {
   btnTextColor: 'var(--color-4)',
   formColor: 'var(--color-3)',
   h1Color: 'var(--color-5)',
-  optionColor: 'var(--color-3)'
+  optionColor: 'var(--color-3)',
+  errorMessageColor: 'var(--color-2)'
 };
 
 export const fieldPageTheme = {
