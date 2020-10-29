@@ -4,6 +4,7 @@ import { fieldPageTheme } from './../components/themes';
 import { TimedQuestion } from './../components/Questions';
 import { PasswordText } from './../components/Text';
 import hacker from './../images/hacker.gif';
+import { collectData } from "./../components/collectData"
 
 import {
   CorrectButton,
@@ -24,16 +25,17 @@ const ThirdCasePage = ({
   theme,
   setTheme,
   answers,
-  setAnswers
+  setAnswers, 
+  setPasswordPoints,
+  passwordPoints
 }) => {
   setTheme('dark-theme');
   const title = 'Case Three';
  
 
-  //set new points state here
-  const [passwordPoints, setPasswordPoints] = React.useState(0)
   if (timeLeft === 0){
-    console.log(passwordPoints)
+    collectData(taskName, answers, setAnswers, passwordPoints);
+    console.log(answers)  
   }
 
   React.useEffect(() => {
@@ -48,6 +50,7 @@ const ThirdCasePage = ({
     - get more than 10 points to win!`;
 
   const [answerArray, setAnswerArray] = React.useState([]);
+  console.log(passwordPoints)
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
