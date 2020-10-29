@@ -59,6 +59,8 @@ const FirstCasePage = ({
         taskName={taskName}
         setBadgesWon={setBadgesWon}
         badgesWon={badgesWon}
+        answers={answers}
+        setAnswers={setAnswers}
       />
     </ThemeProvider>
   );

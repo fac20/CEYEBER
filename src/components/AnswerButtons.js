@@ -15,7 +15,9 @@ export function CorrectButton({
   badgesWon,
   setBadgesWon,
   nextPage,
-  disabled
+  disabled,
+  answers,
+  setAnswers
 }) {
   const history = useHistory();
   const handleCorrectClick = () => {
@@ -61,7 +63,9 @@ export function WrongButton({
   answerArray,
   setAnswerArray,
   nextPage,
-  disabled
+  disabled,
+  answers,
+  setAnswers
 }) {
   const history = useHistory();
 
@@ -100,7 +104,8 @@ export function IgnoreButton({
   setAnswerArray,
   nextPage,
   disabled,
-  setAnswer
+  answers,
+  setAnswers
 }) {
   const history = useHistory();
 

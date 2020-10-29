@@ -44,6 +44,8 @@ const SecondCasePage = ({
         taskName={taskName}
         setBadgesWon={setBadgesWon}
         badgesWon={badgesWon}
+        answers={answers}
+        setAnswers={setAnswers}
       />
       <IgnoreButton
         points={points}

@@ -185,6 +185,8 @@ function App() {
               setTimeLeft={setTimeLeft}
               theme={theme}
               setTheme={setTheme}
+              answers={answers}
+              setAnswers={setAnswers}
             />
           </Route>
           <Route path="/game-over" exact>
