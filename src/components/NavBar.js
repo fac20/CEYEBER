@@ -41,7 +41,8 @@ export const NavBar = ({
   taskName,
   badgesWon,
   setPasswordPoints,
-  passwordPoints
+  passwordPoints,
+  setLostScore
 }) => {
   return (
     <ThemeProvider theme={navBarTheme}>
@@ -59,6 +60,7 @@ export const NavBar = ({
               taskName={taskName}
               setPoints={setPoints}
               badgesWon={badgesWon}
+              setLostScore={setLostScore}
               passwordPoints={passwordPoints}
               setPasswordPoints={setPasswordPoints}
             />
@@ -76,7 +78,8 @@ const PointsBar = ({
   setPoints,
   badgesWon,
   setPasswordPoints,
-  passwordPoints
+  passwordPoints,
+  setLostScore
 }) => {
   const history = useHistory();
 
@@ -93,10 +96,12 @@ const PointsBar = ({
     if (taskName === 'Hack Attack' && timeLeft === 0) {
       if (passwordPoints < 0) {
         setPoints(points - 2);
+        setLostScore('2 points');
         history.push('/try-again');
         setPasswordPoints(0);
       } else if (passwordPoints < 9) {
         setPoints(points - 1);
+        setLostScore('1 point');
         history.push('/try-again');
         setPasswordPoints(0);
       } else if (passwordPoints >= 9) {

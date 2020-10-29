@@ -16,7 +16,7 @@ const FirstCasePage = ({
   setTaskName,
   badgesWon,
   setBadgesWon,
-  theme,
+  setLostScore,
   setTheme,
   answers,
   setAnswers
@@ -43,6 +43,7 @@ const FirstCasePage = ({
         answers={answers}
         setAnswers={setAnswers}
         taskName={taskName}
+        setLostScore={setLostScore}
       />
       <WrongButton
         points={points}
@@ -52,6 +53,7 @@ const FirstCasePage = ({
         answers={answers}
         setAnswers={setAnswers}
         taskName={taskName}
+        setLostScore={setLostScore}
       />
       <CorrectButton
         points={points}

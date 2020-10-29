@@ -14,15 +14,14 @@ import BadgePage from './pages/badgePage';
 import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
 import LandingPage from './pages/landingPage';
-import { useHistory } from 'react-router-dom';
 import NotFoundPage from './pages/pageNotFound';
 
 function App() {
-  const history = useHistory();
-
   const [points, setPoints] = React.useState(2);
   const [agent, setAgent] = React.useState('BrownFox');
+  const [lostScore, setLostScore] = React.useState('');
   const [timeLeft, setTimeLeft] = React.useState(30);
+
   const [badgesWon, setBadgesWon] = React.useState({
     case1: null,
     case2: null,
@@ -112,6 +111,7 @@ function App() {
               timeLeft={timeLeft}
               taskName={taskName}
               badgesWon={badgesWon}
+              setLostScore={setLostScore}
             />
             <FirstCasePage
               points={points}
@@ -124,13 +124,14 @@ function App() {
               setTheme={setTheme}
               answers={answers}
               setAnswers={setAnswers}
+              setLostScore={setLostScore}
             />
           </Route>
           <Route path="/try-again" exact>
             <TryAgain
               failMessage={failMessage}
               setTimeLeft={setTimeLeft}
-              taskname={taskName}
+              lostScore={lostScore}
             />
           </Route>
           <Route path="/badge" exact>
@@ -158,6 +159,7 @@ function App() {
               timeLeft={timeLeft}
               taskName={taskName}
               badgesWon={badgesWon}
+              setLostScore={setLostScore}
             />
             <SecondCasePage
               points={points}
@@ -170,6 +172,7 @@ function App() {
               setTheme={setTheme}
               answers={answers}
               setAnswers={setAnswers}
+              setLostScore={setLostScore}
             />
           </Route>
           <Route path="/third-case-intro" exact>
@@ -191,6 +194,7 @@ function App() {
               badgesWon={badgesWon}
               setPasswordPoints={setPasswordPoints}
               passwordPoints={passwordPoints}
+              setLostScore={setLostScore}
             />
             <ThirdCasePage
               points={points}
@@ -208,6 +212,7 @@ function App() {
               setAnswers={setAnswers}
               setPasswordPoints={setPasswordPoints}
               passwordPoints={passwordPoints}
+              setLostScore={setLostScore}
             />
           </Route>
           <Route path="/game-over" exact>

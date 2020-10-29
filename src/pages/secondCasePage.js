@@ -16,7 +16,7 @@ const SecondCasePage = ({
   setTaskName,
   badgesWon,
   setBadgesWon,
-  theme,
+  setLostScore,
   setTheme,
   answers,
   setAnswers
@@ -56,6 +56,7 @@ const SecondCasePage = ({
         answers={answers}
         setAnswers={setAnswers}
         taskName={taskName}
+        setLostScore={setLostScore}
       />
       <WrongButton
         points={points}
@@ -65,6 +66,7 @@ const SecondCasePage = ({
         answers={answers}
         setAnswers={setAnswers}
         taskName={taskName}
+        setLostScore={setLostScore}
       />
     </ThemeProvider>
   );
