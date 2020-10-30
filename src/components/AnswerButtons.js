@@ -81,7 +81,7 @@ export function WrongButton({
         setPoints(points - 2);
       }
 
-      collectData(taskName, answers, setAnswers, 2);
+      collectData(taskName, answers, setAnswers, -2);
       history.push(nextPage);
     }
   };

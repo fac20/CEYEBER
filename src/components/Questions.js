@@ -1,9 +1,7 @@
 import React from 'react';
 import { H1, H2, Text } from './Text';
 import { Img } from './Image';
-import { Label } from './Forms';
 import { useHistory } from 'react-router-dom';
-import { Progress } from './ProgressBar';
 
 export const ImageQuestion = ({ title, img, question }) => {
   return (

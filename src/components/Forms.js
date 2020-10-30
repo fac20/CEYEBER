@@ -124,7 +124,7 @@ export const LandingPageForm = ({ agent, setAgent }) => {
           type="text"
           placeholder="BrownFox"
           data-cy="agent"
-          maxLength="8"
+          maxLength="15"
           required
         />
         <ErrorDiv>{errorMessage}</ErrorDiv>
