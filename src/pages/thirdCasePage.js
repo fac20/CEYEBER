@@ -70,7 +70,7 @@ const ThirdCasePage = ({
           <PasswordStrength
             id="passwordStrength"
             value={passwordPoints}
-            max="27"
+            max="11"
           />
         </FlexContainer>
 
