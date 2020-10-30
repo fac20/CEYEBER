@@ -15,17 +15,13 @@ const LI = styled(Text)`
   ${props => (props.case.case3 === props.name ? 'color: var(--color-1)' : '')};
 
   &:before {
-    ${props =>
-      props.case.case2 === props.name ? 'content: "✅ "' : ''};
-    ${props =>
-      props.case.case3 === props.name ? 'content: "✅ "' : ''};
-    ${props =>
-      props.case.case1 === props.name ? 'content: "✅ "' : ''};
+    ${props => (props.case.case2 === props.name ? 'content: "✅ "' : '')};
+    ${props => (props.case.case3 === props.name ? 'content: "✅ "' : '')};
+    ${props => (props.case.case1 === props.name ? 'content: "✅ "' : '')};
   }
 `;
 
 const Checklist = ({ badgesWon }) => {
-  console.log(badgesWon)
   return (
     <>
       <UL>

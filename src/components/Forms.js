@@ -80,11 +80,11 @@ const ErrorDiv = styled.div`
 
 const Countries = ({ id }) => {
   const options = countriesArray.map(country => {
-      return (
-        <Option key={country} value={country}>
-          {country}
-        </Option>
-      );
+    return (
+      <Option key={country} value={country}>
+        {country}
+      </Option>
+    );
   });
   return (
     <Select id={id} name={id} defaultValue="United Kingdom">
@@ -103,19 +103,16 @@ export const LandingPageForm = ({ agent, setAgent }) => {
     const age = event.target.elements.age.value;
     const country = event.target.elements.country.value;
     signUp(agent, age, country)
-    .then(res => {
-      if (res.id){
-        window.sessionStorage.setItem('user_id', res.id)
-        setAgent(agent);
-        history.push('/profile');
-      } else {
-        //ask to pick another
-        console.log(res.message)
-        setErrorMessage(res.message); 
-      }   
-    })
-    //.then(id => window.sessionStorage.setItem('user_id', id))
-    .catch(error=> console.log(error))
+      .then(res => {
+        if (res.id) {
+          window.sessionStorage.setItem('user_id', res.id);
+          setAgent(agent);
+          history.push('/profile');
+        } else {
+          setErrorMessage(res.message);
+        }
+      })
+      .catch(error => console.erro(error));
   };
 
   return (

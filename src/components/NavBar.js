@@ -34,7 +34,7 @@ const Ul = styled.ul`
   padding-left: 0;
   @media only screen and (max-width: 460px) {
     flex-direction: column;
-  };
+  } ;
 `;
 
 const Li = styled.li`
@@ -61,7 +61,7 @@ const StyledLink = styled(Link)`
       window.location.pathname.includes('intro')
         ? props.theme.darkBgColor
         : props.theme.labelColor};
-  };
+  }
 `;
 
 export const NavBar = ({
@@ -78,9 +78,9 @@ export const NavBar = ({
     <ThemeProvider theme={navBarTheme}>
       <StyledNavBar>
         <Ul>
-            <Li>
-              <StyledLink to="/training-manual">Training Manual</StyledLink>
-            </Li>
+          <Li>
+            <StyledLink to="/training-manual">Training Manual</StyledLink>
+          </Li>
           <InlineDiv>
             <Li className="points">
               <PointsBar
@@ -120,7 +120,6 @@ const PointsBar = ({
       setPoints(20);
     }
     if (taskName !== 'Hack Attack' && points <= 0) {
-      console.log('ITS HERE ACTUALLLY');
       history.push('/game-over');
     }
     if (taskName === 'Hack Attack' && timeLeft === 0) {
