@@ -36,7 +36,6 @@ a {
 
 .globe {
   height: 10rem;
-  width: 10rem;
   background-image: url(./images/globe.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -49,7 +48,6 @@ a {
 
 .avatar {
   height: 10rem;
-  width: 10rem;
   background-image: url(./images/avatar.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -125,3 +123,4 @@ a {
   background-size: contain;
   background-position: center;
 }
+

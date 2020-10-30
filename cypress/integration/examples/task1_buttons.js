@@ -37,7 +37,6 @@ describe('Checks all buttons on first task', function () {
     cy.contains('TRY AGAIN').click();
     cy.url().should('contain', '/game-over');
     cy.contains('TRY AGAIN').click();
-    cy.url().should('contain', '/');
-    cy.contains('CLICK HERE TO BUILD YOUR PROFILE');
+    cy.url().should('contain', '/first-case-intro');
   });
 });

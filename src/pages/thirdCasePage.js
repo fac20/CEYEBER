@@ -7,6 +7,7 @@ import { PasswordStrength } from './../components/ProgressBar';
 import { Label } from './../components/Forms';
 import hacker from './../images/hacker.gif';
 import { collectData } from './../components/collectData';
+import { Wrapper, FlexContainer } from './../components/Wrapper';
 
 import {
   CorrectButton,
@@ -54,100 +55,107 @@ const ThirdCasePage = ({
 
   return (
     <ThemeProvider theme={fieldPageTheme}>
-      <TimedQuestion
-        title={title}
-        img={img}
-        question={question}
-        timeLeft={timeLeft}
-        setTimeLeft={setTimeLeft}
-        taskName={taskName}
-        // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
-      />
+      <Wrapper>
+        <TimedQuestion
+          title={title}
+          img={img}
+          question={question}
+          timeLeft={timeLeft}
+          setTimeLeft={setTimeLeft}
+          taskName={taskName}
+          // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
+        />
+        <FlexContainer>
+          <Label htmlFor="passwordStrength">Password Strength</Label>
+          <PasswordStrength
+            id="passwordStrength"
+            value={passwordPoints}
+            max="27"
+          />
+        </FlexContainer>
 
-      <Label htmlFor="passwordStrength">Password Strength</Label>
-      <PasswordStrength id="passwordStrength" value={passwordPoints} max="27" />
+        <PasswordText>{answerArray}</PasswordText>
 
-      <PasswordText>{answerArray}</PasswordText>
-
-      <div>
-        <CorrectButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label="!!"
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          badgesWon={badgesWon}
-          setBadgesWon={setBadgesWon}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <IgnoreButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label="dog"
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <CorrectButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label="01"
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          badgesWon={badgesWon}
-          setBadgesWon={setBadgesWon}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <WrongButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label="password"
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <CorrectButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label="?"
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          badgesWon={badgesWon}
-          setBadgesWon={setBadgesWon}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <IgnoreButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label="abc"
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <WrongButton
-          passwordPoints={passwordPoints}
-          setPasswordPoints={setPasswordPoints}
-          label={agent}
-          timeLeft={timeLeft}
-          taskName={taskName}
-          answerArray={answerArray}
-          setAnswerArray={setAnswerArray}
-          disabled={answerArray.join().length >= 24 ? true : false}
-        />
-        <SubmitPasswordButton setTimeLeft={setTimeLeft} />
-      </div>
+        <div>
+          <CorrectButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label="!!"
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            badgesWon={badgesWon}
+            setBadgesWon={setBadgesWon}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <IgnoreButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label="dog"
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <CorrectButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label="01"
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            badgesWon={badgesWon}
+            setBadgesWon={setBadgesWon}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <WrongButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label="password"
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <CorrectButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label="?"
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            badgesWon={badgesWon}
+            setBadgesWon={setBadgesWon}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <IgnoreButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label="abc"
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <WrongButton
+            passwordPoints={passwordPoints}
+            setPasswordPoints={setPasswordPoints}
+            label={agent}
+            timeLeft={timeLeft}
+            taskName={taskName}
+            answerArray={answerArray}
+            setAnswerArray={setAnswerArray}
+            disabled={answerArray.join().length >= 24 ? true : false}
+          />
+          <SubmitPasswordButton setTimeLeft={setTimeLeft} />
+        </div>
+      </Wrapper>
     </ThemeProvider>
   );
 };

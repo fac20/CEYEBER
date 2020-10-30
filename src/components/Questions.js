@@ -42,8 +42,8 @@ export function TimedQuestion({
 
   return (
     <>
-      <H2>{timeLeft} {timeLeft > 1 ? 'Seconds' : 'Second' }</H2>
       <H1>{title}</H1>
+      <H2>{timeLeft} {timeLeft > 1 ? 'Seconds' : 'Second' }</H2>
       <Img src={img} />
       <Text>{question}</Text>
     </>

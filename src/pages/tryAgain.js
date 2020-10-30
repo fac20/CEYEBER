@@ -3,15 +3,10 @@ import { Button } from '../components/Buttons';
 import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
+import { Wrapper } from './../components/Wrapper';
 
 import { H1, H2, Text } from '../components/Text';
 import { gameOverPageTheme } from './../components/themes';
-
-const Container = styled.div`
-  width: 80%;
-  text-align: center;
-  padding: 5rem;
-`;
 
 const AlertImage = styled.div`
   margin: auto;
@@ -27,13 +22,13 @@ const TryAgain = ({ failMessage, setTimeLeft, lostScore }) => {
 
   return (
     <ThemeProvider theme={gameOverPageTheme}>
-      <Container>
+      <Wrapper>
         <H1>Incorrect!</H1>
         <AlertImage className="alert" />
         <Text>You lost {lostScore}</Text>
         <H2>{failMessage}</H2>
         <Button onClick={handleClick}>TRY AGAIN</Button>
-      </Container>
+      </Wrapper>
     </ThemeProvider>
   );
 };

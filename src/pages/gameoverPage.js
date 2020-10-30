@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { sendAnswers } from './../api/api';
 import { H1, H2 } from '../components/Text';
-import { Container } from '../components/Forms';
+import { Wrapper } from '../components/Wrapper';
 import { gameOverPageTheme } from '../components/themes';
 
 const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAnswers }) => {
@@ -28,8 +28,7 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
         q3a1: null,
         q3a2: null
       }); 
-      history.push('/');
-
+      history.push('/first-case-intro');
     })
     .catch(err => 
       console.error(err));
@@ -37,10 +36,10 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
 
 
   return (
-    <Container>
-      <ThemeProvider theme={gameOverPageTheme}>
-        <div className="skull" />
+    <ThemeProvider theme={gameOverPageTheme}>
+      <Wrapper>
         <H1>GAME OVER!</H1>
+        <div className="skull" />
         <H2>
           Oh no! You have lost a badge!
           <br />
@@ -48,8 +47,8 @@ const GameOver = ({ points, setPoints, setTaskName, setBadgesWon, answers, setAn
           <br /> on how to spot fake news
         </H2>
         <Button onClick={handleClick}>TRY AGAIN</Button>
-      </ThemeProvider>
-    </Container>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 
