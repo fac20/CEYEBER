@@ -31,9 +31,9 @@ export const PasswordStrength = styled.progress`
   }
   ::-webkit-progress-value {
     background-color: ${props =>
-      props.value <= 5
+      props.value <= 4
         ? 'var(--color-7)'
-        : props.value > 5 && props.value <= 14
+        : props.value > 4 && props.value <= 9
         ? 'var(--color-2)'
         : 'var(--color-3)'};
   }
