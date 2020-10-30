@@ -1,9 +1,7 @@
 import React from 'react';
 import { H1, H2, Text } from './Text';
 import { Img } from './Image';
-import { Label } from './Forms';
 import { useHistory } from 'react-router-dom';
-import { Progress } from './ProgressBar';
 
 export const ImageQuestion = ({ title, img, question }) => {
   return (
@@ -15,7 +13,6 @@ export const ImageQuestion = ({ title, img, question }) => {
   );
 };
 
-
 export function TimedQuestion({
   title,
   img,
@@ -26,24 +23,21 @@ export function TimedQuestion({
   nextPage,
   taskName
 }) {
-  
   const history = useHistory();
 
   React.useEffect(() => {
-    
-
     const startInterval = setInterval(() => {
       setTimeLeft(timeLeft - 1);
     }, 1000);
     return () => clearInterval(startInterval);
   }, [timeLeft, setTimeLeft, history, nextPage]);
-  //esLint wanted dependencies of history and nextPage so have added them
-  //doesn't seem to affect page working
 
   return (
     <>
       <H1>{title}</H1>
-      <H2>{timeLeft} {timeLeft > 1 ? 'Seconds' : 'Second' }</H2>
+      <H2>
+        {timeLeft} {timeLeft > 1 ? 'Seconds' : 'Second'}
+      </H2>
       <Img src={img} />
       <Text>{question}</Text>
     </>

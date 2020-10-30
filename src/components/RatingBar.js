@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React from 'react';
 import { Label } from './Forms';
-//import fbIcon from '../images/facebook.svg';
 import { FixedWidthText } from './Text';
 
 const StarRating = styled.div`
@@ -43,7 +42,7 @@ const DivContainer = styled.div`
   @media only screen and (max-width: 460px) {
     margin: 0.5rem;
     flex-direction: column;
-    align-items: center
+    align-items: center;
   }
 `;
 
@@ -60,8 +59,6 @@ const SmallDivContainer = styled.div`
 `;
 
 const RatingBar = ({ ratingValue, updateRatingValue }) => {
-  //const fbIconSrc = fbIcon;
-
   const skills = {
     0: 'Never used it!',
     1: 'Once a week',
@@ -98,7 +95,9 @@ const RatingBar = ({ ratingValue, updateRatingValue }) => {
           })}
         </StarRating>
         <SmallDivContainer>
-          <FixedWidthText width="150px">{skills[ratingValue.Facebook]}</FixedWidthText>
+          <FixedWidthText width="150px">
+            {skills[ratingValue.Facebook]}
+          </FixedWidthText>
         </SmallDivContainer>
       </DivContainer>
       <DivContainer>

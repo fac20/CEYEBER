@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 import { Wrapper } from './../components/Wrapper';
-
 import { H1, H2, Text } from '../components/Text';
 import { gameOverPageTheme } from './../components/themes';
 

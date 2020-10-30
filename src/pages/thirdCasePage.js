@@ -63,7 +63,6 @@ const ThirdCasePage = ({
           timeLeft={timeLeft}
           setTimeLeft={setTimeLeft}
           taskName={taskName}
-          // nextPage={points <= 10 && timeLeft === 0 ? '/try-again' : '/badge'}
         />
         <FlexContainer>
           <Label htmlFor="passwordStrength">Password Strength</Label>

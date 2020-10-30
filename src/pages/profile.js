@@ -24,7 +24,7 @@ const Profile = ({ theme, setTheme, agent }) => {
 
   const history = useHistory();
   const createProfile = () => {
-    sendSkills(ratingValue).then(console.log);
+    sendSkills(ratingValue);
     history.push('/first-case-intro');
   };
 

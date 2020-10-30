@@ -3,7 +3,6 @@ import { Button, SubmitButton } from './Buttons.js';
 import { useHistory } from 'react-router-dom';
 import { collectData } from './collectData';
 
-//CORRECT button:
 export function CorrectButton({
   points,
   setPoints,
@@ -45,7 +44,6 @@ export function CorrectButton({
       }
     }
 
-    //go to the next page
     history.push(nextPage);
   };
   return (
@@ -55,7 +53,6 @@ export function CorrectButton({
   );
 }
 
-//WRONG button:
 export function WrongButton({
   points,
   setPoints,
@@ -84,7 +81,7 @@ export function WrongButton({
         setPoints(points - 2);
       }
 
-      collectData(taskName, answers, setAnswers, 2);
+      collectData(taskName, answers, setAnswers, -2);
       history.push(nextPage);
     }
   };
@@ -96,7 +93,6 @@ export function WrongButton({
   );
 }
 
-//IGNORE button:
 export function IgnoreButton({
   points,
   setPoints,

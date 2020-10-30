@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { NavBar } from './components/NavBar.js';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import TrainingManual from './pages/trainingManual';
 import FirstCasePage from './pages/firstCasePage';
 import SecondCasePage from './pages/secondCasePage';
@@ -15,7 +15,6 @@ import CasesPage from './pages/casesPage';
 import Intro from './components/Intro';
 import LandingPage from './pages/landingPage';
 import NotFoundPage from './pages/pageNotFound';
-
 
 function App() {
   const [points, setPoints] = React.useState(2);
