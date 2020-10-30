@@ -4,11 +4,20 @@ export const Progress = styled.progress`
   border: 2px solid;
   border-color: ${props => props.theme.pBarColor};
   border-radius: 10px;
+  margin: auto 1rem;
+  padding: 2px;
+  background-color: ${props => props.theme.pBarBgColor};
   ::-webkit-progress-bar {
     background-color: ${props => props.theme.pBarBgColor};
+    border-radius: 10px;
   }
   ::-webkit-progress-value {
+    border-radius: 10px;
     background-color: ${props => props.theme.pBarValueColor};
+  }
+  ::-moz-progress-bar {
+    background-color: ${props => props.theme.pBarValueColor};
+    border-radius: 5px;
   }
 `;
 // under 0 red

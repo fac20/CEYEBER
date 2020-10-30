@@ -25,11 +25,16 @@ export const StyledNavBar = styled.nav`
 
 const InlineDiv = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 const Ul = styled.ul`
-  /* display: flex; */
+  display: flex;
+  justify-content: space-evenly;
   padding-left: 0;
+  @media only screen and (max-width: 460px) {
+    flex-direction: column;
+  };
 `;
 
 const Li = styled.li`
@@ -38,7 +43,7 @@ const Li = styled.li`
   font-size: 1.2rem;
   list-style-type: none;
   display: inline-block;
-  width: 50%;
+  /* width: 50%; */
   color: ${props => props.theme.labelColor};
   transition: all 0.2s ease-in-out;
   :hover:not(.points) {
@@ -56,7 +61,7 @@ const StyledLink = styled(Link)`
       window.location.pathname.includes('intro')
         ? props.theme.darkBgColor
         : props.theme.labelColor};
-  }
+  };
 `;
 
 export const NavBar = ({
@@ -73,23 +78,23 @@ export const NavBar = ({
     <ThemeProvider theme={navBarTheme}>
       <StyledNavBar>
         <Ul>
-          <InlineDiv>
             <Li>
               <StyledLink to="/training-manual">Training Manual</StyledLink>
             </Li>
+          <InlineDiv>
+            <Li className="points">
+              <PointsBar
+                points={points}
+                timeLeft={timeLeft}
+                taskName={taskName}
+                setPoints={setPoints}
+                badgesWon={badgesWon}
+                setLostScore={setLostScore}
+                passwordPoints={passwordPoints}
+                setPasswordPoints={setPasswordPoints}
+              />
+            </Li>
           </InlineDiv>
-          <Li className="points">
-            <PointsBar
-              points={points}
-              timeLeft={timeLeft}
-              taskName={taskName}
-              setPoints={setPoints}
-              badgesWon={badgesWon}
-              setLostScore={setLostScore}
-              passwordPoints={passwordPoints}
-              setPasswordPoints={setPasswordPoints}
-            />
-          </Li>
         </Ul>
       </StyledNavBar>
     </ThemeProvider>
