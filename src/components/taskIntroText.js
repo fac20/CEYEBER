@@ -9,12 +9,12 @@ export const task2 = {
   title: '2nd Case: Thief Buster',
   bubble: 'Decide whether the following is real',
   message:
-    'Your mission is to decipher whether or not the following communication is legitimate- or from someone trying to steal your details.'
+    'Your mission is to choose whether or not the following letter is real- or from someone trying to steal your details.'
 };
 
 export const task3 = {
   title: '3rd Case: Password Time Challenge',
   bubble: 'Your device has been hacked!',
   message:
-    'You have only 30 secconds to change the password and make it more secure!'
+    'You have only 30 seconds to change the password and make it more secure!'
 };
