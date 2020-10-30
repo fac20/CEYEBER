@@ -116,7 +116,7 @@ This is the **Front-end**, [Back-end Repo Here](https://github.com/fac20/CEYEBER
 
 ## Project status
 
-Under development. Currently building back-end and fixing bugs
+The project has been finished having user profile page, survay page and three challenges.
 
 ## Bugs and Fixes requiring attention :bug:
 
