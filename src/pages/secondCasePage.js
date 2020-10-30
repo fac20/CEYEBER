@@ -54,22 +54,22 @@ const SecondCasePage = ({
           setPoints={setPoints}
           label="Don’t know, better to
         ignore it"
-        nextPage={'try-again'}
-        answers={answers}
-        setAnswers={setAnswers}
-        taskName={taskName}
-        setLostScore={setLostScore}
-      />
-      <WrongButton
-        points={points}
-        setPoints={setPoints}
-        label="Click the link - this is from Netflix"
-        nextPage={'try-again'}
-        answers={answers}
-        setAnswers={setAnswers}
-        taskName={taskName}
-        setLostScore={setLostScore}
-      />
+          nextPage={'try-again'}
+          answers={answers}
+          setAnswers={setAnswers}
+          taskName={taskName}
+          setLostScore={setLostScore}
+        />
+        <WrongButton
+          points={points}
+          setPoints={setPoints}
+          label="Click the link - this is from Netflix"
+          nextPage={'try-again'}
+          answers={answers}
+          setAnswers={setAnswers}
+          taskName={taskName}
+          setLostScore={setLostScore}
+        />
       </Wrapper>
     </ThemeProvider>
   );
