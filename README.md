@@ -20,6 +20,8 @@
 
 Web App for children between the ages of 8 - 16 years to test their critical thinking skills in cyber threats
 
+This is the **Front-end**, [Back-end Repo Here](https://github.com/fac20/CEYEBER-backend)
+
 ## Team Roles
 
 - Product Owner: Aqsa
@@ -37,6 +39,7 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 
 - React
 - JavaScript
+- CSS
 - Miro
 - Figma
 
@@ -52,7 +55,6 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 
 ### Tests
 
-- Jest
 - Cypress
 
 ## File Structure
@@ -66,6 +68,9 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
   - pages - ladnig page, profile page and all the other pages goes here
   - app.js - holds all the routes and global hooks of the web app
   - app.css - have media queries, list styling and styling of images
+  
+## Colour Variables
+
 
 ## Sprint One - Frontend
 
@@ -78,7 +83,7 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 7. Try again page displays warning to user of what they have done wrong during the challange (user also recieves point reduction)
 8. User reaches game over page if points drops below 0
 
-### Routes
+### Front-end Routes
 
 - [x] "/"
 - [x] "/training-manual"
@@ -86,17 +91,20 @@ Web App for children between the ages of 8 - 16 years to test their critical thi
 - [x] "/badgesWon"
 - [x] "/first-case-intro"
 - [x] "/first-case-task"
-- [ ] "/second-case-intro"
+- [x] "/second-case-intro"
 - [x] "/second-case-task"
-- [ ] "/third-case-intro"
+- [x] "/third-case-intro"
 - [x] "/third-case-task"
 - [x] "/try-again"
 - [x] "/badge"
 - [x] "/game-over"
 
-## Srint Two - Backend
+## Sprint Two - Create Backend and Update Front-end
 
-_pending_
+1. [Link to Backend Repo Here] (https://github.com/fac20/CEYEBER-backend)
+2. Updated front end following user testing
+3. Update colour theme variables
+4. Responsiveness
 
 ## Install Locally :computer:
 
@@ -111,13 +119,11 @@ Under development. Currently building back-end and fixing bugs
 
 ## Bugs and Fixes requiring attention :bug:
 
-- Light/Dark background on task intro
-- History state needs attention
-- You can gain more than the maximum points
-- Limiting lengths of inputs
-- Linking all pages together
-- Badges are currently hardcoded
-- Task list in badgesWon page has to be styled in reverse order
+- [ ] Recording the first and second attempts possibly being overwritten
+- [ ] SVGs need color variables (if you want to completely change colour scheme)
+- [ ] Tests not passing on CircleCI but are passing locally
+- [ ] Refactoring
+- [ ] Logic of Third Case Challenge - e.g. points to be reduced if player uses one button
 
 ## Acknowledgment
 
