@@ -102,7 +102,7 @@ This is the **Front-end**, [Back-end Repo Here](https://github.com/fac20/CEYEBER
 
 ## Sprint Two - Create Backend and Update Front-end
 
-1. [Link to Backend Repo Here] (https://github.com/fac20/CEYEBER-backend)
+1. [Link to Backend Repo Here](https://github.com/fac20/CEYEBER-backend)
 2. Updated front end following user testing
 3. Update colour theme variables
 4. Responsiveness
