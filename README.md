@@ -69,8 +69,9 @@ This is the **Front-end**, [Back-end Repo Here](https://github.com/fac20/CEYEBER
   - app.js - holds all the routes and global hooks of the web app
   - app.css - have media queries, list styling and styling of images
   
-## Colour Variables
-
+## Colour Variables & Fonts
+1. Base colours are in `index.css`, including fonts
+2. Using theme objects in `src/components/themes.js` with styled components `ThemeProvider` to set all themes in each page component. **Theme provider only has colours, fonts have not been added**
 
 ## Sprint One - Frontend
 
@@ -101,7 +102,7 @@ This is the **Front-end**, [Back-end Repo Here](https://github.com/fac20/CEYEBER
 
 ## Sprint Two - Create Backend and Update Front-end
 
-1. [Link to Backend Repo Here] (https://github.com/fac20/CEYEBER-backend)
+1. [Link to Backend Repo Here](https://github.com/fac20/CEYEBER-backend)
 2. Updated front end following user testing
 3. Update colour theme variables
 4. Responsiveness
