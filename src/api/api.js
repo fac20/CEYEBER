@@ -7,7 +7,6 @@ function request(path, options) {
       error.status = response.status;
       throw error;
     } else {
-      console.log(response)
       return response.json();
     }
   });
@@ -55,14 +54,7 @@ function sendSkills({
   });
 }
 
-function sendAnswers({
-  q1a1,
-  q1a2,
-  q2a1,
-  q2a2,
-  q3a1,
-  q3a2
-}) {
+function sendAnswers({ q1a1, q1a2, q2a1, q2a2, q3a1, q3a2 }) {
   const id = window.sessionStorage.getItem('user_id');
   return request('answers', {
     method: 'POST',
@@ -80,6 +72,5 @@ function sendAnswers({
     }
   });
 }
-
 
 export { signUp, sendSkills, sendAnswers };
