@@ -69,6 +69,7 @@ export function WrongButton({
   answers,
   setAnswers,
   passwordPoints,
+  setLostScore,
   setPasswordPoints
 }) {
   const history = useHistory();
@@ -79,10 +80,11 @@ export function WrongButton({
       setPasswordPoints(oldScore => oldScore - 2);
     } else {
       if (points > 0) {
+        setLostScore('2 points');
         setPoints(points - 2);
       }
 
-      collectData(taskName, answers, setAnswers, 10);
+      collectData(taskName, answers, setAnswers, 2);
       history.push(nextPage);
     }
   };
@@ -108,6 +110,7 @@ export function IgnoreButton({
   answers,
   setAnswers,
   passwordPoints,
+  setLostScore,
   setPasswordPoints
 }) {
   const history = useHistory();
@@ -118,6 +121,7 @@ export function IgnoreButton({
       setPasswordPoints(oldScore => oldScore - 1);
     } else {
       if (points > 0) {
+        setLostScore('1 point');
         setPoints(points - 1);
       }
 
