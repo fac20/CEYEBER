@@ -112,7 +112,7 @@ export const LandingPageForm = ({ agent, setAgent }) => {
           setErrorMessage(res.message);
         }
       })
-      .catch(error => console.erro(error));
+      .catch(error => console.error(error));
   };
 
   return (
